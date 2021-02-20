@@ -119,6 +119,7 @@
 
 <script src="<?php echo base_url(); ?>/assets/js/plugins.js"></script>
 <script src="<?php echo base_url(); ?>/assets/js/main.js"></script>
+<script src="<?php echo base_url(); ?>/assets/js/mainjs.js"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>

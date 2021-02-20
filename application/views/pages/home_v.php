@@ -49,8 +49,8 @@
                     <div class="row">
                         <div class="col-xl-6 col-lg-6">
                             <div class="hero__caption">
-                                <span data-animation="fadeInLeft" data-delay=".4s">Selamat Datang Di Manunggal jaya</span>
-                                <h1 data-animation="fadeInLeft" data-delay=".6s">Bengkel Las Canopi</h1>
+                                <span data-animation="fadeInLeft" data-delay=".4s">Selamat Datang Di <?= $cv ?></span>
+                                <h1 data-animation="fadeInLeft" data-delay=".6s"><?= $cv2 ?></h1>
                             </div>
                         </div>
                     </div>
@@ -107,7 +107,6 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="cl-xl-7 col-lg-8 col-md-10">
-
                     <div class="section-tittle text-center mb-70">
                         <h2>Produk Layanan</h2>
                     </div>
@@ -120,9 +119,9 @@
                             <img src="assets/img/gallery/services1.png" alt="">
                         </div>
                         <div class="services-caption">
-                            <h3><a href="services.html">Lighting</a></h3>
-                            <p class="pera1">For each project we establish </p>
-                            <p class="pera2">For each project we establish relationships with partners who we know will help us.
+                            <h3><a href="services.html"><?= $jenis ?></a></h3>
+                            <p class="pera1"><?= $dki ?></p>
+                            <p class="pera2"><?= $deskripsi ?>
                             </p>
                         </div>
                     </div>
@@ -160,73 +159,28 @@
 
     <div class="gallery-area">
         <div class="container-fluid p-0 fix">
+            <div class="row justify-content-center">
+                <div class="cl-xl-7 col-lg-8 col-md-10">
+                    <div class="section-tittle text-center mb-70">
+                        <h2>Produk Layanan</h2>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
-                <div class="col-xl-6 col-lg-4 col-md-6">
-                    <div class="single-gallery mb-30">
-                        <div class="gallery-img" style="background-image: url(assets/img/gallery/gallery1.png);"></div>
-                        <div class="thumb-content-box">
-                            <div class="thumb-content">
-                                <h3><span>Intorior</span>Burj Khalifa</h3>
-                                <a href="work.html"><i class="fas fa-angle-right"></i></a>
+                <?php foreach ($product as $p => $list) : ?>
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="single-gallery mb-30">
+                            <div class="gallery-img" style="background-image: url(assets/img/hero/<?= $list->image ?>);"></div>
+                            <div class="thumb-content-box">
+                                <div class="thumb-content">
+                                    <h3><span>Intorior</span>Burj Khalifa</h3>
+                                    <a href="work.html"><i class="fas fa-angle-right"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="single-gallery mb-30">
-                        <div class="gallery-img" style="background-image: url(assets/img/gallery/gallery2.png);"></div>
-                        <div class="thumb-content-box">
-                            <div class="thumb-content">
-                                <h3><span>Intorior</span>Burj Khalifa</h3>
-                                <a href="work.html"><i class="fas fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="single-gallery mb-30">
-                        <div class="gallery-img" style="background-image: url(assets/img/gallery/gallery3.png);"></div>
-                        <div class="thumb-content-box">
-                            <div class="thumb-content">
-                                <h3><span>Intorior</span>Burj Khalifa</h3>
-                                <a href="work.html"><i class="fas fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="single-gallery mb-30">
-                        <div class="gallery-img" style="background-image: url(assets/img/gallery/gallery4.png);"></div>
-                        <div class="thumb-content-box">
-                            <div class="thumb-content">
-                                <h3><span>Intorior</span>Burj Khalifa</h3>
-                                <a href="work.html"><i class="fas fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="single-gallery mb-30">
-                        <div class="gallery-img" style="background-image: url(assets/img/gallery/gallery5.png);"></div>
-                        <div class="thumb-content-box">
-                            <div class="thumb-content">
-                                <h3><span>Intorior</span>Burj Khalifa</h3>
-                                <a href="work.html"><i class="fas fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-4 col-md-6">
-                    <div class="single-gallery mb-30">
-                        <div class="gallery-img" style="background-image: url(assets/img/gallery/gallery6.png);"></div>
-                        <div class="thumb-content-box">
-                            <div class="thumb-content">
-                                <h3><span>Intorior</span>Burj Khalifa</h3>
-                                <a href="work.html"><i class="fas fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach ?>
             </div>
         </div>
     </div>

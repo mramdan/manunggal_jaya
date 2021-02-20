@@ -22,11 +22,11 @@
                     <div class="main-menu f-right d-none d-lg-block">
                         <nav>
                             <ul id="navigation">
-                                <li><a href="<?php echo base_url(); ?>controllers/home">Home</a></li>
-                                <li><a href="<?php echo base_url(); ?>controllers/profile">Profile</a></li>
-                                <li><a href="<?php echo base_url(); ?>controllers/produk">Produk</a></li>
-                                <li><a href="<?php echo base_url(); ?>controllers/blog">Blog</a></li>
-                                <li><a href="<?php echo base_url(); ?>controllers/contact">Contact</a></li>
+                                <li><a href="<?php echo base_url(); ?>pages">Home</a></li>
+                                <li><a href="<?php echo base_url(); ?>pages/profile">Profile</a></li>
+                                <li><a href="<?php echo base_url(); ?>pages/produk">Produk</a></li>
+                                <li><a href="<?php echo base_url(); ?>pages/blog">Blog</a></li>
+                                <li><a href="<?php echo base_url(); ?>pages/contact">Contact</a></li>
                             </ul>
                         </nav>
                     </div>

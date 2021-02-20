@@ -1,8 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
 
-<!-- Mirrored from preview.colorlib.com/theme/theinterior/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 14 Feb 2021 11:57:01 GMT -->
-
 <head>
    <meta charset="utf-8">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -24,7 +22,11 @@
    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/themify-icons.css">
    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/slick.css">
    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/nice-select.css">
-   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style.css">
+   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style2.css">
+   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/csstl.css">
+   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/cssp.css">
+   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/animate.css">
+   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/animate.min.css">
 </head>
 
 <body class="body-bg">
