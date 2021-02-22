@@ -38,4 +38,5 @@
         // add loading class to html immediately
         document.querySelector('html').classList.add('loading');
     </script><!-- END THEME STYLES -->
+    <script src="<?= base_url() ?>assets/backend/vendor/jquery/jquery.min.js"></script>
 </head>

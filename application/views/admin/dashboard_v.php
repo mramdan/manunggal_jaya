@@ -5,6 +5,15 @@
         <!-- .page -->
         <div class="page">
             <!-- .page-inner -->
+            <div class="page-message" role="alert">
+                <span class="mr-5">Did you know, you can receive daily or weekly update straight to your inbox?</span>
+                <a href="user-notification-settings.html" class="btn btn-sm btn-warning circle mr-1">Notifications settings</a>
+                <a href="#" class="btn btn-sm btn-icon btn-warning" aria-label="Close" onclick="$(this).parent().fadeOut()">
+                    <span aria-hidden="true">
+                        <i class="fa fa-times"></i>
+                    </span>
+                </a>
+            </div>
             <div class="page-inner">
                 <!-- .page-title-bar -->
                 <header class="page-title-bar">
@@ -497,21 +506,3 @@
             </div><!-- /.page-inner -->
         </div><!-- /.page -->
     </div><!-- .app-footer -->
-    <footer class="app-footer">
-        <ul class="list-inline">
-            <li class="list-inline-item">
-                <a class="text-muted" href="#">Support</a>
-            </li>
-            <li class="list-inline-item">
-                <a class="text-muted" href="#">Help Center</a>
-            </li>
-            <li class="list-inline-item">
-                <a class="text-muted" href="#">Privacy</a>
-            </li>
-            <li class="list-inline-item">
-                <a class="text-muted" href="#">Terms of Service</a>
-            </li>
-        </ul>
-        <div class="copyright"> Copyright © 2018. All right reserved. </div>
-    </footer>
-</main>

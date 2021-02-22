@@ -52,7 +52,7 @@
         </div>
         <p><?php echo lang('login_subheading'); ?></p>
         <!-- alert -->
-        <div id="infoMessage" class="alert alert-warning alert-dismissible fade show" role="alert">
+        <div id="infoMessage" role="alert">
             <strong><?php echo $message; ?></strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -125,6 +125,25 @@
     <!-- BEGIN THEME JS -->
     <script src="<?= base_url() ?>assets/backend/javascript/theme.min.js"></script> <!-- END THEME JS -->
 
+    <script type="text/javascript">
+        // $(window).on("load", function() {
+        //     $(".alert").alert('close');
+        // });
+
+        function initial_alert() {
+            $("#infoMessage").removeClass("alert alert-warning alert-dismissible fade show").addClass("alert alert-warning alert-dismissible fade show hide");
+            $("#alert_error").removeClass("alert alert-danger display-open").addClass("alert alert-danger display-hide");
+        }
+        initial_alert();
+
+        function hidealert() {
+            setTimeout(function() {
+                $(".alert").alert('close');
+            }, 2000);
+
+        }
+        hidealert();
+    </script>
 </body>
 
 </html>
