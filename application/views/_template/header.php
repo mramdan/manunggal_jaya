@@ -24,6 +24,7 @@
     <!-- BEGIN PLUGINS STYLES -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/backend/vendor/open-iconic/font/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/backend/vendor/%40fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/backend/vendor/toastr/build/toastr.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/backend/vendor/flatpickr/flatpickr.min.css"><!-- END PLUGINS STYLES -->
     <!-- BEGIN THEME STYLES -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/backend/stylesheets/theme.min.css" data-skin="default">
@@ -39,4 +40,5 @@
         document.querySelector('html').classList.add('loading');
     </script><!-- END THEME STYLES -->
     <script src="<?= base_url() ?>assets/backend/vendor/jquery/jquery.min.js"></script>
+    <script src="<?= base_url() ?>assets/backend/vendor/toastr/build/toastr.min.js"></script>
 </head>

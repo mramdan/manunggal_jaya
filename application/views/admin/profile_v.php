@@ -7,12 +7,12 @@
             <header class="page-cover">
                 <div class="text-center">
                     <a href="user-profile.html" class="user-avatar user-avatar-xl"><img src="<?= base_url() ?>assets/backend/images/avatars/profile.jpg" alt=""></a>
-                    <h2 class="h4 mt-2 mb-0"> <?php echo $profile ?> </h2>
+                    <h2 class="h4 mt-2 mb-0" id="nama_p"> </h2>
                     <div class="my-1">
                         <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i class="far fa-star text-yellow"></i>
                     </div>
-                    <p class="text-muted"> <?php echo $no ?> </p>
-                    <p> <?php echo $alamat ?>. </p>
+                    <p class="text-muted" id="no_p"> </p>
+                    <p id="alamat_p"> . </p>
                 </div>
             </header>
 
@@ -22,11 +22,10 @@
                 <div class="nav-scroller">
                     <!-- .nav -->
                     <div class="nav nav-center nav-tabs">
-                        <a class="nav-link active show" data-toggle="tab" href="#home">Settings</a>
-                        <a class="nav-link" data-toggle="tab" href="#profile">Sosial Media <span class="badge">16</span></a>
-                        <a class="nav-link" data-toggle="tab" href="#next">Teams</a>
-                        <a class="nav-link" data-toggle="tab" href="#profile">Projects</a>
-                        <a class="nav-link" data-toggle="tab" href="#profile">Tasks</a>
+                        <a class="nav-link active show" data-toggle="tab" href="#home">Pertinjau</a>
+                        <a class="nav-link" data-toggle="tab" href="#about">About</a>
+                        <a class="nav-link" data-toggle="tab" href="#kontak">Kontak</a>
+                        <a class="nav-link" data-toggle="tab" href="#sosmed">Sosial Media <span class="badge">16</span></a>
                     </div>
                 </div>
             </nav>
@@ -45,39 +44,23 @@
                 <!-- .page-section -->
                 <div class="page-section">
                     <!-- grid row -->
-                    <div class="row">
-                        <!-- grid column -->
-                        <div class="col-lg-12">
-                            <div id="myTabContent" class="tab-content">
-                                <div class="tab-pane fade active show" id="home">
-                                    <div class="card card-fluid">
-                                        <h6 class="card-header"> Public Profile Perusahaan </h6><!-- .card-body -->
-                                        <div class="card-body">
+                    <!-- form -->
+                    <form method="post" id="form">
+                        <!-- CRSF PROTECTION -->
+                        <input type="hidden" class="txt_csrfname" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+                        <!-- // CRSF PROTECTION -->
+                        <input type="hidden" value="" name="id" />
+                        <input type="hidden" value="" name="logo_old" />
+                        <div class="row">
+                            <!-- grid column -->
+                            <div class="col-lg-12">
+                                <div id="myTabContent" class="tab-content">
+                                    <div class="tab-pane fade active show" id="home">
+                                        <div class="card card-fluid">
+                                            <h6 class="card-header"> Public Profile Perusahaan </h6><!-- .card-body -->
+                                            <div class="card-body">
 
-                                            <!-- <div class="media mb-3">
 
-                                                <div class="user-avatar user-avatar-xl fileinput-button">
-                                                    <div class="fileinput-button-label"> Change logo </div><img src="<?= base_url() ?>assets/backend/images/avatars/profile.jpg" alt=""> <input id="fileupload-avatar" type="file" name="avatar">
-                                                </div>
-
-                                                <div class="media-body pl-3">
-                                                    <h3 class="card-title"> Logo Perusahaan </h3>
-                                                    <h6 class="card-subtitle text-muted"> Click the current image to change your logo. </h6>
-                                                    <p class="card-text">
-                                                        <small>JPG, GIF or PNG 400x400, &lt; 1 MB.</small>
-                                                    </p>
-                                                    <div id="progress-avatar" class="progress progress-xs fade">
-                                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-
-                                            <!-- form -->
-                                            <form method="post" id="form">
-                                                <!-- CRSF PROTECTION -->
-                                                <input type="hidden" class="txt_csrfname" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
-                                                <!-- // CRSF PROTECTION -->
-                                                <input type="hidden" value="" name="id" />
                                                 <div class="form-row">
                                                     <label for="logo" class="col-md-3">Logo image</label>
                                                     <div class="col-md-9 mb-3">
@@ -112,17 +95,83 @@
                                                 <hr>
                                                 <!-- .form-actions -->
                                                 <div class="form-actions">
-                                                    <button type="submit" id="btnSave" class="btn btn-primary ml-auto">Update Profile</button>
+                                                    <button type="submit" id="btnSave" class="btn btn-primary ml-auto">
+                                                        <span class="oi oi-task mr-2"></span>
+                                                        Update Profile
+                                                    </button>
                                                 </div>
-                                            </form>
+
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="tab-pane fade" id="profile">
-                                    <div class="card card-fluid">
-                                        <h6 class="card-header"> Social Networks </h6>
-                                        <form method="post">
+                                    <div class="tab-pane fade" id="about">
+                                        <div class="card card-fluid">
+                                            <h6 class="card-header"> Update About </h6><!-- .card-body -->
+                                            <div class="card-body">
+
+                                                <div class="form-row">
+                                                    <label for="about" class="col-md-3">About Website</label>
+                                                    <div class="col-md-9 mb-3">
+                                                        <textarea class="form-control" rows="10" id="about" name="about" placeholder="Input About Website">Huge fan of HTML, CSS and Javascript. Web design and open source lover.</textarea> <small class="text-muted">Appears on your profile page, 300 chars max.</small>
+                                                    </div>
+                                                </div>
+
+                                                <hr>
+                                                <!-- .form-actions -->
+                                                <div class="form-actions">
+                                                    <button type="submit" id="btnSave" class="btn btn-primary ml-auto">
+                                                        <span class="oi oi-task mr-2"></span>
+                                                        Update About
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="kontak">
+                                        <div class="card card-fluid">
+                                            <h6 class="card-header"> Kontak Owner </h6>
+
+                                            <div class="list-group list-group-flush mt-3 mb-0">
+
+                                                <div class="list-group-item">
+                                                    <div class="list-group-item-figure">
+                                                        <div class="tile tile-md bg-success">
+                                                            <i class="fab fa-whatsapp"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list-group-item-body">
+                                                        <input type="text" class="form-control" name="kontak" id="kontak" placeholder="Input Kontak WhatsApp">
+                                                    </div>
+                                                </div>
+
+                                                <div class="list-group-item">
+                                                    <div class="list-group-item-figure">
+                                                        <div class="tile tile-md bg-red">
+                                                            <i class="fas fa-envelope"></i>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="list-group-item-body">
+                                                        <input type="text" class="form-control" name="email" id="email" placeholder="Input email">
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.list-group -->
+                                            <!-- .card-body -->
+                                            <div class="card-body">
+                                                <hr>
+                                                <!-- .form-actions -->
+                                                <div class="form-actions">
+                                                    <button type="submit" class="btn btn-primary ml-auto">Update Socials</button>
+                                                </div><!-- /.form-actions -->
+                                            </div><!-- /form -->
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="sosmed">
+                                        <div class="card card-fluid">
+                                            <h6 class="card-header"> Social Networks </h6>
 
                                             <div class="list-group list-group-flush mt-3 mb-0">
 
@@ -196,23 +245,19 @@
                                                 <div class="form-actions">
                                                     <button type="submit" class="btn btn-primary ml-auto">Update Socials</button>
                                                 </div><!-- /.form-actions -->
-                                            </div><!-- /.card-body -->
-                                        </form><!-- /form -->
+                                            </div><!-- /form -->
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="tab-pane fade" id="next">
-                                    selanjutnya apa
-                                </div>
 
+
+                                </div>
                             </div>
-                            <!-- .card -->
-
-                            <!-- .card -->
-                            <!-- /.card -->
-                        </div><!-- /grid column -->
-                    </div><!-- /grid row -->
+                        </div><!-- /grid row -->
+                    </form>
                 </div><!-- /.page-section -->
             </div><!-- /.page-inner -->
         </div><!-- /.page -->
     </div>
+
+    <div id="alert"> </div>

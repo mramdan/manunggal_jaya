@@ -4,7 +4,22 @@
         <!-- .aside-header -->
         <header class="aside-header d-block d-md-none">
             <!-- .btn-account -->
-            <button class="btn-account" type="button" data-toggle="collapse" data-target="#dropdown-aside"><span class="user-avatar user-avatar-lg"><img src="<?= base_url() ?>assets/backend/images/avatars/profile.jpg" alt=""></span> <span class="account-icon"><span class="fa fa-caret-down fa-lg"></span></span> <span class="account-summary"><span class="account-name">Beni Arisandi</span> <span class="account-description">Marketing Manager</span></span></button> <!-- /.btn-account -->
+            <button class="btn-account" type="button" data-toggle="collapse" data-target="#dropdown-aside">
+                <span class="user-avatar user-avatar-lg">
+                    <img src="<?= base_url() ?>assets/backend/images/avatars/profile.jpg" alt="">
+                </span>
+                <span class="account-icon">
+                    <span class="fa fa-caret-down fa-lg"></span>
+                </span>
+                <span class="account-summary">
+                    <span class="account-name">
+                        <?= $user->username ?>
+                    </span>
+                    <span class="account-description">
+                        <?= $user->email ?>
+                    </span>
+                </span>
+            </button> <!-- /.btn-account -->
             <!-- .dropdown-aside -->
             <div id="dropdown-aside" class="dropdown-aside collapse">
                 <!-- dropdown-items -->

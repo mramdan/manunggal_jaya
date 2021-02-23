@@ -17,6 +17,7 @@ class Set_profile extends CI_Controller
     public function index()
     {
         $data = [
+            'user' => $this->user,
             'judul' => 'Setting Profile Perusahaan',
             'id' => $this->profile_m->get_profile('id'),
             'profile' => $this->profile_m->get_profile('nama_perusahaan'),
@@ -25,8 +26,8 @@ class Set_profile extends CI_Controller
         ];
 
         $this->load->view('_template/header', $data);
-        $this->load->view('_template/topbar');
-        $this->load->view('_template/sidebar');
+        $this->load->view('_template/topbar', $data);
+        $this->load->view('_template/sidebar', $data);
 
         $this->load->view('admin/profile_v', $data);
         $this->load->view('js/profile_js');
@@ -58,9 +59,13 @@ class Set_profile extends CI_Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = array(
-                'nama_prk' => $this->input->post('nama_prk'),
+                'nama_perusahaan' => $this->input->post('nama_perusahaan'),
+                'no_perusahaan' => $this->input->post('no_perusahaan'),
+                'alamat' => $this->input->post('alamat'),
+                'about' => $this->input->post('about'),
             );
-            $insert = $this->profile_m->update(array('id_prk' => $this->input->post('id')), $data);
+            // var_dump($data);
+            $insert = $this->profile_m->update(array('id' => $this->input->post('id')), $data);
             echo json_encode($insert);
         }
     }

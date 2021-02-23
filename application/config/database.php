@@ -75,10 +75,22 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'm_j',
+	// | -------------------------------------------------------------------
+	// | Local Database
+	// | -------------------------------------------------------------------
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => '',
+	// 'database' => 'm_j',
+	// | -------------------------------------------------------------------
+	// | Hosting tapi free wkwkwk
+	// | -------------------------------------------------------------------
+	'hostname' => 'freedb.tech',
+	'username' => 'freedbtech_anbomeker',
+	'password' => 'manunggal123',
+	'database' => 'freedbtech_manunggal',
+
+
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

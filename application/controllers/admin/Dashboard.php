@@ -18,12 +18,13 @@ class Dashboard extends CI_Controller
     {
 
         $data = [
+            'user' => $this->user,
             'judul' => 'Admin Dashborad',
         ];
 
         $this->load->view('_template/header', $data);
-        $this->load->view('_template/topbar');
-        $this->load->view('_template/sidebar');
+        $this->load->view('_template/topbar', $data);
+        $this->load->view('_template/sidebar', $data);
         $this->load->view('admin/dashboard_v');
         $this->load->view('_template/footer');
     }
