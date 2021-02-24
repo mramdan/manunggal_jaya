@@ -3,52 +3,28 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Pages_models extends CI_Model
 {
-   public function get_nama()
+   public function get_profile($varams)
    {
-      $nama = 'manungal jaya';
-      return $nama;
-   }
+      $query = $this->db->get('set_profile')->row();
+      // $result = $query;
+      $data = $query->$varams;
 
-   public function get_nama2()
-   {
-      $section = 'Bengkel Las Canopi';
-      return $section;
-   }
-
-
-   //produk
-   public function get_produk()
-   {
-      $kategori = 'klasik';
-      return $kategori;
-   }
-   public function get_dp()
-   {
-      $dp = 'For each project';
-      return $dp;
-   }
-   public function get_dpi()
-   {
-      $dpi = 'For each project we establish relationships with partners who we know will help';
-      return $dpi;
+      return $data;
    }
    public function get_product()
    {
-      // $query = "SELECT * FROM hero";
-      $this->db->select('*');
-      $this->db->from('hero');
-      $sql = $this->db->get()->row();
+      $query = $this->db->query('select * from ref_produk LEFT JOIN ref_image ON ref_produk.id_image=ref_image.id_image');
 
-      // $data = [];
-
-      // foreach ($sql as $list) {
-      //    $data = [
-      //       'id_hero' => $list->id_hero,
-      //       'judul' => $list->judul,
-      //       'image' => $list->image,
-      //       'descripsi' => $list->descripsi,
-      //    ];
-      // }
-      return $sql;
+      $data = array();
+      foreach ($query->result() as $row) {
+         $data[] = array(
+            'id_produk' => $row->id_produk,
+            'nama_produk' => $row->nama_produk,
+            'deskripsi' => $row->deskripsi,
+            'harga' => $row->harga,
+            'file' => $row->file,
+         );
+      }
+      return $data;
    }
 }

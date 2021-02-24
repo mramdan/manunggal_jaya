@@ -14,7 +14,7 @@
       </div>
    </div>
 
-   <section class="blog_area section-padding">
+   <section class="blog_area section-padding" style="background-color: white; border-top: 3px solid #ff1e00;">
       <div class="row">
          <div class="col-lg-10 mb-5 mb-lg-0">
             <section id="portfolio" class="clearfix">
@@ -32,78 +32,30 @@
 
                   <div class="row portfolio-container">
 
-                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 portfolio-item filter-app">
 
-                        <div class="prod-box portfolio-wrap">
-                           <div class="prod-i">
-                              <a href="#">
-                                 <img src="<?php echo base_url(); ?>/assets/img/blog/single_blog_1.png" class="img-fluid" alt="#" /></a>
-                           </div>
-                           <div class="prod-dit clearfix">
-                              <div class="dit-t clearfix">
-                                 <div class="left-ti">
-                                    <h4>Table with Lights</h4>
-                                    <p>By <span>Beko</span> under <span>Lights</span></p>
+
+                     <?php foreach ($produk as $pk) : ?>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 portfolio-item filter-app">
+
+                           <div class="prod-box portfolio-wrap">
+                              <div class="prod-i">
+                                 <a href="#">
+                                    <img src="<?= base_url() ?>assets/img/gallery/<?= $pk['file']; ?>" class="img-fluid" alt="#" /></a>
+                              </div>
+                              <div class="prod-dit clearfix">
+                                 <div class="dit-t clearfix">
+                                    <div class="left-ti">
+                                       <h4><?= $pk['nama_produk']; ?></h4>
+                                       <p><?= $pk['deskripsi']; ?></p>
+                                    </div>
+                                    <a href="#">Rp.<?= $pk['harga']; ?></a>
                                  </div>
-                                 <a href="#">$1220</a>
                               </div>
                            </div>
                         </div>
-                     </div>
+                     <?php endforeach ?>
 
-                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 portfolio-item filter-app">
-                        <div class="prod-box portfolio-wrap">
-                           <div class="prod-i">
-                              <a href="">
-                                 <img src="<?php echo base_url(); ?>/assets/img/blog/single_blog_1.png" alt="#" />
-                              </a>
 
-                           </div>
-                           <div class="prod-dit clearfix">
-                              <div class="dit-t clearfix">
-                                 <div class="left-ti">
-                                    <h4>Table with Lights</h4>
-                                    <p>By <span>Beko</span> under <span>Lights</span></p>
-                                 </div>
-                                 <a href="#">$1220</a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-
-                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 portfolio-item filter-web" data-wow-delay="0.1s">
-                        <div class="prod-box portfolio-wrap">
-                           <a href="">
-                              <img src="<?php echo base_url(); ?>/assets/img/blog/single_blog_1.png" alt="#" />
-                           </a>
-                           <div class="prod-dit clearfix">
-                              <div class="dit-t clearfix">
-                                 <div class="left-ti">
-                                    <h4>Table with Lights</h4>
-                                    <p>By <span>Beko</span> under <span>Lights</span></p>
-                                 </div>
-                                 <a href="#">$1220</a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-
-                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 portfolio-item filter-card">
-                        <div class="prod-box portfolio-wrap">
-                           <a href="">
-                              <img src="<?php echo base_url(); ?>/assets/img/blog/single_blog_1.png" alt="#" />
-                           </a>
-                           <div class="prod-dit clearfix">
-                              <div class="dit-t clearfix">
-                                 <div class="left-ti">
-                                    <h4>Table with Lights</h4>
-                                    <p>By <span>Beko</span> under <span>Lights</span></p>
-                                 </div>
-                                 <a href="#">$1220</a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
                   </div>
                </div>
             </section>

@@ -1,46 +1,4 @@
 <main>
-
-    <!-- <div class="bd-example">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/img/hero/canopi.jpg) class=" d-block w-100" alt="gambar">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/img/hero/h1_hero.jpg)" class="d-block w-100" alt="gambar">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="/img/hero/canopi.jpg)" class="d-block w-100" alt="gambar">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div> -->
-
     <div class="slider-area">
         <div class="slider-active dot-style">
 
@@ -49,8 +7,11 @@
                     <div class="row">
                         <div class="col-xl-6 col-lg-6">
                             <div class="hero__caption">
-                                <span data-animation="fadeInLeft" data-delay=".4s">Selamat Datang Di <?= $cv ?></span>
-                                <h1 data-animation="fadeInLeft" data-delay=".6s"><?= $cv2 ?></h1>
+                                <div class="clas-text-white">
+
+                                </div>
+                                <span data-animation="fadeInLeft" data-delay=".4s">Selamat Datang Di <?php echo $cv ?></span>
+                                <h1 data-animation="fadeInLeft" data-delay=".6s"><?= $alamat ?></h1>
                             </div>
                         </div>
                     </div>
@@ -67,7 +28,7 @@
     <div class="our-info-area pt-170 pb-100 section-bg" data-background="assets/img/gallery/section_bg02.jpg">
         <div class="container">
             <div class="row">
-                <h1>Bengkel Las Manunggal Jaya</h1>
+                <h1>manunggal</h1>
                 <div class="section-tittle profession-details">
                     <p style="color: white;">Aorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
                     </p>
@@ -113,78 +74,31 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-10">
-                    <div class="single-services mb-200">
-                        <div class="services-img">
-                            <img src="assets/img/gallery/services1.png" alt="">
-                        </div>
-                        <div class="services-caption">
-                            <h3><a href="services.html"><?= $jenis ?></a></h3>
-                            <p class="pera1"><?= $dki ?></p>
-                            <p class="pera2"><?= $deskripsi ?>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10">
-                    <div class="single-services mb-200">
-                        <div class="services-img">
-                            <img src="assets/img/gallery/services2.png" alt="">
-                        </div>
-                        <div class="services-caption">
-                            <h3><a href="services.html">Interior Design</a></h3>
-                            <p class="pera1">For each project we establish </p>
-                            <p class="pera2">For each project we establish relationships with partners who we know will help us.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10">
-                    <div class="single-services mb-200">
-                        <div class="services-img">
-                            <img src="assets/img/gallery/services3.png" alt="">
-                        </div>
-                        <div class="services-caption">
-                            <h3><a href="services.html">Office Decoretion</a></h3>
-                            <p class="pera1">For each project we establish </p>
-                            <p class="pera2">For each project we establish relationships with partners who we know will help us.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
+                <?php foreach ($produk as $pk) : ?>
 
-    <div class="gallery-area">
-        <div class="container-fluid p-0 fix">
-            <div class="row justify-content-center">
-                <div class="cl-xl-7 col-lg-8 col-md-10">
-                    <div class="section-tittle text-center mb-70">
-                        <h2>Produk Layanan</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <?php foreach ($product as $p => $list) : ?>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="single-gallery mb-30">
-                            <div class="gallery-img" style="background-image: url(assets/img/hero/<?= $list->image ?>);"></div>
-                            <div class="thumb-content-box">
-                                <div class="thumb-content">
-                                    <h3><span>Intorior</span>Burj Khalifa</h3>
-                                    <a href="work.html"><i class="fas fa-angle-right"></i></a>
-                                </div>
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="single-services mb-200">
+                            <div class="services-img">
+                                <a href="services.html">
+                                    <img src="<?= base_url() ?>assets/img/gallery/<?= $pk['file']; ?>" alt="">
+                                </a>
+                            </div>
+                            <div class="services-caption">
+                                <h3><a href="services.html"><?= $pk['nama_produk']; ?></a></h3>
+                                <p class="pera1">Get Produk
+                                </p>
+                                <p class="pera2"><?= $pk['deskripsi']; ?>
+                                </p>
                             </div>
                         </div>
                     </div>
+
                 <?php endforeach ?>
+
             </div>
         </div>
     </div>
-
 
     <div class="team-area section-padding30">
         <div class="container">
@@ -300,57 +214,4 @@
             </div>
         </div>
     </section>
-
-
-    <div class="home-blog-area section-padding30">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-tittle text-center mb-70">
-                        <h2>Design Terbaru</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="home-blog-single mb-30">
-                        <div class="blog-img-cap">
-                            <div class="blog-img">
-                                <img src="assets/img/gallery/home_blog1.png" alt="">
-                            </div>
-                            <ul>
-                                <li class="black-bg">October 27, 2020</li>
-                                <li>By Admin - 30 Likes - 4 Comments</li>
-                            </ul>
-                            <div class="blog-cap">
-                                <h3><a href="blog_details.html">16 Easy Ideas to Use Everyday
-                                        Stuff in Kitchen.</a></h3>
-                                <a href="blog_details.html" class="more-btn">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="home-blog-single mb-30">
-                        <div class="blog-img-cap">
-                            <div class="blog-img">
-                                <img src="assets/img/gallery/home_blog2.png" alt="">
-                            </div>
-                            <ul>
-                                <li class="black-bg">October 27, 2020</li>
-                                <li>By Admin - 30 Likes - 4 Comments</li>
-                            </ul>
-                            <div class="blog-cap">
-                                <h3><a href="blog_details.html">16 Easy Ideas to Use Everyday
-                                        Stuff in Kitchen.</a></h3>
-                                <a href="blog_details.html" class="more-btn">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </main>

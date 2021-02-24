@@ -1,6 +1,6 @@
 <footer>
 
-   <div class="footer-area footer-bg">
+   <div class="footer-area footer-bg" style="border-top: 3px solid #ff1313;">
       <div class="container">
          <div class="footer-top footer-padding">
             <div class="row d-flex justify-content-between">
@@ -16,45 +16,36 @@
                               at least a.</p>
                         </div>
                      </div>
-                     <div class="footer-number">
-                        <h4><span>+564 </span>7885 3222</h4>
-                        <p><a href="<?php echo base_url(); ?>/https://preview.colorlib.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="324b5d4740575f535b5e72555f535b5e1c515d5f">[email&#160;protected]</a></p>
-                     </div>
                   </div>
                </div>
                <div class="col-xl-3 col-lg-2 col-md-5 col-sm-6">
                   <div class="single-footer-caption mb-50">
                      <div class="footer-tittle">
-                        <h4>Useful Links</h4>
-                     </div>
-                     <div class="footer-cap">
-                        <span>New York</span>
-                        <p>123 East 26th Street, Fifth Floor, New York, NY 10011</p>
-                     </div>
-                     <div class="footer-cap">
-                        <span>Japan</span>
-                        <p>123 East 26th Street, Fifth Floor, New York, NY 10011</p>
-                     </div>
-                  </div>
-               </div>
-
-               <div class="col-xl-4 col-lg-4 col-md-5 col-sm-7">
-                  <div class="single-footer-caption mb-50">
-                     <div class="footer-tittle">
-                        <h4>Instagram Feed</h4>
-                     </div>
-                     <div class="instagram-gellay">
-                        <ul class="insta-feed">
-                           <li><a href="#"><img src="<?php echo base_url(); ?>/assets/img/gallery/instagram1.png" alt=""></a></li>
-                           <li><a href="#"><img src="<?php echo base_url(); ?>/assets/img/gallery/instagram2.png" alt=""></a></li>
-                           <li><a href="#"><img src="<?php echo base_url(); ?>/assets/img/gallery/instagram3.png" alt=""></a></li>
-                           <li><a href="#"><img src="<?php echo base_url(); ?>/assets/img/gallery/instagram4.png" alt=""></a></li>
-                           <li><a href="#"><img src="<?php echo base_url(); ?>/assets/img/gallery/instagram5.png" alt=""></a></li>
-                           <li><a href="#"><img src="<?php echo base_url(); ?>/assets/img/gallery/instagram6.png" alt=""></a></li>
+                        <h4>Produk Jasa</h4>
+                        <ul>
+                           <li>Pagar</li>
+                           <li>kanopy</li>
+                           <li>Railing Tangga</li>
+                           <li>Tralis Jendela</li>
+                           <li>Stainless Steel</li>
+                           <li>Kontruksi Baja</li>
                         </ul>
                      </div>
                   </div>
                </div>
+               <div class="col-lg-3 col-md-6 footer-contact">
+                  <div class="single-footer-caption mb-50">
+                     <div class="footer-tittle">
+                        <h4>Contact Us</h4>
+                        <p style="color: #f9f9ff">
+                           <?php echo $addres ?> <br>
+                           <strong>Phone:</strong> +62 <?php echo $kontak ?><br>
+                           <strong>Email:</strong> <?php echo $email ?><br>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+
             </div>
          </div>
          <div class="footer-bottom">
@@ -62,7 +53,7 @@
                <div class="col-xl-9 col-lg-8">
                   <div class="footer-copy-right">
                      <p>
-                        Copyright &copy;
+                        Copyright <?php echo $right ?> &copy;
                         <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
                         <script>
                            document.write(new Date().getFullYear());
@@ -133,7 +124,5 @@
    gtag('config', 'UA-23581568-13');
 </script>
 </body>
-
-<!-- Mirrored from preview.colorlib.com/theme/theinterior/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 14 Feb 2021 11:58:46 GMT -->
 
 </html>

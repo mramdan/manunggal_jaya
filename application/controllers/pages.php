@@ -4,21 +4,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Pages extends CI_Controller
 {
 
-   /**
-    * Index Page for this controller.
-    *
-    * Maps to the following URL
-    * 		http://example.com/index.php/welcome
-    *	- or -
-    * 		http://example.com/index.php/welcome/index
-    *	- or -
-    * Since this controller is set as the default controller in
-    * config/routes.php, it's displayed at http://example.com/
-    *
-    * So any other public methods not prefixed with an underscore will
-    * map to /index.php/welcome/<method_name>
-    * @see https://codeigniter.com/user_guide/general/urls.html
-    */
 
    public function __construct()
    {
@@ -32,58 +17,83 @@ class Pages extends CI_Controller
          'tittle' => 'Home',
 
          //hero
-         'cv' => $this->pages->get_nama(),
-         'cv2' => $this->pages->get_nama2(),
+         'cv' => $this->pages->get_profile('nama_perusahaan'),
+         'alamat' => $this->pages->get_profile('alamat'),
+         'produk' => $this->pages->get_product(),
+         'right' => $this->pages->get_profile('nama_perusahaan'),
+         'kontak' => $this->pages->get_profile('kontak'),
+         'email' => $this->pages->get_profile('email'),
+         'addres' => $this->pages->get_profile('alamat')
 
-         //produk
-         'jenis' => $this->pages->get_produk(),
-         'dki' => $this->pages->get_dp(),
-         'deskripsi' => $this->pages->get_dpi(),
-         'product' => $this->pages->get_product(),
       ];
       $this->load->view('layout/header', $data);
       $this->load->view('layout/navbar');
       $this->load->view('pages/home_v', $data);
-      $this->load->view('layout/footer');
+      $this->load->view('layout/footer', $data);
    }
+
+
    public function profile()
    {
       $data = [
-         'tittle' => 'Profile'
+         'tittle' => 'Profile',
+         'right' => $this->pages->get_profile('nama_perusahaan'),
+         'kontak' => $this->pages->get_profile('kontak'),
+         'email' => $this->pages->get_profile('email'),
+         'addres' => $this->pages->get_profile('alamat')
       ];
       $this->load->view('layout/header', $data);
       $this->load->view('layout/navbar');
       $this->load->view('pages/profile_v');
-      $this->load->view('layout/footer');
+      $this->load->view('layout/footer', $data);
    }
+
+
    public function produk()
    {
       $data = [
-         'tittle' => 'Produk'
+         'tittle' => 'Produk',
+         'produk' => $this->pages->get_product(),
+         'right' => $this->pages->get_profile('nama_perusahaan'),
+         'kontak' => $this->pages->get_profile('kontak'),
+         'email' => $this->pages->get_profile('email'),
+         'addres' => $this->pages->get_profile('alamat')
       ];
       $this->load->view('layout/header', $data);
       $this->load->view('layout/navbar');
-      $this->load->view('pages/produk_v');
-      $this->load->view('layout/footer');
+      $this->load->view('pages/produk_v', $data);
+      $this->load->view('layout/footer', $data);
    }
+
+
    public function blog()
    {
       $data = [
-         'tittle' => 'Blog'
+         'tittle' => 'Blog',
+         'right' => $this->pages->get_profile('nama_perusahaan'),
+         'kontak' => $this->pages->get_profile('kontak'),
+         'email' => $this->pages->get_profile('email'),
+         'addres' => $this->pages->get_profile('alamat')
       ];
       $this->load->view('layout/header', $data);
       $this->load->view('layout/navbar');
       $this->load->view('pages/blog_v');
-      $this->load->view('layout/footer');
+      $this->load->view('layout/footer', $data);
    }
+
+
    public function contact()
    {
       $data = [
-         'tittle' => 'Contact'
+         'tittle' => 'Contact',
+         'right' => $this->pages->get_profile('nama_perusahaan'),
+         'kontak' => $this->pages->get_profile('kontak'),
+         'email' => $this->pages->get_profile('email'),
+         'addres' => $this->pages->get_profile('alamat')
       ];
       $this->load->view('layout/header', $data);
       $this->load->view('layout/navbar');
       $this->load->view('pages/Contact_v');
-      $this->load->view('layout/footer');
+      $this->load->view('layout/footer', $data);
    }
 }
