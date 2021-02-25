@@ -35,38 +35,83 @@ class Set_profile extends CI_Controller
         $this->load->view('_template/footer');
     }
 
-    public function ajax_add()
+    public function ajax_edit()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $data = array(
-                'nama_prk' => $this->input->post('nama_prk'),
-            );
-            //print_r($data);
-            $insert = $this->profile_m->save($data);
-            echo json_encode($insert);
+            $id = $this->input->post('id');
+            $data = $this->profile_m->get_by_id($id);
+            echo json_encode($data);
         }
     }
 
-    public function ajax_edit($id)
+    public function _UploadImage()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $data = $this->profile_m->get_by_id($id);
-            echo json_encode($data);
+            $config['upload_path'] = './assets/uploads/logo/';
+            $config['allowed_types'] = '*';
+            $config['overwrite'] = true;
+            $config['max_size'] = 1024; // 1MB
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            if (!$this->upload->do_upload('logo')) {
+                $error = array('error' => $this->upload->display_errors());
+                print_r($error);
+            } else {
+                $datafile = $this->upload->data('file_name');
+            }
+            return $datafile;
         }
     }
 
     public function ajax_update()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (!empty($_FILES["logo"]["name"])) {
+
+                //direktori file
+                $path = 'assets/uploads/logo/';
+                $filename = $this->input->post('logo_old');
+                //hapus file
+                if (file_exists($path . $filename)) {
+                    unlink($path . $filename);
+                }
+                //simpan file baru
+                $logo =  $this->_UploadImage('file_name');
+            } else {
+                $logo = $this->input->post('logo_old');
+            }
+
             $data = array(
+                'logo' => $logo,
                 'nama_perusahaan' => $this->input->post('nama_perusahaan'),
                 'no_perusahaan' => $this->input->post('no_perusahaan'),
                 'alamat' => $this->input->post('alamat'),
                 'about' => $this->input->post('about'),
+                'kontak' => $this->input->post('kontak'),
+                'kontak2' => $this->input->post('kontak2'),
+                'email' => $this->input->post('email'),
+            );
+
+            $data_sosmed = array(
+                'Facebook' => $this->input->post('facebook'),
+                'Twitter' => $this->input->post('twitter'),
+                'Instagram' => $this->input->post('instagram'),
+                'YouTube' => $this->input->post('youtube'),
             );
             // var_dump($data);
             $insert = $this->profile_m->update(array('id' => $this->input->post('id')), $data);
+            $insert_sosmed = $this->profile_m->update_sosmed(array('id_sosmed' => $this->input->post('id_sosmed')), $data_sosmed);
             echo json_encode($insert);
+        }
+    }
+
+    public function get_sosmed()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $id = $this->input->post('id_sosmed');
+            $data = $this->profile_m->get_sosmed($id);
+            echo json_encode($data);
         }
     }
 }

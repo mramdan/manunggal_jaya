@@ -62,6 +62,9 @@ class Profile_models extends CI_Model
 
     public function update($where, $data)
     {
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
 
         $r = $this->db->update($this->table, $data, $where);
 
@@ -77,17 +80,31 @@ class Profile_models extends CI_Model
         return $res;
     }
 
-    public function delete_by_id($id)
+    public function update_sosmed($where, $data)
     {
-        $this->db->where('id_prk', $id);
-        $r = $this->db->delete($this->table);
+
+        $r = $this->db->update('ref_sosmed', $data, $where);
+
         if ($r) {
             $res['status'] = '00';
-            $res['mess'] = 'Data Berhasil Di Delete';
+            $res['type'] = 'success';
+            $res['mess'] = 'Berhasil Update Data';
         } else {
             $res['status'] = '01';
-            $res['mess'] = 'Data Gagal Di Delete';
+            $res['type'] = 'warning';
+            $res['mess'] = 'Gagal Update Data';
         }
         return $res;
+    }
+
+    public function get_sosmed($id)
+    {
+        $this->db->start_cache();
+        $this->db->from('ref_sosmed');
+        $this->db->where('id_sosmed', $id);
+        $this->db->stop_cache();
+        $query = $this->db->get();
+        $this->db->flush_cache();
+        return $query->row();
     }
 }

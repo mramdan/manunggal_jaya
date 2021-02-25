@@ -26,12 +26,13 @@
         // generateToast();
 
         function get_profile() {
-            id = '1';
+
             $.ajax({
-                url: "<?php echo site_url('admin/set_profile/ajax_edit/') ?>/" + id,
+                url: "<?php echo site_url('admin/set_profile/ajax_edit') ?>",
                 type: "POST",
                 dataType: "JSON",
                 data: {
+                    'id': '1',
                     '<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>'
                 },
                 success: function(data) {
@@ -42,12 +43,15 @@
                     $('[name="no_perusahaan"]').val(data.no_perusahaan);
                     $('[name="alamat"]').val(data.alamat);
 
+                    $('#logo_image').attr('src', '<?= base_url() ?>assets/uploads/logo/' + data.logo);
+                    $('#link_logo').attr('href', '<?= base_url() ?>assets/uploads/logo/' + data.logo);
                     $('#nama_p').text(data.nama_perusahaan);
                     $('#no_p').text(data.no_perusahaan);
                     $('#alamat_p').text(data.alamat);
 
                     $('[name="about"]').val(data.about);
                     $('[name="kontak"]').val(data.kontak);
+                    $('[name="kontak2"]').val(data.kontak2);
                     $('[name="email"]').val(data.email);
 
                 },
@@ -58,6 +62,32 @@
         }
         get_profile();
 
+        function get_sosmed() {
+
+            $.ajax({
+                url: "<?php echo site_url('admin/set_profile/get_sosmed') ?>",
+                type: "POST",
+                dataType: "JSON",
+                data: {
+                    'id_sosmed': '1',
+                    '<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>'
+                },
+                success: function(data) {
+
+                    $('[name="id_sosmed"]').val(data.id_sosmed);
+                    $('[name="facebook"]').val(data.Facebook);
+                    $('[name="twitter"]').val(data.Twitter);
+                    $('[name="youtube"]').val(data.YouTube);
+                    $('[name="instagram"]').val(data.Instagram);
+
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert('Error get data from ajax');
+                }
+
+            });
+        }
+        get_sosmed();
 
 
         $('#form').submit(function(e) {
@@ -104,6 +134,7 @@
                         //alert(data.mess);
                         // $('#form')[0].reset();
                         get_profile();
+                        get_sosmed();
                         type = data.type;
                         msg = data.mess;
                         showAlert(type, msg);
@@ -112,6 +143,7 @@
                         //alert(data.mess);
                         // $('#form')[0].reset();
                         get_profile();
+                        get_sosmed();
                         type = data.type;
                         msg = data.mess;
                         showAlert(type, msg);

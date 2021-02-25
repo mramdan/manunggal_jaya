@@ -6,7 +6,7 @@
             <!-- .page-cover -->
             <header class="page-cover">
                 <div class="text-center">
-                    <a href="user-profile.html" class="user-avatar user-avatar-xl"><img src="<?= base_url() ?>assets/backend/images/avatars/profile.jpg" alt=""></a>
+                    <a id="link_logo" target="_blank" class="user-avatar user-avatar-xl"><img id="logo_image" alt=""></a>
                     <h2 class="h4 mt-2 mb-0" id="nama_p"> </h2>
                     <div class="my-1">
                         <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i class="far fa-star text-yellow"></i>
@@ -25,7 +25,7 @@
                         <a class="nav-link active show" data-toggle="tab" href="#home">Pertinjau</a>
                         <a class="nav-link" data-toggle="tab" href="#about">About</a>
                         <a class="nav-link" data-toggle="tab" href="#kontak">Kontak</a>
-                        <a class="nav-link" data-toggle="tab" href="#sosmed">Sosial Media <span class="badge">16</span></a>
+                        <a class="nav-link" data-toggle="tab" href="#sosmed">Sosial Media <span class="badge">4</span></a>
                     </div>
                 </div>
             </nav>
@@ -45,7 +45,7 @@
                 <div class="page-section">
                     <!-- grid row -->
                     <!-- form -->
-                    <form method="post" id="form">
+                    <form method="post" id="form" enctype="multipart/form-data">
                         <!-- CRSF PROTECTION -->
                         <input type="hidden" class="txt_csrfname" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
                         <!-- // CRSF PROTECTION -->
@@ -62,10 +62,11 @@
 
 
                                                 <div class="form-row">
-                                                    <label for="logo" class="col-md-3">Logo image</label>
+                                                    <label for="logo" class="col-md-3">Ubah Logo</label>
                                                     <div class="col-md-9 mb-3">
                                                         <div class="custom-file">
-                                                            <input type="file" class="custom-file-input" id="logo" name="logo" multiple=""> <label class="custom-file-label" for="input01">Pilih logo</label>
+                                                            <input type="file" class="custom-file-input" id="logo" name="logo" accept="image/x-png,image/gif,image/jpeg" />
+                                                            <label class="custom-file-label" for="input01">Pilih logo</label>
                                                         </div>
                                                         <small class="text-muted">Upload a new logo image, JPG 1200x300</small>
                                                     </div>
@@ -148,6 +149,17 @@
 
                                                 <div class="list-group-item">
                                                     <div class="list-group-item-figure">
+                                                        <div class="tile tile-md bg-success">
+                                                            <i class="fab fa-whatsapp"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list-group-item-body">
+                                                        <input type="text" class="form-control" name="kontak2" id="kontak2" placeholder="Input Kontak WhatsApp lainnya">
+                                                    </div>
+                                                </div>
+
+                                                <div class="list-group-item">
+                                                    <div class="list-group-item-figure">
                                                         <div class="tile tile-md bg-red">
                                                             <i class="fas fa-envelope"></i>
                                                         </div>
@@ -163,18 +175,29 @@
                                                 <hr>
                                                 <!-- .form-actions -->
                                                 <div class="form-actions">
-                                                    <button type="submit" class="btn btn-primary ml-auto">Update Socials</button>
+                                                    <button type="submit" class="btn btn-primary ml-auto">Update Kontak</button>
                                                 </div><!-- /.form-actions -->
                                             </div><!-- /form -->
                                         </div>
                                     </div>
 
                                     <div class="tab-pane fade" id="sosmed">
+                                        <input type="hidden" name="id_sosmed">
                                         <div class="card card-fluid">
                                             <h6 class="card-header"> Social Networks </h6>
 
                                             <div class="list-group list-group-flush mt-3 mb-0">
+                                                <div class="list-group-item">
 
+                                                    <div class="list-group-item-figure">
+                                                        <div class="tile tile-md bg-facebook">
+                                                            <i class="fab fa-facebook-f"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list-group-item-body">
+                                                        <input type="text" class="form-control" name="facebook" id="facebook" placeholder="Facebook Username">
+                                                    </div>
+                                                </div>
                                                 <div class="list-group-item">
 
                                                     <div class="list-group-item-figure">
@@ -184,57 +207,34 @@
                                                     </div>
 
                                                     <div class="list-group-item-body">
-                                                        <input type="text" class="form-control" id="twitter" placeholder="Twitter Username" value="@stilearningTwit">
+                                                        <input type="text" class="form-control" name="twitter" id="twitter" placeholder="Twitter Username">
                                                     </div>
                                                 </div>
-                                                <div class="list-group-item">
 
-                                                    <div class="list-group-item-figure">
-                                                        <div class="tile tile-md bg-facebook">
-                                                            <i class="fab fa-facebook-f"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="list-group-item-body">
-                                                        <input type="text" class="form-control" id="facebook" placeholder="Facebook Username">
-                                                    </div>
-                                                </div>
 
                                                 <div class="list-group-item">
 
                                                     <div class="list-group-item-figure">
-                                                        <div class="tile tile-md bg-linkedin">
-                                                            <i class="fab fa-linkedin"></i>
+                                                        <div class="tile tile-md bg-youtube">
+                                                            <i class="fab fa-youtube"></i>
                                                         </div>
                                                     </div>
 
                                                     <div class="list-group-item-body">
-                                                        <input type="text" class="form-control" id="linkedin" placeholder="Linkedin Username">
+                                                        <input type="text" class="form-control" name="youtube" id="youtube" placeholder="YouTube Username">
                                                     </div>
                                                 </div>
 
                                                 <div class="list-group-item">
 
                                                     <div class="list-group-item-figure">
-                                                        <div class="tile tile-md bg-dribbble">
-                                                            <i class="fab fa-dribbble"></i>
+                                                        <div class="tile tile-md bg-instagram">
+                                                            <i class="fab fa-instagram"></i>
                                                         </div>
                                                     </div>
 
                                                     <div class="list-group-item-body">
-                                                        <input type="text" class="form-control" id="dribbble" placeholder="Dribbble Username">
-                                                    </div>
-                                                </div>
-
-                                                <div class="list-group-item">
-
-                                                    <div class="list-group-item-figure">
-                                                        <div class="tile tile-md bg-github">
-                                                            <i class="fab fa-github"></i>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="list-group-item-body">
-                                                        <input type="text" class="form-control" id="github" placeholder="Github Username">
+                                                        <input type="text" class="form-control" name="instagram" id="instagram" placeholder="Instagram Username">
                                                     </div>
                                                 </div>
                                             </div><!-- /.list-group -->
