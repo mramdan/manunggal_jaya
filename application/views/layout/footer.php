@@ -39,7 +39,7 @@
                         <h4>Contact Us</h4>
                         <p style="color: #f9f9ff">
                            <?php echo $addres ?> <br>
-                           <strong>Phone:</strong> +62 <?php echo $kontak ?><br>
+                           <strong>Phone:</strong><?php echo $kontak ?><br>
                            <strong>Email:</strong> <?php echo $email ?><br>
                         </p>
                      </div>
@@ -88,7 +88,7 @@
 
 <script src="<?php echo base_url(); ?>/assets/js/vendor/jquery-1.12.4.min.js"></script>
 <script src="<?php echo base_url(); ?>/assets/js/popper.min.js"></script>
-<script src="<?php echo base_url(); ?>/assets/js/bootstrap.min.js"></script>
+
 
 <script src="<?php echo base_url(); ?>/assets/js/jquery.slicknav.min.js"></script>
 
@@ -111,6 +111,11 @@
 <script src="<?php echo base_url(); ?>/assets/js/plugins.js"></script>
 <script src="<?php echo base_url(); ?>/assets/js/main.js"></script>
 <script src="<?php echo base_url(); ?>/assets/js/mainjs.js"></script>
+
+<script src="<?php echo base_url(); ?>/assets/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo base_url(); ?>/assets/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>/assets/js/bootstrap.js"></script>
+<script src="<?php echo base_url(); ?>/assets/js/bootstrap.bundle.js"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>

@@ -1,5 +1,45 @@
 <main>
-    <div class="slider-area">
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
+
+
+        <div class="carousel-inner">
+            <?php foreach ($hero as $hero) : ?>
+                <div class="carousel-item <?= $hero['is_active']; ?>">
+
+                    <img src="<?= base_url() ?>assets/img/blog/<?= $hero['file']; ?>" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="hero__caption ">
+                                <div class="clas-text-white">
+                                    <h1 data-animation="fadeInLeft" data-delay=".6s"><?= $hero['judul']; ?></h1>
+                                </div>
+                                <span data-animation="fadeInLeft" data-delay=".4s"></span>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            <?php endforeach ?>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="slider-area">
         <div class="slider-active dot-style">
 
             <div class="single-slider slider-height hero-overly d-flex align-items-center">
@@ -10,27 +50,27 @@
                                 <div class="clas-text-white">
 
                                 </div>
-                                <span data-animation="fadeInLeft" data-delay=".4s">Selamat Datang Di <?php echo $cv ?></span>
-                                <h1 data-animation="fadeInLeft" data-delay=".6s"><?= $alamat ?></h1>
+                                <span data-animation="fadeInLeft" data-delay=".4s">Selamat Datang Di </span>
+                                <h1 data-animation="fadeInLeft" data-delay=".6s"><?php echo $cv ?></h1>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="video-icon">
-            <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=1aP-TXUpNoU"><i class="fas fa-play"></i></a>
-        </div>
+    <div class="video-icon">
+        <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=1aP-TXUpNoU"><i class="fas fa-play"></i></a>
+    </div>
     </div>
 
 
     <div class="our-info-area pt-170 pb-100 section-bg" data-background="assets/img/gallery/section_bg02.jpg">
         <div class="container">
             <div class="row">
-                <h1>manunggal</h1>
-                <div class="section-tittle profession-details">
-                    <p style="color: white;">Aorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                <h1 class="text-white">Manunggal Jaya</h1>
+                <div class="section-tittle profession-details mt-3">
+                    <p style="color: white;"><?= $about ?>
                     </p>
                     <p style="color: white;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
@@ -47,29 +87,23 @@
                 <div class="col-lg-8">
 
                     <div class="section-tittle profession-details">
-                        <span>Our Professional Services</span>
                         <h2>Kenapa Memilih Kami.</h2>
-                        <p>Aorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                        <p>
+                            <?php echo $service ?>
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <a href="about.html" class="btn btn3">Discover More About Ous</a>
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <div class="services-area section-padding3">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="cl-xl-7 col-lg-8 col-md-10">
                     <div class="section-tittle text-center mb-70">
-                        <h2>Produk Layanan</h2>
+                        <h2 class="text-white">Produk Layanan</h2>
                     </div>
                 </div>
             </div>
@@ -205,11 +239,11 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-xl-8 col-lg-8 col-md-8">
                     <div class="wantToWork-caption wantToWork-caption2">
-                        <h2>Are you Searching For a First-Class Consultant?</h2>
+                        <h2>Apa Yang Di Butuhkan?</h2>
                     </div>
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-3">
-                    <a href="#" class="btn btn-black f-right">Contact Us</a>
+                    <a href="<?= base_url() ?>pages/contact" class="btn btn-black f-right">Contact Us</a>
                 </div>
             </div>
         </div>

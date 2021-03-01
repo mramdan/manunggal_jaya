@@ -26,13 +26,12 @@
                                 <li><a href="<?php echo base_url(); ?>pages/profile">Profile</a></li>
                                 <li><a href="<?php echo base_url(); ?>pages/produk">Produk</a></li>
                                 <li><a href="<?php echo base_url(); ?>pages/blog">Blog</a></li>
-                                <li><a href="<?php echo base_url(); ?>pages/contact">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
 
                     <div class="header-btns d-none d-lg-block f-right">
-                        <a href="#" class="btn header-btn">Contact Us</a>
+                        <a href="<?php echo base_url(); ?>pages/contact" class="btn header-btn">Contact Us</a>
                     </div>
 
                     <div class="col-12">

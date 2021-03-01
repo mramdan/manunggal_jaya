@@ -20,20 +20,20 @@
           <div class="row" style="padding:20px">
              <div class="col-lg-8 mb-5 mb-lg-0">
                 <div class="blog_left_sidebar">
-                   <div class="container" style="background-color: white; width:1200px; border-top:solid 3px #ff1313;">
+                   <div class="container" style="background-color: white;">
                       <div class="row align-items-end" style="padding-top: 50px; padding-left:20px;">
-                         <div class="col-lg-10">
+                         <div class="col-lg-8">
                             <div class="section-tittle profession-details">
-                               <h2 style="color: black;">Manunggal Jaya</h2>
-                               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut iure minima aperiam perferendis tenetur sapiente cumque odio sint iste voluptate voluptates at, expedita architecto quaerat harum sit animi blanditiis, magni vitae nemo ex. Numquam, eligendi? Tempora, mollitia velit vitae sint dolore provident vel eveniet ad esse est earum aperiam eos?</p>
+                               <h2 style="color: black;"><?= $cv ?></h2>
+                               <p><?= $about ?></p>
                             </div>
                          </div>
                       </div>
                    </div>
                 </div>
              </div>
-             <div class="col-lg-3">
-                <div class="blog_right_sidebar" style="margin-left: 140px;">
+             <div class="col-lg-4">
+                <div class="blog_right_sidebar">
                    <aside class="single_sidebar_widget search_widget">
                       <form action="#">
                          <div class="form-group">
@@ -126,35 +126,6 @@
                             <p>01 Hours ago</p>
                          </div>
                       </div>
-                   </aside>
-                   <aside class="single_sidebar_widget tag_cloud_widget">
-                      <h4 class="widget_title" style="color: #2d2d2d;">Tag Clouds</h4>
-                      <ul class="list">
-                         <li>
-                            <a href="#">project</a>
-                         </li>
-                         <li>
-                            <a href="#">love</a>
-                         </li>
-                         <li>
-                            <a href="#">technology</a>
-                         </li>
-                         <li>
-                            <a href="#">travel</a>
-                         </li>
-                         <li>
-                            <a href="#">restaurant</a>
-                         </li>
-                         <li>
-                            <a href="#">life style</a>
-                         </li>
-                         <li>
-                            <a href="#">design</a>
-                         </li>
-                         <li>
-                            <a href="#">illustration</a>
-                         </li>
-                      </ul>
                    </aside>
                 </div>
              </div>
