@@ -33,10 +33,52 @@
             </div>
 
             <div class="row portfolio-container">
+               <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                  <?php foreach ($produk as $pk) : ?>
+                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 portfolio-item filter-app">
+                        <div class="card">
+                           <a href="<?= base_url() ?>pages/detail_produk/<?= $pk['id_produk']; ?>">
+                              <img src="<?= base_url() ?>assets/img/gallery/<?= $pk['file']; ?>" class="card-img-top" alt="...">
+                           </a>
+                           <div class="card-body">
+                              <h5 class="card-title"><?= $pk['nama_produk']; ?></h5>
+                              <p><?= $pk['deskripsi']; ?></p>
+                           </div>
+                           <div class="card-body">
+                              <div class="header-btns d-none d-lg-block">
+                                 <style>
+                                    .hg {
+                                       width: 100%;
+                                       height: 50px;
+                                       background-color: #ff1e00;
+                                       border-radius: 5px;
+                                       color: blanchedalmond;
+                                       display: flex;
+                                       text-align: center;
+                                       font: 5px;
+                                    }
+
+                                    .hg span {
+                                       margin: auto;
+                                       font-weight: bolder;
+                                    }
+                                 </style>
+                                 <div class="hg">
+                                    <span>Rp.<?= $pk['harga']; ?></span>
+                                 </div>
 
 
+                              </div>
+                           </div>
 
-               <?php foreach ($produk as $pk) : ?>
+                        </div>
+                     </div>
+                  <?php endforeach ?>
+               </div>
+
+
+               <!-- <?php foreach ($produk as $pk) : ?>
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 portfolio-item filter-app">
 
                      <div class="prod-box portfolio-wrap">
@@ -55,12 +97,16 @@
                         </div>
                      </div>
                   </div>
-               <?php endforeach ?>
+               <?php endforeach ?> -->
 
 
             </div>
          </div>
       </section>
+
+
+
+
    </div>
 
    </div>

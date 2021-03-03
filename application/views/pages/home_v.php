@@ -10,13 +10,15 @@
 
                     <img src="<?= base_url() ?>assets/img/blog/<?= $hero['file']; ?>" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="hero__caption ">
-                                <div class="clas-text-white">
-                                    <h1 data-animation="fadeInLeft" data-delay=".6s"><?= $hero['judul']; ?></h1>
-                                </div>
-                                <span data-animation="fadeInLeft" data-delay=".4s"></span>
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="hero__caption">
+                                    <div class="clas-text-white">
 
+                                    </div>
+                                    <span data-animation="fadeInLeft" data-delay=".4s">Selamat Datang Di </span>
+                                    <h1 data-animation="fadeInLeft" data-delay=".6s"><?php echo $cv ?></h1>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -133,57 +135,6 @@
             </div>
         </div>
     </div>
-
-    <div class="team-area section-padding30">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="cl-xl-7 col-lg-8 col-md-10">
-
-                    <div class="section-tittle text-center mb-70">
-                        <span>Creative derector</span>
-                        <h2>Best Interitor Services</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
-                    <div class="single-team mb-30">
-                        <div class="team-img">
-                            <img src="assets/img/gallery/team2.png" alt="">
-                        </div>
-                        <div class="team-caption">
-                            <h3><a href="#">Jhon Sunsa</a></h3>
-                            <span>Creative derector</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
-                    <div class="single-team mb-30">
-                        <div class="team-img">
-                            <img src="assets/img/gallery/team3.png" alt="">
-                        </div>
-                        <div class="team-caption">
-                            <h3><a href="#">Jhon Sunsa</a></h3>
-                            <span>Creative derector</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
-                    <div class="single-team mb-30">
-                        <div class="team-img">
-                            <img src="assets/img/gallery/team1.png" alt="">
-                        </div>
-                        <div class="team-caption">
-                            <h3><a href="#">Jhon Sunsa</a></h3>
-                            <span>Creative derector</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <div class="testimonial-area testimonial-padding">
         <div class="container">

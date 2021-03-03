@@ -49,6 +49,7 @@
                       </div>
                    </div>
 
+
                    <div class="container" style="background-color: white;">
                       <div class="container">
                          <div class="row mt-5">
@@ -60,13 +61,16 @@
                                <div class="section-tittle text-center mb-70">
                                   <span class="mb-2" style="font-size:12px;">lokasi Pelapak</span>
                                   <h6 class="text-dark">Depok</h6>
+                                  <p></p>
                                </div>
                             </div>
                          </div>
                       </div>
 
-                      <button type="button" class="btn btn-outline-primary">Chat</button>
-                      <button type="button" class="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true">Order Sekarang</button>
+                      <button type="button" class="btn btn-outline-primary ">Chat</button>
+
+                      <a href="<?php echo base_url(); ?>pages/order_produk" class="btn header-btn">Order Sekarang</a>
+
                    </div>
                 </div>
              </div>

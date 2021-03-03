@@ -66,10 +66,10 @@
 
                   <div class="footer-social f-right">
                      <span>Follow Us</span>
-                     <a href="#"><i class="fab fa-twitter"></i></a>
-                     <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                     <a href="#"><i class="fas fa-globe"></i></a>
-                     <a href="#"><i class="fab fa-instagram"></i></a>
+                     <a href="https://twitter.com/?lang=en<?= $twitter ?>" target="_blank"><i class="fab fa-twitter"></i></a>
+                     <a href="https://web.facebook.com/<?= $facebook ?>" target="_blank"><i class=" fab fa-facebook-f"></i></a>
+                     <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                     <a href="<?= $instagram ?>" target="_blank"><i class="fab fa-instagram"></i></a>
                   </div>
                </div>
             </div>

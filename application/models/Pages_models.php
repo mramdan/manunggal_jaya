@@ -72,4 +72,15 @@ class Pages_models extends CI_Model
       }
       return $data;
    }
+
+
+
+   //footer
+
+   public function get_sosmed($sosmed)
+   {
+      $query = $this->db->get('ref_sosmed')->row();
+      $data = $query->$sosmed;
+      return $data;
+   }
 }
