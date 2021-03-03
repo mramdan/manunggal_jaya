@@ -259,5 +259,3 @@
             </div><!-- /.page-inner -->
         </div><!-- /.page -->
     </div>
-
-    <div id="alert"> </div>

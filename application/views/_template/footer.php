@@ -19,6 +19,8 @@
 <script src="<?= base_url() ?>assets/backend/vendor/flatpickr/flatpickr.min.js"></script>
 <script src="<?= base_url() ?>assets/backend/vendor/easy-pie-chart/jquery.easypiechart.min.js"></script>
 <script src="<?= base_url() ?>assets/backend/vendor/chart.js/Chart.min.js"></script>
+<script src="<?= base_url() ?>assets/backend/vendor/sortablejs/Sortable.min.js"></script>
+<script src="<?= base_url() ?>assets/backend/vendor/nestable2/jquery.nestable.min.js"></script>
 <!-- END PLUGINS JS -->
 
 <!-- BEGIN THEME JS -->
@@ -28,7 +30,16 @@
 <!-- BEGIN PAGE LEVEL JS -->
 <!-- <script src="<?= base_url() ?>assets/backend/javascript/pages/dashboard-demo.js"></script> -->
 <!-- END PAGE LEVEL JS -->
-
+<script type="text/javascript">
+    $(function() {
+        $('.menu a').filter(function() {
+            return this.href == location.href
+        }).parent().addClass('has-active').siblings().removeClass('has-active')
+        $('.menu a').click(function() {
+            $(this).parent().addClass('has-active').siblings().removeClass('has-active')
+        })
+    })
+</script>
 </body>
 
 </html>
