@@ -19,11 +19,16 @@
 <script src="<?= base_url() ?>assets/backend/vendor/flatpickr/flatpickr.min.js"></script>
 <script src="<?= base_url() ?>assets/backend/vendor/easy-pie-chart/jquery.easypiechart.min.js"></script>
 <script src="<?= base_url() ?>assets/backend/vendor/chart.js/Chart.min.js"></script>
+<script src="<?= base_url() ?>assets/backend/vendor/summernote/summernote-bs4.min.js"></script>
 <script src="<?= base_url() ?>assets/backend/vendor/sortablejs/Sortable.min.js"></script>
 <script src="<?= base_url() ?>assets/backend/vendor/nestable2/jquery.nestable.min.js"></script>
+<script src="<?= base_url() ?>assets/backend/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?= base_url() ?>assets/backend/javascript/pages/dataTables.bootstrap.js"></script>
+
 <!-- END PLUGINS JS -->
 
 <!-- BEGIN THEME JS -->
+<script src="<?= base_url() ?>assets/backend/javascript/pages/summernote-demo.js"></script>
 <script src="<?= base_url() ?>assets/backend/javascript/theme.min.js"></script>
 <!-- END THEME JS -->
 
