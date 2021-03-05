@@ -69,7 +69,74 @@
 
                       <button type="button" class="btn btn-outline-primary ">Chat</button>
 
-                      <a href="<?php echo base_url(); ?>pages/order_produk" class="btn header-btn">Order Sekarang</a>
+
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn header-btn ml-1" data-bs-toggle="modal" data-bs-target="#dataorder">
+                         Order Sekarang
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="dataorder" tabindex="-1" aria-labelledby="dataorderLabel" aria-hidden="true">
+                         <div class="modal-dialog">
+                            <div class="modal-content">
+                               <div class="mt-3" style="text-align: center;">
+                                  <h5 class="modal-title" id="dataorderLabel">Data Pemesanan</h5>
+
+                               </div>
+                               <div class="modal-body mt-3">
+
+
+                                  <style>
+                                     .dl {
+                                        width: 100%;
+
+
+                                        border-radius: 5px;
+                                        color: blanchedalmond;
+                                        display: flex;
+                                        text-align: center;
+                                        font: 5px;
+                                     }
+                                  </style>
+
+
+                                  <div class="dl">
+                                     <form class="form-contact contact_form" action="<?= base_url('pages/pesan_produk') ?>" method="post">
+                                        <div class="row ">
+                                           <div class="col-12">
+                                              <div class="form-group">
+                                                 <input class="form-control" name="nama" id="nama" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Lengkap'" placeholder="Nama Lengkap">
+                                              </div>
+                                           </div>
+                                           <div class="col-12">
+                                              <div class="form-group">
+                                                 <input class="form-control" name="email" id="email" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" placeholder="Email">
+                                              </div>
+                                           </div>
+                                           <div class="col-12">
+                                              <div class="form-group">
+                                                 <input class="form-control" name="telpon" id="telpon" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'No Telpon'" placeholder="No Telpon">
+                                              </div>
+                                           </div>
+                                           <div class="col-12">
+                                              <div class="form-group">
+                                                 <input class="form-control" name="alamat" id="alamat" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Alamat Lengkap'" placeholder="Alamat Lengkap">
+                                              </div>
+                                           </div>
+                                        </div>
+
+                                        <div class="form-group mt-3">
+                                           <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                                        </div>
+                                     </form>
+                                  </div>
+                               </div>
+
+
+                            </div>
+                         </div>
+                      </div>
+
 
                    </div>
                 </div>

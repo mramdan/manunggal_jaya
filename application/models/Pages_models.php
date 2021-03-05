@@ -6,7 +6,7 @@ class Pages_models extends CI_Model
 
    public function get_hero()
    {
-      $query = $this->db->query('select * from set_hero LEFT JOIN ref_image ON set_hero.id_image=ref_image.id_image');
+      $query = $this->db->query('select * from set_hero');
 
       $data = array();
       foreach ($query->result() as $row) {
@@ -16,7 +16,8 @@ class Pages_models extends CI_Model
             'deskripsi' => $row->deskripsi,
             'urutan' => $row->urutan,
             'is_active' => $row->is_active,
-            'file' => $row->file,
+            'image' => $row->image,
+            'type' => $row->type,
          );
       }
       return $data;
@@ -31,9 +32,26 @@ class Pages_models extends CI_Model
       return $data;
    }
 
+   public function get_testimoni()
+   {
+      $query = $this->db->query('select * from testimoni');
+
+      $data = array();
+      foreach ($query->result() as $row) {
+         $data[] = array(
+            'id_testi' => $row->id_testi,
+            'nama_pelanggan' => $row->nama_pelanggan,
+            'komentar' => $row->komentar,
+            'foto' => $row->foto,
+
+         );
+      }
+      return $data;
+   }
+
    public function get_product()
    {
-      $query = $this->db->query('select * from ref_produk LEFT JOIN ref_image ON ref_produk.id_image=ref_image.id_image');
+      $query = $this->db->query('select * from ref_produk LEFT JOIN ref_image ON ref_produk.id_image=ref_image.id_image order by id_produk desc limit 3');
 
       $data = array();
       foreach ($query->result() as $row) {
@@ -51,7 +69,7 @@ class Pages_models extends CI_Model
 
    public function get_product_by_id($id)
    {
-      return $this->db->get_where('ref_produk', ['id_produk' => $id])->row_array();
+      return $this->db->get_where('ref_produk', ['nama_produk' => $id])->row_array();
    }
 
 

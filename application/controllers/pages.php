@@ -28,6 +28,9 @@ class Pages extends CI_Controller
          'addres' => $this->pages->get_profile('alamat'),
          'hero' => $this->pages->get_hero(),
 
+         'testimoni' => $this->pages->get_testimoni(),
+
+
          'twitter' => $this->pages->get_sosmed('Twitter'),
          'facebook' => $this->pages->get_sosmed('Facebook'),
          'instagram' => $this->pages->get_sosmed('Instagram'),
@@ -117,24 +120,16 @@ class Pages extends CI_Controller
       $this->load->view('pages/d_produk_v', $data);
       $this->load->view('layout/footer', $data);
    }
-   public function order_produk()
+   public function pesan_produk()
    {
-      $data = [
-         'tittle' => 'Order',
-         'right' => $this->pages->get_profile('nama_perusahaan'),
-         'kontak' => $this->pages->get_profile('kontak'),
-         'email' => $this->pages->get_profile('email'),
-         'addres' => $this->pages->get_profile('alamat'),
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+         $nama = $this->input->post('nama');
+         $email = $this->input->post('email');
+         $telpon = $this->input->post('telpon');
+         $alamat = $this->input->post('alamat');
 
-         'twitter' => $this->pages->get_sosmed('Twitter'),
-         'facebook' => $this->pages->get_sosmed('Facebook'),
-         'instagram' => $this->pages->get_sosmed('Instagram'),
-         'youtube' => $this->pages->get_sosmed('YouTube'),
-      ];
-      $this->load->view('layout/header', $data);
-      $this->load->view('layout/navbar');
-      $this->load->view('pages/o_produk_v', $data);
-      $this->load->view('layout/footer', $data);
+         // echo '<h1>' . $produk . '</h1>';
+      }
    }
 
 
@@ -188,6 +183,26 @@ class Pages extends CI_Controller
       $this->load->view('layout/header', $data);
       $this->load->view('layout/navbar');
       $this->load->view('pages/Contact_v', $data);
+      $this->load->view('layout/footer', $data);
+   }
+   public function testimoni()
+   {
+      $data = [
+         'tittle' => 'Testimoni',
+         'testimoni' => $this->pages->get_testimoni(),
+         'right' => $this->pages->get_profile('nama_perusahaan'),
+         'kontak' => $this->pages->get_profile('kontak'),
+         'email' => $this->pages->get_profile('email'),
+         'addres' => $this->pages->get_profile('alamat'),
+
+         'twitter' => $this->pages->get_sosmed('Twitter'),
+         'facebook' => $this->pages->get_sosmed('Facebook'),
+         'instagram' => $this->pages->get_sosmed('Instagram'),
+         'youtube' => $this->pages->get_sosmed('YouTube'),
+      ];
+      $this->load->view('layout/header', $data);
+      $this->load->view('layout/navbar');
+      $this->load->view('pages/testimoni_v', $data);
       $this->load->view('layout/footer', $data);
    }
 }

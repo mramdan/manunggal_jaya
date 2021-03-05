@@ -6,7 +6,7 @@
             <div class="row">
                <div class="col-xl-12">
                   <div class="hero-cap hero-cap2 text-center pt-80">
-                     <h2>Produk</h2>
+                     <h2>Testimoni</h2>
                   </div>
                </div>
             </div>
@@ -38,7 +38,7 @@
                   <?php foreach ($produk as $pk) : ?>
                      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 portfolio-item filter-app">
                         <div class="card">
-                           <a href="<?= base_url() ?>pages/detail_produk/<?= $pk['id_produk']; ?>">
+                           <a href="<?= base_url() ?>pages/detail_produk/<?= $pk['nama_produk']; ?>">
                               <img src="<?= base_url() ?>assets/img/gallery/<?= $pk['file']; ?>" class="card-img-top" alt="...">
                            </a>
                            <div class="card-body">
@@ -47,6 +47,7 @@
                            </div>
                            <div class="card-body">
                               <div class="header-btns d-none d-lg-block">
+
                                  <style>
                                     .hg {
                                        width: 100%;
@@ -109,4 +110,4 @@
 
    </div>
 
-   </div>
+</main>
