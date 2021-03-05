@@ -22,9 +22,12 @@
 <script src="<?= base_url() ?>assets/backend/vendor/summernote/summernote-bs4.min.js"></script>
 <script src="<?= base_url() ?>assets/backend/vendor/sortablejs/Sortable.min.js"></script>
 <script src="<?= base_url() ?>assets/backend/vendor/nestable2/jquery.nestable.min.js"></script>
-<script src="<?= base_url() ?>assets/backend/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="<?= base_url() ?>assets/backend/javascript/pages/dataTables.bootstrap.js"></script>
 
+<script src="<?= base_url() ?>assets/backend/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?= base_url() ?>assets/backend/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="<?= base_url() ?>assets/backend/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="<?= base_url() ?>assets/backend/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="<?= base_url() ?>assets/backend/vendor/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
 <!-- END PLUGINS JS -->
 
 <!-- BEGIN THEME JS -->
@@ -33,7 +36,8 @@
 <!-- END THEME JS -->
 
 <!-- BEGIN PAGE LEVEL JS -->
-<!-- <script src="<?= base_url() ?>assets/backend/javascript/pages/dashboard-demo.js"></script> -->
+<script src="<?= base_url() ?>assets/backend/javascript/pages/dataTables.bootstrap.js"></script>
+<!-- <script src="<?= base_url() ?>assets/backend/javascript/pages/datatables-demo.js"></script> -->
 <!-- END PAGE LEVEL JS -->
 <script type="text/javascript">
     $(function() {

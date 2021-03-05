@@ -22,49 +22,47 @@
         table.ajax.reload(null, false);;
     }
 
-    function get_list_produk() {
-        $.ajax({
-            type: "POST",
-            url: '<?php echo base_url() ?>admin/produk/ajax_list',
-            async: false,
-            dataType: 'json',
-            success: function(data) {
-                // var html = '';
-                // var i;
-                // for (i = 0; i < data.length; i++) {
-                //     html += '<tr>' +
-                //         '<td>' + data[i].barang_kode + '</td>' +
-                //         '<td>' + data[i].barang_nama + '</td>' +
-                //         '<td>' + data[i].barang_harga + '</td>' +
-                //         '</tr>';
-                // }
-                $('#show_data').html(data);
-            }
+    function searchRecords() {
+        $('#table-search').on('keyup change focus', function(e) {
+            // var filterBy = $('#filterBy').val();
+            // var hasFilter = filterBy !== '';
+            var value = $('#table-search').val(); // clear selected rows
+
+            table.search('').columns().search('').draw();
+            table.search(value).draw();
 
         });
     }
+    searchRecords();
 
     $(document).ready(function() {
+        table = $('#myTable').DataTable({
+            "searching": true,
+            //"lengthChange": false,
+            "processing": true, //Feature control the processing indicator.
+            "serverSide": true, //Feature control DataTables' server-side processing mode.
+            "order": [], //Initial no order.
 
-        // function searchRecords() {
-        //     var self = this;
-        //     $('#table-search, #filterBy').on('keyup change focus', function(e) {
-        //         var filterBy = $('#filterBy').val();
-        //         var hasFilter = filterBy !== '';
-        //         var value = $('#table-search').val(); // clear selected rows
+            // Load data for the table's content from an Ajax source
+            "ajax": {
+                "url": "<?php echo site_url('admin/produk/ajax_list') ?>",
+                "type": "POST",
+                "dataType": "json",
+            },
 
-        //         self.table.search('').columns().search('').draw();
+            //Set column definition initialisation properties.
+            "columnDefs": [{
+                    "targets": [4], //last column
+                    "orderable": false, //set not orderable
+                },
+                // {
+                //     "targets": [1],
+                //     "visible": false,
+                //     "searchable": false
+                // },
+            ],
+        });
 
-        //         if (hasFilter) {
-        //             self.table.columns(filterBy).search(value).draw();
-        //         } else {
-        //             self.table.search(value).draw();
-        //         }
-        //     });
-        // }
-        // searchRecords();
-        get_list_produk();
-        var table = $('#myTable2').DataTable();
     });
 
     function add_new() {
@@ -101,6 +99,35 @@
 
                 $('#modal_form_produk').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Edit Hero/Slider'); // Set Title to Bootstrap modal title
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error get data from ajax');
+            }
+        });
+    }
+
+    function detail(id) {
+
+        // $('#modal_detail').empty();
+        //Ajax Load data from ajax
+        $.ajax({
+            url: "<?php echo site_url('admin/produk/ajax_edit/') ?>" + id,
+            type: "GET",
+            dataType: "JSON",
+            success: function(data) {
+
+                // console.log('edit', data);
+                var nama = data.nama_produk;
+                $('#title').val(nama);
+                // $('[name="deskripsi"]').val(data.deskripsi).trigger('change');
+                // $('[name="harga"]').val(data.harga);
+                // $('[name="kategori"]').val(data.kategori);
+
+                // $('[name="old_foto"]').val(data.foto);
+
+                $('#modal_detail').modal('show'); // show bootstrap modal when complete loaded
+                $('.modal-title').text('Detail Produk ' + nama); // Set Title to Bootstrap modal title
 
             },
             error: function(jqXHR, textStatus, errorThrown) {

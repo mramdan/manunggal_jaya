@@ -4,15 +4,71 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Produk_model extends CI_Model
 {
     var $table = 'ref_produk';
+    var $column_order = array('', 'nama_produk', 'harga', 'kategori');
+    var $column_search = array('nama_produk', 'harga', 'kategori');
+    var $order = array('id_produk' => 'desc'); // default order 
 
-    public function get_list_produk()
+    private function _get_datatables_query()
     {
-        $this->db->start_cache();
+
         $this->db->from($this->table);
-        $this->db->stop_cache();
+
+        $i = 0;
+
+        if (!empty($_POST['search']['value'])) {
+            foreach ($this->column_search as $item) // loop column 
+            {
+
+                if ($i === 0) // first loop
+                {
+                    // $this->db->group_start(); // open bracket. query Where with OR clause better with bracket. because maybe can combine with other WHERE with AND.
+                    $this->db->like($item, $_POST['search']['value']);
+                } else {
+                    $this->db->or_like($item, $_POST['search']['value']);
+                }
+
+                if (count($this->column_search) - 1 == $i); //last loop
+                // $this->db->group_end(); //close bracket
+                $i++;
+            }
+        }
+
+
+        if (isset($_POST['order'])) // here order processing
+        {
+            $this->db->order_by($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+        } else if (isset($this->order)) {
+            $order = $this->order;
+            $this->db->order_by(key($order), $order[key($order)]);
+        }
+    }
+
+    function get_datatables()
+    {
+
+        $this->_get_datatables_query();
+        $this->db->select("*", false);
+
+        if ($_POST['length'] != -1)
+            $this->db->limit($_POST['length'], $_POST['start']);
+
         $query = $this->db->get();
-        $this->db->flush_cache();
         return $query->result();
+    }
+
+    function count_filtered()
+    {
+        $this->_get_datatables_query();
+        $this->db->select("*", false);
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
+    public function count_all()
+    {
+        $this->_get_datatables_query();
+        $this->db->select("*", false);
+        return $this->db->count_all_results();
     }
 
     public function save($data)

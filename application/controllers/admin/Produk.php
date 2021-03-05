@@ -33,30 +33,42 @@ class Produk extends CI_Controller
     public function ajax_list()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $list =  $this->produk_m->get_list_produk();
+            $id_skk = $this->input->post('id_skk');
+
+            $list = $this->produk_m->get_datatables($id_skk);
             $data = array();
-            $no = 0;
+            $no = $_POST['start'];
+
             foreach ($list as $dd) {
                 $no++;
                 $row = array();
 
-                $row[] = '<tr>';
-                $row[] = '<td>' . $no . '</td>';
-                $row[] = '<td>' . $dd->nama_produk . '</td>';
-                $row[] = '<td>' . $dd->kategori . '</td>';
-                $row[] = '<td> Rp. ' . number_format($dd->harga) . '</td>';
+                $row[] = $no;
+                $row[] = '<a href="javascript:void(0)" onclick="detail(' . "'" . $dd->id_produk . "'" . ')">' . $dd->nama_produk . ' <i class="fas fa-external-link-alt"></i></a>';
+                $row[] = $dd->kategori;
+                $row[] = 'Rp. ' . number_format($dd->harga);
 
-                $row[] = '<td class="align-middle text-right">
-                            <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" onclick="edit(' . "'" . $dd->id_produk . "'" . ')"><i class="fa fa-pencil-alt"></i></a>
-                            <a class="btn btn-sm btn-icon btn-secondary" href="javascript:void(0)" onclick="delete_data(' . "'" . $dd->id_produk . "'" . ')"><i class="far fa-trash-alt text-red"></i></a>
-                         </td>';
-
-                $row[] = '</tr>';
+                $row[] = '<a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" onclick="edit(' . "'" . $dd->id_produk . "'" . ')"><i class="fa fa-pencil-alt"></i></a>
+                          <a class="btn btn-sm btn-icon btn-secondary" href="javascript:void(0)" onclick="delete_data(' . "'" . $dd->id_produk . "'" . ')"><i class="far fa-trash-alt text-red"></i></a>';
 
                 $data[] = $row;
             }
+
+            $output = array(
+                "draw" => $_POST['draw'],
+                "recordsTotal" => $this->produk_m->count_all($id_skk),
+                "recordsFiltered" => $this->produk_m->count_filtered($id_skk),
+                "data" => $data,
+            );
+        } else {
+            $output = array(
+                "draw" => "",
+                "recordsTotal" => "",
+                "recordsFiltered" => "",
+                "data" => 'Not Allowed',
+            );
         }
-        echo json_encode($data);
+        echo json_encode($output);
     }
 
     public function ajax_add()

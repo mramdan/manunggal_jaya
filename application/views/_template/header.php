@@ -13,7 +13,7 @@
 
     <!-- FAVICONS -->
     <link rel="apple-touch-icon" sizes="144x144" href="<?= base_url() ?>assets/backend/apple-touch-icon.png">
-    <link rel="shortcut icon" href="<?= base_url() ?>assets/backend/favicon.ico">
+    <link rel="shortcut icon" href="<?= base_url() ?>assets/images/icon/favicon.ico">
     <meta name="theme-color" content="#3063A0">
     <!-- End FAVICONS -->
 
@@ -25,15 +25,9 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/backend/vendor/open-iconic/font/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/backend/vendor/%40fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/backend/vendor/toastr/build/toastr.min.css">
-    <link rel="stylesheet" href="<?= base_url() ?>assets/backend/vendor/flatpickr/flatpickr.min.css"><!-- END PLUGINS STYLES -->
+    <link rel="stylesheet" href="<?= base_url() ?>assets/backend/vendor/flatpickr/flatpickr.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/backend/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
-
-
-
-
-    <link rel="stylesheet" href="<?= base_url() ?>assets/backend/vendor/summernote/summernote-bs4.min.css"><!-- END PLUGINS STYLES -->
+    <link rel="stylesheet" href="<?= base_url() ?>assets/backend/vendor/summernote/summernote-bs4.min.css">
     <!-- BEGIN THEME STYLES -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/backend/stylesheets/theme.min.css" data-skin="default">
     <link rel="stylesheet" href="<?= base_url() ?>assets/backend/stylesheets/theme-dark.min.css" data-skin="dark">
