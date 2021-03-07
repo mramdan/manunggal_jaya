@@ -120,11 +120,8 @@
                 // console.log('edit', data);
                 var nama = data.nama_produk;
                 $('#title').val(nama);
-                // $('[name="deskripsi"]').val(data.deskripsi).trigger('change');
-                // $('[name="harga"]').val(data.harga);
-                // $('[name="kategori"]').val(data.kategori);
-
-                // $('[name="old_foto"]').val(data.foto);
+                $('#foto_produk').attr('src', '<?= base_url('assets/uploads/produk/') ?>' + data.foto);
+                $('#detai_desc').html(data.deskripsi);
 
                 $('#modal_detail').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Detail Produk ' + nama); // Set Title to Bootstrap modal title
@@ -146,10 +143,10 @@
                 success: function(data) {
                     if (data.status == '00') {
                         // reload_list_produk();
-                        get_list_produk();
+                        reload_table();
                         showAlert(data.type, data.mess);
                     } else {
-                        get_list_produk();
+                        reload_table();
                         showAlert(data.type, data.mess);
                     }
                 },
@@ -205,11 +202,11 @@
             success: function(data) {
                 if (data.status == '00') //if success close modal and reload ajax table
                 {
-                    get_list_produk();
+                    reload_table();
                     showAlert(data.type, data.mess);
                     $('#modal_form_produk').modal('hide');
                 } else {
-                    get_list_produk();
+                    reload_table();
                     showAlert(data.type, data.mess);
 
                 }

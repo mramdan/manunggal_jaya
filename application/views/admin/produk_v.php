@@ -79,18 +79,20 @@
                     <div class="modal-dialog modal-xl" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h6 id="title" class="modal-title"> </h6>
+                                <h3 id="title" class="modal-title"></h3>
                             </div>
                             <div class="modal-body">
                                 <div class="row">
-                                    <div class="col-md-5">
-                                        kjadflka
+                                    <div class="col-md-5 mb-2">
+                                        <img id="foto_produk" class="img-fluid">
                                     </div>
-                                    <div class="col-md-7">dafad</div>
+                                    <div class="col-md-7">
+                                        <div id="detai_desc"></div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
