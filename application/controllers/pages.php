@@ -14,33 +14,43 @@ class Pages extends CI_Controller
    public function index()
    {
       $data = [
-         'tittle' => 'Home',
+         //title Page
+         'title' => 'Home | ' . $this->pages->get_profile('nama_perusahaan'),
+         // Seo Setting
+         'description' => $this->pages->get_profile('description'),
+         'keywords' => $this->pages->get_profile('keywords'),
+         'author' => $this->pages->get_profile('author'),
 
-         //hero
-         'cv' => $this->pages->get_profile('nama_perusahaan'),
-         'about' => $this->pages->get_profile('about'),
-         'service' => $this->pages->get_profile('service'),
-         'alamat' => $this->pages->get_profile('alamat'),
-         'produk' => $this->pages->get_product(),
-         'right' => $this->pages->get_profile('nama_perusahaan'),
+         //header
+         'logo' => $this->pages->get_profile('logo'),
          'kontak' => $this->pages->get_profile('kontak'),
-         'email' => $this->pages->get_profile('email'),
-         'addres' => $this->pages->get_profile('alamat'),
-         'hero' => $this->pages->get_hero(),
+         'kontak2' => $this->pages->get_profile('kontak2'),
 
-         'testimoni' => $this->pages->get_testimoni(),
-
-
+         // Footer
          'twitter' => $this->pages->get_sosmed('Twitter'),
          'facebook' => $this->pages->get_sosmed('Facebook'),
          'instagram' => $this->pages->get_sosmed('Instagram'),
          'youtube' => $this->pages->get_sosmed('YouTube'),
 
+         'name' => $this->pages->get_profile('nama_perusahaan'),
+         'service' => $this->pages->get_profile('service'),
+         'alamat' => $this->pages->get_profile('alamat'),
+         'produk' => $this->pages->get_product(),
+         'email' => $this->pages->get_profile('email'),
+         'addres' => $this->pages->get_profile('alamat'),
+
+
+         // Content
+         'hero' => $this->pages->get_hero(),
+         'name' => $this->pages->get_profile('nama_perusahaan'),
+         'about' => $this->pages->get_profile('about'),
+         'testimoni' => $this->pages->get_testimoni(),
+
       ];
       $this->load->view('layout/header', $data);
-      $this->load->view('layout/navbar');
+      // $this->load->view('layout/navbar');
       $this->load->view('pages/home_v', $data);
-      $this->load->view('layout/footer', $data);
+      $this->load->view('layout/footer');
    }
 
 

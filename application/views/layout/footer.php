@@ -1,133 +1,128 @@
-<footer>
+</main>
 
-   <div class="footer-area footer-bg" style="border-top: 3px solid #ff1313;">
-      <div class="container">
-         <div class="footer-top footer-padding">
-            <div class="row d-flex justify-content-between">
-               <div class="col-xl-3 col-lg-4 col-md-5 col-sm-8">
-                  <div class="single-footer-caption mb-50">
 
-                     <div class="footer-logo">
-                        <a href="index-2.html"><img src="<?php echo base_url(); ?>/assets/img/logo/logo2_footer.png" alt=""></a>
-                     </div>
-                     <div class="footer-tittle">
-                        <div class="footer-pera">
-                           <p class="info1">Grabbing the concsumer’s attention isn’t enough you have to keep that attention for
-                              at least a.</p>
-                        </div>
-                     </div>
-                  </div>
+<!-- Footer -->
+<footer class="cs-footer pt-3 bg-dark">
+   <div class="container mt-lg-3 py-md-5 py-4">
+      <div class="row mb-5">
+         <div class="col-lg-5 col-md-6">
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+               <a class="d-inline-block" href="index.html">
+                  <img src="<?= base_url() ?>assets/frontend/img/construction/logo-light.svg" width="130" alt="Createx logo">
+               </a>
+               <div class="mt-sm-1 mt-4 pr-sm-4">
+                  <a href="#" class="social-btn">
+                     <i class="cxi-whatsapp"></i>
+                  </a>
+                  <a href="#" class="social-btn">
+                     <i class="cxi-messenger"></i>
+                  </a>
+                  <a href="#" class="social-btn">
+                     <i class="cxi-facebook"></i>
+                  </a>
+                  <a href="#" class="social-btn">
+                     <i class="cxi-twitter"></i>
+                  </a>
+                  <a href="#" class="social-btn">
+                     <i class="cxi-youtube"></i>
+                  </a>
                </div>
-               <div class="col-xl-3 col-lg-2 col-md-5 col-sm-6">
-                  <div class="single-footer-caption mb-50">
-                     <div class="footer-tittle">
-                        <h4>Produk Jasa</h4>
-                        <ul>
-                           <li>Pagar</li>
-                           <li>kanopy</li>
-                           <li>Railing Tangga</li>
-                           <li>Tralis Jendela</li>
-                           <li>Stainless Steel</li>
-                           <li>Kontruksi Baja</li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-3 col-md-6 footer-contact">
-                  <div class="single-footer-caption mb-50">
-                     <div class="footer-tittle">
-                        <h4>Contact Us</h4>
-                        <p style="color: #f9f9ff">
-                           <?php echo $addres ?> <br>
-                           <strong>Phone:</strong><?php echo $kontak ?><br>
-                           <strong>Email:</strong> <?php echo $email ?><br>
-                        </p>
-                     </div>
-                  </div>
-               </div>
-
             </div>
+            <p class="mb-md-0 mb-4 font-size-sm text-light opacity-60">Createx Construction Bureau has been successfully operating in the USA construction market since 2000. We are proud to offer you quality construction and exemplary service. Our mission is to set the highest standards for construction sphere.</p>
          </div>
-         <div class="footer-bottom">
-            <div class="row d-flex justify-content-between align-items-center">
-               <div class="col-xl-9 col-lg-8">
-                  <div class="footer-copy-right">
-                     <p>
-                        Copyright <?php echo $right ?> &copy;
-                        <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-                        <script>
-                           document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made
-                        with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Anbomaker</a>
-                     </p>
-                  </div>
+         <div class="col-lg-5 offset-lg-2 col-md-6">
+            <h4 class="text-light">Let’s stay in touch</h4>
+            <form class="input-group">
+               <input class="form-control input-light" type="email" placeholder="Your email address" required>
+               <div class="input-group-append">
+                  <button class="btn btn-danger text-uppercase" type="submit">Subscribe</button>
                </div>
-               <div class="col-xl-3 col-lg-4">
-
-                  <div class="footer-social f-right">
-                     <span>Follow Us</span>
-                     <a href="https://twitter.com/?lang=en<?= $twitter ?>" target="_blank"><i class="fab fa-twitter"></i></a>
-                     <a href="https://web.facebook.com/<?= $facebook ?>" target="_blank"><i class=" fab fa-facebook-f"></i></a>
-                     <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                     <a href="<?= $instagram ?>" target="_blank"><i class="fab fa-instagram"></i></a>
-                  </div>
-               </div>
-            </div>
+            </form>
+            <p class="mb-0 pt-3 font-size-xs text-light opacity-60">*Subscribe to our newsletter to receive communications and early updates from Createx Construction Bureau.</p>
+         </div>
+      </div>
+      <div class="row mb-sm-5 mb-4">
+         <div class="col-md-4 mb-md-0 mb-4">
+            <h6 class="text-light text-uppercase">Head office</h6>
+            <ul class="nav nav-light flex-column">
+               <li class="nav-item mb-2">
+                  <span class="mr-1 text-light">Address:</span>
+                  <a href="#" class="nav-link d-inline-block p-0 font-weight-normal">8502 Preston Rd. Inglewood, New York</a>
+               </li>
+               <li class="nav-item mb-2">
+                  <span class="mr-1 text-light">Call:</span>
+                  <a href="tel:(405)555-0128" class="nav-link d-inline-block p-0 font-weight-normal">(405) 555-0128</a>
+               </li>
+               <li class="nav-item mb-2">
+                  <span class="mr-1 text-light">Email:</span>
+                  <a href="mailto:hello@example.com" class="nav-link d-inline-block p-0 font-weight-normal">hello@example.com</a>
+               </li>
+            </ul>
+         </div>
+         <div class="col-md-3 col-sm-6 mb-md-0 mb-4">
+            <h6 class="text-light text-uppercase">Who we are</h6>
+            <ul class="nav nav-light flex-column">
+               <li class="nav-item mb-2">
+                  <a href="about.html" class="nav-link p-0 font-weight-normal">About Us</a>
+               </li>
+               <li class="nav-item mb-2">
+                  <a href="careers.html" class="nav-link p-0 font-weight-normal">Available Positions</a>
+               </li>
+               <li class="nav-item mb-2">
+                  <a href="contacts.html" class="nav-link p-0 font-weight-normal">Contacts</a>
+               </li>
+            </ul>
+         </div>
+         <div class="col-md-5 col-sm-6 mb-md-0 mb-4">
+            <h6 class="text-light text-uppercase">Our experience</h6>
+            <ul class="nav nav-light flex-column">
+               <li class="nav-item mb-2">
+                  <a href="services.html" class="nav-link p-0 font-weight-normal">Services</a>
+               </li>
+               <li class="nav-item mb-2">
+                  <a href="projects.html" class="nav-link p-0 font-weight-normal">Work</a>
+               </li>
+               <li class="nav-item mb-2">
+                  <a href="news.html" class="nav-link p-0 font-weight-normal">News</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="d-flex align-items-sm-center justify-content-between py-1">
+         <div class="font-size-xs text-light">
+            <span class="d-sm-inline d-block mb-1">
+               <span class="font-size-sm">&copy; </span>
+               All rights reserved.
+            </span>
+            Made with
+            <i class="cxi-heart mt-n1 mx-1 font-size-base text-primary align-middle"></i>
+            <a href="#" class="text-light" target="_blank" rel="noopener noreferrer">by AnbomekerDev</a>
+         </div>
+         <div class="d-flex align-items-sm-center">
+            <span class="d-sm-inline-block d-none text-light font-size-sm mr-3 mb-1 align-vertical text-uppercase">Go to top</span>
+            <a class="btn-scroll-top btn-danger position-static rounded" href="#top" data-scroll>
+               <i class="btn-scroll-top-icon cxi-angle-up"></i>
+            </a>
          </div>
       </div>
    </div>
-
 </footer>
 
-<div id="back-top">
-   <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
-</div>
 
+<!-- Vendor scripts: js libraries and plugins-->
+<script src="<?= base_url() ?>assets/frontend/vendor/jquery/dist/jquery.slim.min.js"></script>
+<script src="<?= base_url() ?>assets/frontend/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url() ?>assets/frontend/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script src="<?= base_url() ?>assets/frontend/vendor/lightgallery.js/dist/js/lightgallery.min.js"></script>
+<script src="<?= base_url() ?>assets/frontend/vendor/lg-video.js/dist/lg-video.min.js"></script>
+<script src="<?= base_url() ?>assets/frontend/vendor/jarallax/dist/jarallax.min.js"></script>
+<script src="<?= base_url() ?>assets/frontend/vendor/jarallax/dist/jarallax-element.min.js"></script>
+<script src="<?= base_url() ?>assets/frontend/vendor/simplebar/dist/simplebar.min.js"></script>
+<script src="<?= base_url() ?>assets/frontend/vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+<script src="<?= base_url() ?>assets/frontend/vendor/progressbar.js/dist/progressbar.min.js"></script>
 
-<script src="<?php echo base_url(); ?>/assets/js/vendor/modernizr-3.5.0.min.js"></script>
-
-<script src="<?php echo base_url(); ?>/assets/js/vendor/jquery-1.12.4.min.js"></script>
-<script src="<?php echo base_url(); ?>/assets/js/popper.min.js"></script>
-
-
-<script src="<?php echo base_url(); ?>/assets/js/jquery.slicknav.min.js"></script>
-
-<script src="<?php echo base_url(); ?>/assets/js/owl.carousel.min.js"></script>
-<script src="<?php echo base_url(); ?>/assets/js/slick.min.js"></script>
-
-<script src="<?php echo base_url(); ?>/assets/js/wow.min.js"></script>
-<script src="<?php echo base_url(); ?>/assets/js/animated.headline.js"></script>
-<script src="<?php echo base_url(); ?>/assets/js/jquery.magnific-popup.js"></script>
-
-<script src="<?php echo base_url(); ?>/assets/js/jquery.nice-select.min.js"></script>
-<script src="<?php echo base_url(); ?>/assets/js/jquery.sticky.js"></script>
-
-<script src="<?php echo base_url(); ?>/assets/js/contact.js"></script>
-<script src="<?php echo base_url(); ?>/assets/js/jquery.form.js"></script>
-<script src="<?php echo base_url(); ?>/assets/js/jquery.validate.min.js"></script>
-<script src="<?php echo base_url(); ?>/assets/js/mail-script.js"></script>
-<script src="<?php echo base_url(); ?>/assets/js/jquery.ajaxchimp.min.js"></script>
-
-<script src="<?php echo base_url(); ?>/assets/js/plugins.js"></script>
-<script src="<?php echo base_url(); ?>/assets/js/main.js"></script>
-<script src="<?php echo base_url(); ?>/assets/js/mainjs.js"></script>
-
-<script src="<?php echo base_url(); ?>/assets/js/bootstrap.bundle.min.js"></script>
-<script src="<?php echo base_url(); ?>/assets/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>/assets/js/bootstrap.js"></script>
-<script src="<?php echo base_url(); ?>/assets/js/bootstrap.bundle.js"></script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-   window.dataLayer = window.dataLayer || [];
-
-   function gtag() {
-      dataLayer.push(arguments);
-   }
-   gtag('js', new Date());
-
-   gtag('config', 'UA-23581568-13');
-</script>
+<!-- Main theme script-->
+<script src="<?= base_url() ?>assets/frontend/js/theme.min.js"></script>
 </body>
 
 </html>

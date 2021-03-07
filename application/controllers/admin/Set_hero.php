@@ -62,7 +62,6 @@ class Set_hero extends CI_Controller
                                 </div>
                                 <div class="btn-group ml-auto">
                                     <button class="btn btn-sm btn-secondary" onclick="edit(' . "'" . $dd->id_hero . "'" . ')" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Edit">Edit</button>
-                                    <button class="btn btn-sm btn-secondary text-red" onclick="delete_data(' . "'" . $dd->id_hero . "'" . ')" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Hapus"><i class="far fa-trash-alt"></i></button>
                                 </div>
                             </li>';
             }

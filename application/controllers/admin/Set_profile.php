@@ -70,7 +70,7 @@ class Set_profile extends CI_Controller
             if (!empty($_FILES["logo"]["name"])) {
 
                 //direktori file
-                $path = 'assets/uploads/logo/';
+                $path = 'assets/brand/';
                 $filename = $this->input->post('logo_old');
                 //hapus file
                 if (file_exists($path . $filename)) {

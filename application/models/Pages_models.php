@@ -51,16 +51,17 @@ class Pages_models extends CI_Model
 
    public function get_product()
    {
-      $query = $this->db->query('select * from ref_produk LEFT JOIN ref_image ON ref_produk.id_image=ref_image.id_image order by id_produk desc limit 3');
+      $query = $this->db->query('select * from ref_produk order by id_produk desc limit 3');
 
       $data = array();
       foreach ($query->result() as $row) {
          $data[] = array(
             'id_produk' => $row->id_produk,
             'nama_produk' => $row->nama_produk,
+            'kategori' => $row->kategori,
             'deskripsi' => $row->deskripsi,
             'harga' => $row->harga,
-            'file' => $row->file,
+            'foto' => $row->foto,
          );
       }
       return $data;

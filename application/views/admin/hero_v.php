@@ -72,13 +72,13 @@
 
                                     </ul>
                                 </div>
-                                <div class="card-footer">
+                                <!-- <div class="card-footer">
                                     <button type="button" class="btn btn-light btn-lg btn-block" onclick="add_new()">
                                         <span class="text-primary mt-2 mb-2">
                                             <i class="fa fa-plus-circle mr-1 text-primary"></i> Tambah Hero/Slider
                                         </span>
                                     </button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

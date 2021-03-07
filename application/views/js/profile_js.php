@@ -43,8 +43,8 @@
                     $('[name="no_perusahaan"]').val(data.no_perusahaan);
                     $('[name="alamat"]').val(data.alamat);
 
-                    $('#logo_image').attr('src', '<?= base_url() ?>assets/uploads/logo/' + data.logo);
-                    $('#link_logo').attr('href', '<?= base_url() ?>assets/uploads/logo/' + data.logo);
+                    $('#logo_image').attr('src', '<?= base_url() ?>assets/brand/logo/' + data.logo);
+                    $('#link_logo').attr('href', '<?= base_url() ?>assets/brand/logo/' + data.logo);
                     $('#nama_p').text(data.nama_perusahaan);
                     $('#no_p').text(data.no_perusahaan);
                     $('#alamat_p').text(data.alamat);
