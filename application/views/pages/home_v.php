@@ -385,25 +385,18 @@
                   }
                 }'>
 
-                        <!-- Carousel testimonial item -->
-                        <blockquote class="px-1 text-md-left text-center">
-                            <img class="mb-4 rounded-circle" src="<?= base_url() ?>assets/frontend/img/construction/testimonials/01.jpg" width="72" alt="Author">
-                            <p>Ipsum aute sunt aliquip aute et occaecat. Anim minim do cillum eiusmod enim. Consectetur magna cillum consequat minim laboris cillum laboris voluptate minim proident exercitation ullamco. </p>
-                            <footer>
-                                <h3 class="h6 mb-0">Courtney Alexander</h3>
-                                <span class="font-size-sm text-muted">Position, Company name</span>
-                            </footer>
-                        </blockquote>
+                        <?php foreach ($testimoni as $tesi) : ?>
+                            <!-- Carousel testimonial item -->
+                            <blockquote class="px-1 text-md-left text-center">
+                                <img class="mb-4 rounded-circle" src="<?= base_url() ?>assets/uploads/testimoni/<?= $tesi['foto'] ?>" width="72" alt="Author">
+                                <p><?= $tesi['komentar'] ?>. </p>
+                                <footer>
+                                    <h3 class="h6 mb-0"><?= $tesi['nama_pelanggan'] ?></h3>
+                                    <span class="font-size-sm text-muted">Position, Company name</span>
+                                </footer>
+                            </blockquote>
+                        <?php endforeach ?>
 
-                        <!-- Carousel testimonial item -->
-                        <blockquote class="px-1 text-md-left text-center">
-                            <img class="mb-4 rounded-circle" src="<?= base_url() ?>assets/frontend/img/construction/testimonials/02.jpg" width="72" alt="Author">
-                            <p>Eveniet molestias. Expedita porro doloremque sit at fugiat in animi obcaecati repellendus, quaerat quo soluta quisquam adipisci odit error repudiandae dolorum accusamus vel?</p>
-                            <footer>
-                                <h3 class="h6 mb-0">Shawn Edwards</h3>
-                                <span class="font-size-sm text-muted">Position, Company name</span>
-                            </footer>
-                        </blockquote>
                     </div>
                 </div>
             </div>

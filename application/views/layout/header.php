@@ -206,7 +206,7 @@
       <header class="cs-header navbar navbar-expand-lg navbar-light navbar-sticky navbar-floating">
          <div class="container px-0 px-xl-3">
             <a class="navbar-brand order-lg-1 mr-lg-5 mr-0 pr-lg-2" href="<?= base_url() ?>">
-               <img src="<?= base_url() ?>assets/brand/logo/<?= $logo ?>" alt="Createx Logo" width="130">
+               <img src="<?= base_url() ?>assets/brand/logo/<?= $logo ?>" alt="logo <?= $name ?>" width="130">
             </a>
             <div class="d-flex align-items-center order-lg-3">
                <a class="media media-tool" href="https://api.whatsapp.com/send?phone=<?= $kontak ?>&text=Halo%Bengkellas-manunggaljaya.com">

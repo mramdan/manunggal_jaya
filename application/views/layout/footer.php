@@ -7,28 +7,28 @@
       <div class="row mb-5">
          <div class="col-lg-5 col-md-6">
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-               <a class="d-inline-block" href="index.html">
-                  <img src="<?= base_url() ?>assets/frontend/img/construction/logo-light.svg" width="130" alt="Createx logo">
+               <a class="d-inline-block" href="<?= base_url() ?>">
+                  <img src="<?= base_url() ?>assets/brand/logo/<?= $logo ?>" alt="logo <?= $name ?>" width="130">
                </a>
                <div class="mt-sm-1 mt-4 pr-sm-4">
-                  <a href="#" class="social-btn">
+                  <a href="https://api.whatsapp.com/send?phone=<?= $kontak ?>&text=Halo%Bengkellas-manunggaljaya.com" class="social-btn">
                      <i class="cxi-whatsapp"></i>
                   </a>
-                  <a href="#" class="social-btn">
+                  <a href="https://api.whatsapp.com/send?phone=<?= $kontak2 ?>&text=Halo%Bengkellas-manunggaljaya.com" class="social-btn">
+                     <i class="cxi-whatsapp"></i>
+                  </a>
+                  <a href="https://facebook.com/<?= $facebook ?>" target="_blank" class="social-btn">
                      <i class="cxi-messenger"></i>
                   </a>
-                  <a href="#" class="social-btn">
+                  <a href="https://facebook.com/<?= $facebook ?>" target="_blank" class="social-btn">
                      <i class="cxi-facebook"></i>
                   </a>
-                  <a href="#" class="social-btn">
-                     <i class="cxi-twitter"></i>
-                  </a>
-                  <a href="#" class="social-btn">
+                  <a href="https://youtube.com/<?= $youtube ?>" target="_blank" class="social-btn">
                      <i class="cxi-youtube"></i>
                   </a>
                </div>
             </div>
-            <p class="mb-md-0 mb-4 font-size-sm text-light opacity-60">Createx Construction Bureau has been successfully operating in the USA construction market since 2000. We are proud to offer you quality construction and exemplary service. Our mission is to set the highest standards for construction sphere.</p>
+            <p class="mb-md-0 mb-4 font-size-sm text-light opacity-60"><?= $description ?></p>
          </div>
          <div class="col-lg-5 offset-lg-2 col-md-6">
             <h4 class="text-light">Let’s stay in touch</h4>
@@ -47,15 +47,15 @@
             <ul class="nav nav-light flex-column">
                <li class="nav-item mb-2">
                   <span class="mr-1 text-light">Address:</span>
-                  <a href="#" class="nav-link d-inline-block p-0 font-weight-normal">8502 Preston Rd. Inglewood, New York</a>
+                  <a href="#" class="nav-link d-inline-block p-0 font-weight-normal"><?= $alamat ?></a>
                </li>
                <li class="nav-item mb-2">
                   <span class="mr-1 text-light">Call:</span>
-                  <a href="tel:(405)555-0128" class="nav-link d-inline-block p-0 font-weight-normal">(405) 555-0128</a>
+                  <a href="tel:<?= $kontak ?>" class="nav-link d-inline-block p-0 font-weight-normal"><?= $kontak ?></a>
                </li>
                <li class="nav-item mb-2">
                   <span class="mr-1 text-light">Email:</span>
-                  <a href="mailto:hello@example.com" class="nav-link d-inline-block p-0 font-weight-normal">hello@example.com</a>
+                  <a href="mailto:<?= $email ?>" class="nav-link d-inline-block p-0 font-weight-normal"><?= $email ?></a>
                </li>
             </ul>
          </div>

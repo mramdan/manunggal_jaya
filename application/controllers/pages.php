@@ -33,12 +33,9 @@ class Pages extends CI_Controller
          'youtube' => $this->pages->get_sosmed('YouTube'),
 
          'name' => $this->pages->get_profile('nama_perusahaan'),
-         'service' => $this->pages->get_profile('service'),
+         'description' => $this->pages->get_profile('description'),
          'alamat' => $this->pages->get_profile('alamat'),
-         'produk' => $this->pages->get_product(),
          'email' => $this->pages->get_profile('email'),
-         'addres' => $this->pages->get_profile('alamat'),
-
 
          // Content
          'hero' => $this->pages->get_hero(),
@@ -48,9 +45,8 @@ class Pages extends CI_Controller
 
       ];
       $this->load->view('layout/header', $data);
-      // $this->load->view('layout/navbar');
       $this->load->view('pages/home_v', $data);
-      $this->load->view('layout/footer');
+      $this->load->view('layout/footer', $data);
    }
 
 

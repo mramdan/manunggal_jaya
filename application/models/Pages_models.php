@@ -34,7 +34,7 @@ class Pages_models extends CI_Model
 
    public function get_testimoni()
    {
-      $query = $this->db->query('select * from testimoni');
+      $query = $this->db->query('select * from testimoni order by id_testi desc limit 4');
 
       $data = array();
       foreach ($query->result() as $row) {
