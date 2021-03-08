@@ -182,13 +182,6 @@
       <iframe src="http://www.googletagmanager.com/ns.html?id=GTM-WKV3GT5" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
    </noscript> -->
 
-   <!-- Page loading spinner-->
-   <div class="cs-page-loading active">
-      <div class="cs-page-loading-inner">
-         <div class="cs-page-spinner"></div><span>Loading...</span>
-      </div>
-   </div>
-
    <!-- Main content-->
    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
    <main class="cs-page-wrapper position-relative">
@@ -229,7 +222,7 @@
             </div>
             <nav class="collapse navbar-collapse order-lg-2" id="navbarCollapse1">
                <ul class="navbar-nav mr-auto text-nowrap">
-                  <li class="nav-item">
+                  <li class="nav-item active">
                      <a class="nav-link" href="<?= base_url('pages/') ?>">Home</a>
                   </li>
                   <li class="nav-item">

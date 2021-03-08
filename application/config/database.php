@@ -78,17 +78,15 @@ $db['default'] = array(
 	// | -------------------------------------------------------------------
 	// | Local Database
 	// | -------------------------------------------------------------------
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'm_j',
-	// | -------------------------------------------------------------------
-	// | Hosting tapi free wkwkwk
-	// | -------------------------------------------------------------------
-	// 'hostname' => 'freedb.tech',
-	// 'username' => 'freedbtech_anbomeker',
-	// 'password' => 'manunggal123',
-	// 'database' => 'freedbtech_manunggal',
+	'hostname' => 'sonya.jagoanhosting.com',
+	'username' => 'bengke41_manunggal',
+	'password' => 'Manunggal123',
+	'database' => 'bengke41_db',
+
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => '',
+	// 'database' => 'm_j',
 
 
 	'dbdriver' => 'mysqli',

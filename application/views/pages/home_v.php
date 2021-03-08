@@ -17,7 +17,7 @@
 
         <?php foreach ($hero as $heros) : ?>
             <!-- Slider -->
-            <div class="d-flex min-vh-100 position-relative pt-6 bg-size-cover bg-position-center-top" style="background-image: url(data:<?= $heros['type'] ?>;base64,<?= $heros['image'] ?>);">
+            <div class="d-flex min-vh-100 position-relative pt-6 bg-size-cover bg-position-center-top" style="background-image: url(assets/uploads/hero/<?= $heros['gambar'] ?>);">
                 <div class="bg-overlay opacity-60"></div>
                 <div class="container d-flex align-items-center bg-overlay-content text-light">
                     <div class="mt-md-n6" style="max-width: 595px;">
@@ -276,82 +276,6 @@
 <!-- Shaped bg -->
 <div class="bg-secondary">
 
-
-    <!-- Brands -->
-    <!-- <section class="container mt-md-4 pt-lg-6 py-5 px-0">
-        <h2 class="h1 mb-5 pb-md-3 text-center">Supported by 12+ partners</h2>
-
-        <div class="cs-carousel">
-            <div class="cs-carousel-inner" data-carousel-options='{
-              "nav": false,
-              "controls": false,
-              "autoplay": true,
-              "autoplayTimeout": 4000,
-              "responsive": {
-                "0": {
-                  "items": 2
-                },
-                "576": {
-                  "items": 3
-                },
-                "768": {
-                  "items": 4
-                },
-                "992": {
-                  "items": 5
-                },
-                "1200": {
-                  "items": 6
-                }
-              }
-            }'>
-                <div class="px-3 text-center">
-                    <a href="#" class="cs-swap-image">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/logo/skema-floor.svg" class="cs-swap-to" width="120" alt="Brand logo hover">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/logo/skema-floor-g.svg" class="cs-swap-from" width="120" alt="Brand logo">
-                    </a>
-                </div>
-                <div class="px-3 text-center">
-                    <a href="#" class="cs-swap-image">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/logo/factory-glass.svg" class="cs-swap-to" width="120" alt="Brand logo hover">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/logo/factory-glass-g.svg" class="cs-swap-from" width="120" alt="Brand logo">
-                    </a>
-                </div>
-                <div class="px-3 text-center">
-                    <a href="#" class="cs-swap-image">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/logo/numark.svg" class="cs-swap-to" width="120" alt="Brand logo hover">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/logo/numark-g.svg" class="cs-swap-from" width="120" alt="Brand logo">
-                    </a>
-                </div>
-                <div class="px-3 text-center">
-                    <a href="#" class="cs-swap-image">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/logo/edwin.svg" class="cs-swap-to" width="120" alt="Brand logo hover">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/logo/edwin-g.svg" class="cs-swap-from" width="120" alt="Brand logo">
-                    </a>
-                </div>
-                <div class="px-3 text-center">
-                    <a href="#" class="cs-swap-image">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/logo/eiffage-construction.svg" class="cs-swap-to" width="120" alt="Brand logo hover">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/logo/eiffage-construction-g.svg" class="cs-swap-from" width="120" alt="Brand logo">
-                    </a>
-                </div>
-                <div class="px-3 text-center">
-                    <a href="#" class="cs-swap-image">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/logo/royal-floor-mats.svg" class="cs-swap-to" width="120" alt="Brand logo hover">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/logo/royal-floor-mats-g.svg" class="cs-swap-from" width="120" alt="Brand logo">
-                    </a>
-                </div>
-                <div class="px-3 text-center">
-                    <a href="#" class="cs-swap-image">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/logo/lotte.svg" class="cs-swap-to" width="120" alt="Brand logo hover">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/logo/lotte-g.svg" class="cs-swap-from" width="120" alt="Brand logo">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-
     <!-- Testimonials -->
     <section class="container mt-md-4 pt-lg-6 pt-5">
         <div class="row pt-3 pt-lg-0">
@@ -388,7 +312,7 @@
                         <?php foreach ($testimoni as $tesi) : ?>
                             <!-- Carousel testimonial item -->
                             <blockquote class="px-1 text-md-left text-center">
-                                <img class="mb-4 rounded-circle" src="<?= base_url() ?>assets/uploads/testimoni/<?= $tesi['foto'] ?>" width="72" alt="Author">
+                                <img class="mb-4 rounded-circle" src="<?= base_url() ?>assets/uploads/testimoni/<?= $tesi['foto'] ?>" width="72" alt="Testimoni">
                                 <p><?= $tesi['komentar'] ?>. </p>
                                 <footer>
                                     <h3 class="h6 mb-0"><?= $tesi['nama_pelanggan'] ?></h3>
@@ -401,7 +325,7 @@
                 </div>
             </div>
             <div class="col-lg-5 col-md-6 d-md-block d-none mb-md-n5 ml-lg-auto" data-jarallax-element="15" data-disable-parallax-down="lg">
-                <img class="rounded" src="<?= base_url() ?>assets/frontend/img/construction/testimonials/03.jpg" alt="Testimonials">
+                <img class="rounded mr-4" src="<?= base_url() ?>assets/frontend/img/sophialatchuba.jpg" alt="Testimonials">
             </div>
         </div>
     </section>

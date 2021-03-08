@@ -48,11 +48,8 @@
                 $('[name="id_hero"]').val(data.id_hero);
                 $('[name="judul"]').val(data.judul);
                 $('[name="deskripsi"]').val(data.deskripsi);
-                $('[name="urutan"]').val(data.urutan);
 
-                $('[name="old_image"]').val(data.image);
-                $('[name="old_type"]').val(data.type);
-
+                $('[name="old_image"]').val(data.gambar);
                 $('#modal_form_hero').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Edit Hero/Slider'); // Set Title to Bootstrap modal title
 

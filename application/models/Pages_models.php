@@ -14,10 +14,7 @@ class Pages_models extends CI_Model
             'id_hero' => $row->id_hero,
             'judul' => $row->judul,
             'deskripsi' => $row->deskripsi,
-            'urutan' => $row->urutan,
-            'is_active' => $row->is_active,
-            'image' => $row->image,
-            'type' => $row->type,
+            'gambar' => $row->gambar,
          );
       }
       return $data;
@@ -73,9 +70,6 @@ class Pages_models extends CI_Model
       return $this->db->get_where('ref_produk', ['nama_produk' => $id])->row_array();
    }
 
-
-
-
    public function get_blog()
    {
       $query = $this->db->query('select * from blog LEFT JOIN ref_image ON blog.id_gambar=ref_image.id_image');
@@ -92,9 +86,6 @@ class Pages_models extends CI_Model
       return $data;
    }
 
-
-
-   //footer
 
    public function get_sosmed($sosmed)
    {

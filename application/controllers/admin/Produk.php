@@ -126,7 +126,7 @@ class Produk extends CI_Controller
             if (!empty($_FILES["foto"]["name"])) {
 
                 $config['upload_path'] = './assets/uploads/produk/';
-                $config['file_name'] = $this->input->post('nama_produk');
+                $config['file_name'] = $this->input->post('nama_produk') . time();
                 $config['allowed_types'] = 'gif|jpg|png';
                 $config['overwrite'] = true;
                 $config['max_size'] = 3024; // 1MB

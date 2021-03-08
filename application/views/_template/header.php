@@ -9,10 +9,9 @@
     <!-- Begin SEO tag -->
     <title> <?php echo $judul; ?> </title>
     <meta property="og:title" content="Dashboard">
-    <meta property="og:site_name" content="SIPMAS - Desa Talagamurni Sukabumi">
+    <meta property="og:site_name" content="Bengkel Las Manunggal Jaya">
 
     <!-- FAVICONS -->
-    <link rel="apple-touch-icon" sizes="144x144" href="<?= base_url() ?>assets/backend/apple-touch-icon.png">
     <link rel="shortcut icon" href="<?= base_url() ?>assets/images/icon/favicon.ico">
     <meta name="theme-color" content="#3063A0">
     <!-- End FAVICONS -->

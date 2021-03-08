@@ -24,7 +24,6 @@
                                 <div class="modal-body">
                                     <input type="hidden" id="id_hero" name="id_hero">
                                     <input type="hidden" id="old_image" name="old_image">
-                                    <input type="hidden" id="old_type" name="old_type">
                                     <div class="form-row">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -38,12 +37,13 @@
                                                 <textarea name="deskripsi" id="deskripsi" class="form-control" placeholder="Input Deskripsi Hero" required></textarea>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <!-- <div class="col-md-3">
                                             <div class="form-group">
                                                 <input type="number" name="urutan" id="urutan" class="form-control" placeholder="Urutan" required>
                                             </div>
-                                        </div>
-                                        <div class="col-md-9">
+                                        </div> -->
+                                        <div class="col-md-12">
+                                            <label for="deskripsi">Upload Gambar</label>
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input" name="image" id="image" accept="image/x-png,image/gif,image/jpeg" />
                                                 <label class="custom-file-label" for="image">Pilih file</label>

@@ -123,6 +123,16 @@
 
 <!-- Main theme script-->
 <script src="<?= base_url() ?>assets/frontend/js/theme.min.js"></script>
+<script type="text/javascript">
+   $(function() {
+      $('.menu a').filter(function() {
+         return this.href == location.href
+      }).parent().addClass('has-active').siblings().removeClass('has-active')
+      $('.menu a').click(function() {
+         $(this).parent().addClass('has-active').siblings().removeClass('has-active')
+      })
+   })
+</script>
 </body>
 
 </html>

@@ -13,7 +13,7 @@
                     <!-- toggle aside menu -->
                     <button class="hamburger hamburger-squeeze mr-2" type="button" data-toggle="aside-menu" aria-label="toggle aside menu"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button> <!-- /toggle aside menu -->
                     <a class="navbar-brand" href="<?= base_url('admin/dashboard') ?>">
-                        <img src="<?= base_url() ?>assets/images/logo-bengkel-las.png" alt="" width="80px">
+                        <h4 class="navbar-brand mt-2">Admin</h4>
                     </a>
                 </div><!-- /.top-bar-brand -->
                 <!-- .top-bar-list -->

@@ -48,7 +48,7 @@ class Set_hero extends CI_Controller
                 //             </li>';
                 $data[] = '<li class="list-group-item align-items-center drag-handle">
                                 <div class="list-group-item-figure">
-                                    <a href="data:' . $dd->type . ';base64,' . $dd->image . '" class="user-avatar user-avatar-xl"><img src="data:' . $dd->type . ';base64,' . $dd->image . '" alt=""></a>
+                                    <a href="' . base_url() . 'assets/uploads/hero/' . $dd->gambar . '" class="user-avatar user-avatar-xl"><img src="' . base_url() . 'assets/uploads/hero/' . $dd->gambar . '" alt=""></a>
                                 </div>
                                 <div class="list-group-item-body">
                                     <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
@@ -69,50 +69,14 @@ class Set_hero extends CI_Controller
         }
     }
 
-    public function ajax_add()
-    {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-            $config['upload_path'] = './assets/uploads/';
-            $config['allowed_types'] = 'gif|jpg|png';
-            $config['overwrite'] = true;
-            $config['max_size'] = 3024; // 1MB
-
-            $this->load->library('upload', $config);
-            $this->upload->initialize($config);
-            if (!$this->upload->do_upload('image')) {
-                $insert['status'] = '01';
-                $insert['type'] = 'error';
-                $insert['mess'] = 'Gagal Upload Gambar !<br> Gambar tidak boleh lebih dari <b>3 MB</b> !';
-                echo json_encode($insert);
-            } else {
-                $image_data = $this->upload->data();
-                $imgdata = file_get_contents($image_data['full_path']);
-                $file_encode = base64_encode($imgdata);
-
-                $data = array(
-                    'judul' => $this->input->post('judul'),
-                    'deskripsi' => $this->input->post('deskripsi'),
-                    'urutan' => $this->input->post('urutan'),
-                    'image' => $file_encode,
-                    'type' => $image_data['file_type'],
-                );
-                // hapus file fisik
-                unlink($image_data['full_path']);
-
-                $insert = $this->hero_m->save($data);
-                echo json_encode($insert);
-            }
-        }
-    }
-
     public function ajax_update()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if (!empty($_FILES["image"]["name"])) {
 
-                $config['upload_path'] = './assets/uploads/';
+                $config['upload_path'] = './assets/uploads/hero/';
+                $config['file_name'] =  time();
                 $config['allowed_types'] = 'gif|jpg|png';
                 $config['overwrite'] = true;
                 $config['max_size'] = 1024; // 1MB
@@ -120,19 +84,36 @@ class Set_hero extends CI_Controller
                 $this->load->library('upload', $config);
                 $this->upload->initialize($config);
                 if (!$this->upload->do_upload('image')) {
-                    $error = array('error' => $this->upload->display_errors());
-                    print_r($error);
+                    $insert['status'] = '01';
+                    $insert['type'] = 'error';
+                    $insert['mess'] = 'Gagal Upload Gambar !<br> Gambar tidak boleh lebih dari <b>1 MB</b> !';
                 } else {
                     $image_data = $this->upload->data();
-                    $imgdata = file_get_contents($image_data['full_path']);
-                    $file_encode = base64_encode($imgdata);
-                    unlink($image_data['full_path']);
+                    //Compress Image
+                    // $config['image_library'] = 'gd2';
+                    // $config['source_image'] = './assets/uploads/hero/' . $image_data['file_name'];
+                    // $config['create_thumb'] = FALSE;
+                    // $config['maintain_ratio'] = FALSE;
+                    // $config['quality'] = '70%';
+                    // // $config['width'] = 600;
+                    // // $config['height'] = 400;
+                    // $config['new_image'] = './assets/uploads/hero/' . $image_data['file_name'];
+                    // $this->load->library('image_lib', $config);
+                    // $this->image_lib->resize();
+
+                    $path = 'assets/uploads/hero/';
+                    $filename = $this->input->post('old_image');
+                    //hapus file
+                    if (file_exists($path . $filename)) {
+                        unlink($path . $filename);
+                    }
+
+                    $gambar = $image_data['file_name'];
                     $data = array(
                         'judul' => $this->input->post('judul'),
                         'deskripsi' => $this->input->post('deskripsi'),
                         'urutan' => $this->input->post('urutan'),
-                        'image' => $file_encode,
-                        'type' => $image_data['file_type'],
+                        'gambar' => $gambar,
                     );
                 }
             } else {
