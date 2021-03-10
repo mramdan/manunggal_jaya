@@ -48,7 +48,7 @@ class Pages_models extends CI_Model
 
    public function get_kategori()
    {
-      $query = $this->db->query('select * from ref_kategori order by id_kategori desc');
+      $query = $this->db->query('select * from ref_kategori');
 
       $data = array();
       foreach ($query->result() as $row) {

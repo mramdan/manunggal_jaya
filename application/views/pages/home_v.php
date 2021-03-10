@@ -126,7 +126,7 @@
 <section class="mt-md-n6 mt-n5 pt-md-6 pt-5 bg-secondary">
     <div class="container mt-4 pt-lg-6 py-5">
         <h2 class="h1 text-center">Pelayanan jasa kami</h2>
-        <p class="mb-lg-5 pb-3 font-size-lg text-muted text-center">Biro Jasa Bengkel Las Manunggal Jaya adalah raksasa interior dengan berbagai layanan jasa.</p>
+        <p class="mb-lg-5 pb-3 font-size-lg text-muted text-center">Biro Jasa Bengkel Las Manunggal Jaya adalah raksasa interior dan eksterior dengan berbagai layanan jasa.</p>
         <div class="row mb-lg-5 mb-4">
             <div class="col-lg-3 col-sm-6 mb-sm-grid-gutter mb-3">
                 <a class="cs-image-fade h-100 card card-hover box-shadow py-3" href="<?= base_url() ?>" style="background-image: url(<?= base_url() ?>assets/frontend/img/construction/home/services/01.jpg);">
@@ -212,14 +212,14 @@
               }
             }
           }'>
-            <?php foreach ($kategori as $kats) : ?>
+            <?php foreach ($kategori as $kategories) : ?>
                 <article class="mb-5 pt-2 pb-sm-3 pb-2">
-                    <a class="cs-portfolio-card-slide" href="<?= base_url('pages/detail_produk/') ?>">
+                    <a class="cs-portfolio-card-slide" href="<?= base_url() ?>pages/kategori/<?= $kategories['deskripsi'] ?>">
                         <div class="cs-portfolio-card-img">
-                            <img class="bg-size-cover" src="<?= base_url() ?>assets/uploads/produk/kategori/<?= $kats['foto'] ?>" alt="Card image">
+                            <img class="bg-size-cover bg-position-center-top" src="<?= base_url() ?>assets/uploads/produk/kategori/<?= $kategories['foto'] ?>" alt="<?= $kategories['deskripsi'] ?>">
                         </div>
                         <div class="cs-portfolio-card-body">
-                            <h3 class="cs-portfolio-card-title"><?= $kats['deskripsi'] ?></h3>
+                            <h3 class="cs-portfolio-card-title"><?= $kategories['deskripsi'] ?></h3>
                             <div class="btn btn-outline-primary text-uppercase">View project</div>
                         </div>
                     </a>
@@ -229,7 +229,7 @@
     </div>
     <h4 class="h3 d-flex flex-md-row flex-column align-items-center justify-content-center pt-sm-0 pt-4 text-center">
         Jelajahi semua pekerjaan kami
-        <a href="<?= base_url('pages/produk/') ?>" class="btn btn-lg btn-primary mt-md-0 mt-sm-4 mt-3 ml-md-5 text-uppercase">View portfolio</a>
+        <a href="<?= base_url('pages/produk') ?>" class="btn btn-lg btn-primary mt-md-0 mt-sm-4 mt-3 ml-md-5 text-uppercase">View portfolio</a>
     </h4>
 </section>
 
@@ -273,11 +273,11 @@
                         <?php foreach ($testimoni as $tesi) : ?>
                             <!-- Carousel testimonial item -->
                             <blockquote class="px-1 text-md-left text-center">
-                                <img class="mb-4 rounded-circle" src="<?= base_url() ?>assets/uploads/testimoni/<?= $tesi['foto'] ?>" width="72" alt="Testimoni">
+                                <img class="mb-4 bg-size-cover bg-position-center-top rounded-circle" src="<?= base_url() ?>assets/uploads/testimoni/<?= $tesi['foto'] ?>" width="60px" height="60px" alt="Testimoni">
                                 <p><?= $tesi['komentar'] ?>. </p>
                                 <footer>
                                     <h3 class="h6 mb-0"><?= $tesi['nama_pelanggan'] ?></h3>
-                                    <span class="font-size-sm text-muted">Position, Company name</span>
+                                    <!-- <span class="font-size-sm text-muted">Position, Company name</span> -->
                                 </footer>
                             </blockquote>
                         <?php endforeach ?>
