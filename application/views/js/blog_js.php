@@ -45,14 +45,14 @@
 
          // Load data for the table's content from an Ajax source
          "ajax": {
-            "url": "<?php echo site_url('admin/produk/ajax_list') ?>",
+            "url": "<?php echo site_url('admin/blog/ajax_list') ?>",
             "type": "POST",
             "dataType": "json",
          },
 
          //Set column definition initialisation properties.
          "columnDefs": [{
-               "targets": [4], //last column
+               "targets": [3], //last column
                "orderable": false, //set not orderable
             },
             // {
@@ -67,37 +67,34 @@
 
    function add_new() {
       save_method = 'add';
-      $('#form_produk')[0].reset(); // reset form on modals
+      $('#form_blog')[0].reset(); // reset form on modals
       $('#image').empty();
-      $('#modal_form_produk').modal('show'); // show bootstrap modal
-      $('.modal-title').text('Tambah Produk'); // Set Title to Bootstrap modal title
+      $('#modal_form_blog').modal('show'); // show bootstrap modal
+      $('.modal-title').text('Tambah blog'); // Set Title to Bootstrap modal title
    }
 
    function edit(id) {
       save_method = 'update';
-      $('#form_produk')[0].reset(); // reset form on modals
+      $('#form_blog')[0].reset(); // reset form on modals
       $('#image').empty();
-      // $('#modal_form_produk').modal('show');
+      // $('#modal_form_blog').modal('show');
 
 
       //Ajax Load data from ajax
       $.ajax({
-         url: "<?php echo site_url('admin/produk/ajax_edit/') ?>" + id,
+         url: "<?php echo site_url('admin/blog/ajax_edit/') ?>" + id,
          type: "GET",
          dataType: "JSON",
          success: function(data) {
 
             // console.log('edit', data);
 
-            $('[name="id_produk"]').val(data.id_produk);
-            $('[name="nama_produk"]').val(data.nama_produk);
-            $('[name="deskripsi"]').val(data.deskripsi).trigger('change');
-            $('[name="harga"]').val(data.harga);
-            $('[name="kategori"]').val(data.kategori);
-
+            $('[name="id_blog"]').val(data.id_blog);
+            $('[name="judul_blog"]').val(data.judul_blog);
+            $('[name="konten"]').val(data.konten).trigger('change');
             $('[name="old_foto"]').val(data.foto);
 
-            $('#modal_form_produk').modal('show'); // show bootstrap modal when complete loaded
+            $('#modal_form_blog').modal('show'); // show bootstrap modal when complete loaded
             $('.modal-title').text('Edit Hero/Slider'); // Set Title to Bootstrap modal title
 
          },
@@ -112,19 +109,19 @@
       // $('#modal_detail').empty();
       //Ajax Load data from ajax
       $.ajax({
-         url: "<?php echo site_url('admin/produk/ajax_edit/') ?>" + id,
+         url: "<?php echo site_url('admin/blog/ajax_edit/') ?>" + id,
          type: "GET",
          dataType: "JSON",
          success: function(data) {
 
             // console.log('edit', data);
-            var nama = data.nama_produk;
+            var nama = data.nama_blog;
             $('#title').val(nama);
-            $('#foto_produk').attr('src', '<?= base_url('assets/uploads/produk/') ?>' + data.foto);
+            $('#foto_blog').attr('src', '<?= base_url('assets/uploads/blog/') ?>' + data.foto);
             $('#detai_desc').html(data.deskripsi);
 
             $('#modal_detail').modal('show'); // show bootstrap modal when complete loaded
-            $('.modal-title').text('Detail Produk ' + nama); // Set Title to Bootstrap modal title
+            $('.modal-title').text('Detail blog ' + nama); // Set Title to Bootstrap modal title
 
          },
          error: function(jqXHR, textStatus, errorThrown) {
@@ -137,12 +134,12 @@
       if (confirm('Apakah Anda yakin menghapus data ini ?')) {
          // ajax delete data to database
          $.ajax({
-            url: "<?php echo site_url('admin/produk/ajax_delete') ?>/" + id,
+            url: "<?php echo site_url('admin/blog/ajax_delete') ?>/" + id,
             type: "POST",
             dataType: "JSON",
             success: function(data) {
                if (data.status == '00') {
-                  // reload_list_produk();
+                  // reload_list_blog();
                   reload_table();
                   showAlert(data.type, data.mess);
                } else {
@@ -159,11 +156,11 @@
 
 
    // function of form submitted
-   $('#form_produk').submit(function(e) {
+   $('#form_blog').submit(function(e) {
       // alert("Form submitted!");
       e.preventDefault();
       // Get form
-      var form = $('#form_produk')[0];
+      var form = $('#form_blog')[0];
 
       // Create an FormData object
       //var data = new FormData(form);
@@ -171,7 +168,7 @@
       //var data = $(this).serialize();
 
       if ($('[name="image"]').val() == '') {
-         alert('Pilih Foto Produk Yang Akan di Upload !');
+         alert('Pilih Foto blog Yang Akan di Upload !');
          return false;
       }
 
@@ -179,13 +176,13 @@
       $('#btnSave').attr('disabled', true); //set button disable 
 
       // ajax adding data to database
-      // console.log($('#form_produk').serialize());
+      // console.log($('#form_blog').serialize());
       var url;
 
       if (save_method == 'add') {
-         url = "<?php echo site_url('admin/produk/ajax_add') ?>";
+         url = "<?php echo site_url('admin/blog/ajax_add') ?>";
       } else {
-         url = "<?php echo site_url('admin/produk/ajax_update') ?>";
+         url = "<?php echo site_url('admin/blog/ajax_update') ?>";
       }
 
       $.ajax({
@@ -204,7 +201,7 @@
             {
                reload_table();
                showAlert(data.type, data.mess);
-               $('#modal_form_produk').modal('hide');
+               $('#modal_form_blog').modal('hide');
             } else {
                reload_table();
                showAlert(data.type, data.mess);

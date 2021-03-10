@@ -9,7 +9,7 @@ class Blog extends CI_Controller
       if (!$this->ion_auth->logged_in()) {
          redirect('auth');
       }
-      $this->load->model('Produk_model', 'produk_m');
+      $this->load->model('blog_model', 'blog_m');
       $this->user = $this->ion_auth->user()->row();
    }
 
@@ -33,9 +33,8 @@ class Blog extends CI_Controller
    public function ajax_list()
    {
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-         $id_skk = $this->input->post('id_skk');
 
-         $list = $this->produk_m->get_datatables($id_skk);
+         $list = $this->blog_m->get_datatables();
          $data = array();
          $no = $_POST['start'];
 
@@ -44,20 +43,20 @@ class Blog extends CI_Controller
             $row = array();
 
             $row[] = $no;
-            $row[] = '<a href="javascript:void(0)" onclick="detail(' . "'" . $dd->id_produk . "'" . ')">' . $dd->nama_produk . ' <i class="fas fa-external-link-alt"></i></a>';
-            $row[] = $dd->kategori;
-            $row[] = 'Rp. ' . number_format($dd->harga);
+            $row[] = '<a href="javascript:void(0)" onclick="detail(' . "'" . $dd->id_blog . "'" . ')">' . $dd->judul_blog . ' <i class="fas fa-external-link-alt"></i></a>';
+            $row[] = $dd->konten;
 
-            $row[] = '<a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" onclick="edit(' . "'" . $dd->id_produk . "'" . ')"><i class="fa fa-pencil-alt"></i></a>
-                          <a class="btn btn-sm btn-icon btn-secondary" href="javascript:void(0)" onclick="delete_data(' . "'" . $dd->id_produk . "'" . ')"><i class="far fa-trash-alt text-red"></i></a>';
+
+            $row[] = '<a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" onclick="edit(' . "'" . $dd->id_blog . "'" . ')"><i class="fa fa-pencil-alt"></i></a>
+                          <a class="btn btn-sm btn-icon btn-secondary" href="javascript:void(0)" onclick="delete_data(' . "'" . $dd->id_blog . "'" . ')"><i class="far fa-trash-alt text-red"></i></a>';
 
             $data[] = $row;
          }
 
          $output = array(
             "draw" => $_POST['draw'],
-            "recordsTotal" => $this->produk_m->count_all($id_skk),
-            "recordsFiltered" => $this->produk_m->count_filtered($id_skk),
+            "recordsTotal" => $this->blog_m->count_all(),
+            "recordsFiltered" => $this->blog_m->count_filtered(),
             "data" => $data,
          );
       } else {
@@ -75,9 +74,9 @@ class Blog extends CI_Controller
    {
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-         $config['upload_path'] = './assets/uploads/produk/';
+         $config['upload_path'] = './assets/uploads/blog/';
          $config['allowed_types'] = 'gif|jpg|png';
-         $config['file_name'] = $this->input->post('nama_produk') . time();
+         $config['file_name'] = $this->input->post('judul_blog') . time();
          $config['overwrite'] = true;
          $config['max_size'] = 3024; // 1MB
 
@@ -106,14 +105,12 @@ class Blog extends CI_Controller
             // $this->image_lib->watermark();
 
             $data = array(
-               'nama_produk' => $this->input->post('nama_produk'),
-               'kategori' => $this->input->post('kategori'),
-               'deskripsi' => $this->input->post('deskripsi'),
-               'harga' => $this->input->post('harga'),
+               'judul_blog' => $this->input->post('judul_blog'),
+               'konten' => $this->input->post('konten'),
                'foto' => $image_data['file_name'],
             );
 
-            $insert = $this->produk_m->save($data);
+            $insert = $this->blog_m->save($data);
             echo json_encode($insert);
          }
       }
@@ -125,8 +122,8 @@ class Blog extends CI_Controller
 
          if (!empty($_FILES["foto"]["name"])) {
 
-            $config['upload_path'] = './assets/uploads/produk/';
-            $config['file_name'] = $this->input->post('nama_produk');
+            $config['upload_path'] = './assets/uploads/blog/';
+            $config['file_name'] = time();
             $config['allowed_types'] = 'gif|jpg|png';
             $config['overwrite'] = true;
             $config['max_size'] = 3024; // 1MB
@@ -141,31 +138,27 @@ class Blog extends CI_Controller
             } else {
                $image_data = $this->upload->data();
                //direktori file
-               $path = 'assets/uploads/produk/';
+               $path = 'assets/uploads/blog/';
                $filename = $this->input->post('foto_old');
                //hapus file
                if (file_exists($path . $filename)) {
                   unlink($path . $filename);
                }
                $data = array(
-                  'nama_produk' => $this->input->post('nama_produk'),
-                  'kategori' => $this->input->post('kategori'),
-                  'deskripsi' => $this->input->post('deskripsi'),
-                  'harga' => $this->input->post('harga'),
+                  'judul_blog' => $this->input->post('judul_blog'),
+                  'konten' => $this->input->post('konten'),
                   'foto' => $image_data['file_name'],
                );
             }
          } else {
             $data = array(
-               'nama_produk' => $this->input->post('nama_produk'),
-               'kategori' => $this->input->post('kategori'),
-               'deskripsi' => $this->input->post('deskripsi'),
-               'harga' => $this->input->post('harga'),
+               'judul_blog' => $this->input->post('judul_blog'),
+               'konten' => $this->input->post('konten'),
                'foto' => $this->input->post('old_foto'),
             );
          }
 
-         $update = $this->produk_m->update(array('id_hero' => $this->input->post('id_hero')), $data);
+         $update = $this->blog_m->update(array('id_blog' => $this->input->post('id_blog')), $data);
          echo json_encode($update);
       }
    }
@@ -173,14 +166,14 @@ class Blog extends CI_Controller
    public function ajax_delete($id)
    {
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-         echo $this->produk_m->delete_by_id($id);
+         echo $this->blog_m->delete_by_id($id);
       }
    }
 
    public function ajax_edit($id)
    {
       if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-         $data = $this->produk_m->get_by_id($id);
+         $data = $this->blog_m->get_by_id($id);
          echo json_encode($data);
       }
    }

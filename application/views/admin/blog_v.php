@@ -20,40 +20,33 @@
                </div><!-- /title and toolbar -->
             </header>
             <!-- Modal Here -->
-            <div class="modal fade" id="modal_form_produk" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal fade" id="modal_form_blog" tabindex="-1" role="dialog" aria-hidden="true">
                <div class="modal-dialog modal-lg" role="document">
                   <div class="modal-content">
                      <div class="modal-header">
                         <h6 id="title" class="modal-title"> </h6>
                      </div>
-                     <form action="" id="form_produk" enctype="multipart/form-data">
+                     <form action="" id="form_blog" enctype="multipart/form-data">
                         <div class="modal-body">
-                           <input type="hidden" id="id_hero" name="id_produk">
+                           <input type="hidden" id="id_blog" name="id_blog">
                            <input type="hidden" id="old_foto" name="old_foto">
                            <div class="form-row">
                               <div class="col-md-12">
                                  <div class="form-group">
-                                    <label for="judul_artikel">Judul Artikel</label>
-                                    <input type="text" id="judul_artikel" name="judul_artikel" class="form-control" placeholder="Input Nama Produk" required>
+                                    <label for="judul_blog">Judul Blog</label>
+                                    <input type="text" id="judul_blog" name="judul_blog" class="form-control" placeholder="Input Nama blog" required>
                                  </div>
                               </div>
                               <div class="col-md-12">
                                  <div class="form-group">
-                                    <label for="deskripsi">Konten</label>
-                                    <textarea name="deskripsi" data-toggle="summernote" data-placeholder="Write here..." class="form-control" placeholder="Input Deskripsi Produk" required></textarea>
+                                    <label for="konten">Konten</label>
+                                    <textarea name="konten" data-toggle="summernote" data-placeholder="Write here..." class="form-control" placeholder="Input konten blog" required></textarea>
                                  </div>
                               </div>
-                              <div class="col-md-12">
-                                 <div class="form-group">
-                                    <label for="kategori">Komentar</label>
-                                    <input type="text" name="kategori" id="kategori" class="form-control" placeholder="Input Kategori Produk" required>
-                                 </div>
-                              </div>
-                              <div class="col-md-12">
 
-                              </div>
+
                               <div class="col-md-12">
-                                 <label for="harga">Foto Produk</label>
+                                 <label for="foto">Foto blog</label>
                                  <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="foto" id="foto" accept="image/x-png,image/gif,image/jpeg" />
                                     <label class="custom-file-label" for="foto">Upload Foto</label>
@@ -79,7 +72,7 @@
                      <div class="modal-body">
                         <div class="row">
                            <div class="col-md-5 mb-2">
-                              <img id="foto_produk" class="img-fluid">
+                              <img id="foto_blog" class="img-fluid">
                            </div>
                            <div class="col-md-7">
                               <div id="detai_desc"></div>
@@ -97,7 +90,7 @@
 
             <div class="page-section">
                <div class="card card-fluid">
-                  <div class="card-header"> Data Produk </div>
+                  <div class="card-header"> Data Blog </div>
                   <div class="card-body">
                      <div class="form-group">
 
@@ -105,7 +98,7 @@
                            <button id="clear-search" type="button" class="close" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times-circle"></i></span></button>
                            <div class="input-group-prepend">
                               <span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span>
-                           </div><input id="table-search" type="text" class="form-control" placeholder="Cari produk">
+                           </div><input id="table-search" type="text" class="form-control" placeholder="Cari blog">
                         </div>
                      </div>
 
@@ -113,9 +106,9 @@
                         <thead>
                            <tr>
                               <th>No</th>
-                              <th> Nama Produk </th>
-                              <th> Kategori </th>
-                              <th> Harga </th>
+                              <th> Judul Blog </th>
+                              <th> Konten </th>
+
                               <th style="width:100px; min-width:100px;"> &nbsp; </th>
                            </tr>
                         </thead>

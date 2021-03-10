@@ -78,15 +78,15 @@ $db['default'] = array(
 	// | -------------------------------------------------------------------
 	// | Local Database
 	// | -------------------------------------------------------------------
-	'hostname' => 'sonya.jagoanhosting.com',
-	'username' => 'bengke41_manunggal',
-	'password' => 'Manunggal123',
-	'database' => 'bengke41_db',
+	// 'hostname' => 'sonya.jagoanhosting.com',
+	// 'username' => 'bengke41_manunggal',
+	// 'password' => 'Manunggal123',
+	// 'database' => 'bengke41_db',
 
-	// 'hostname' => 'localhost',
-	// 'username' => 'root',
-	// 'password' => '',
-	// 'database' => 'm_j',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'm_j',
 
 
 	'dbdriver' => 'mysqli',

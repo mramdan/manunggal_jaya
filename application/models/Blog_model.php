@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Produk_model extends CI_Model
+class Blog_model extends CI_Model
 {
-    var $table = 'ref_produk';
-    var $column_order = array('', 'nama_produk', 'harga', 'kategori');
-    var $column_search = array('nama_produk', 'harga', 'kategori');
-    var $order = array('id_produk' => 'desc'); // default order 
+    var $table = 'blog';
+    var $column_order = array('', 'judul_blog', 'konten', 'foto');
+    var $column_search = array('judul_blog', 'konten', 'foto');
+    var $order = array('id_blog' => 'desc'); // default order 
 
     private function _get_datatables_query()
     {
@@ -90,16 +90,16 @@ class Produk_model extends CI_Model
 
     public function delete_by_id($id)
     {
-        $q = $this->db->query("select foto from $this->table where id_produk = $id")->row();
+        $q = $this->db->query("select foto from $this->table where id_blog = $id")->row();
         $foto = $q->foto;
 
         // var_dump($foto);
-        $path = 'assets/uploads/produk/';
+        $path = 'assets/uploads/blog/';
         //hapus file
         if (file_exists($path . $foto)) {
             unlink($path . $foto);
         }
-        $this->db->where('id_produk', $id);
+        $this->db->where('id_blog', $id);
         $r = $this->db->delete($this->table);
 
         if ($r) {
@@ -118,7 +118,7 @@ class Produk_model extends CI_Model
     {
         $this->db->start_cache();
         $this->db->from($this->table);
-        $this->db->where('id_produk', $id);
+        $this->db->where('id_blog', $id);
         $this->db->stop_cache();
         $query = $this->db->get();
         $this->db->flush_cache();
