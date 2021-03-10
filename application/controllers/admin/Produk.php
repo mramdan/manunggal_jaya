@@ -107,7 +107,7 @@ class Produk extends CI_Controller
 
                 $data = array(
                     'nama_produk' => $this->input->post('nama_produk'),
-                    'kategori' => $this->input->post('kategori'),
+                    'id_kategori' => $this->input->post('id_kategori'),
                     'deskripsi' => $this->input->post('deskripsi'),
                     'harga' => $this->input->post('harga'),
                     'foto' => $image_data['file_name'],
@@ -149,7 +149,7 @@ class Produk extends CI_Controller
                     }
                     $data = array(
                         'nama_produk' => $this->input->post('nama_produk'),
-                        'kategori' => $this->input->post('kategori'),
+                        'id_kategori' => $this->input->post('id_kategori'),
                         'deskripsi' => $this->input->post('deskripsi'),
                         'harga' => $this->input->post('harga'),
                         'foto' => $image_data['file_name'],
@@ -158,7 +158,7 @@ class Produk extends CI_Controller
             } else {
                 $data = array(
                     'nama_produk' => $this->input->post('nama_produk'),
-                    'kategori' => $this->input->post('kategori'),
+                    'id_kategori' => $this->input->post('id_kategori'),
                     'deskripsi' => $this->input->post('deskripsi'),
                     'harga' => $this->input->post('harga'),
                     'foto' => $this->input->post('old_foto'),
@@ -174,6 +174,13 @@ class Produk extends CI_Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo $this->produk_m->delete_by_id($id);
+        }
+    }
+
+    public function get_kategori()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            echo $this->produk_m->get_kategori();
         }
     }
 

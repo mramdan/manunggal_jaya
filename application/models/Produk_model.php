@@ -47,7 +47,8 @@ class Produk_model extends CI_Model
     {
 
         $this->_get_datatables_query();
-        $this->db->select("*", false);
+        $this->db->select("ref_produk.*,ref_kategori.deskripsi as kategori", false);
+        $this->db->join('ref_kategori', 'ref_produk.id_kategori=ref_kategori.id_kategori');
 
         if ($_POST['length'] != -1)
             $this->db->limit($_POST['length'], $_POST['start']);
@@ -59,7 +60,8 @@ class Produk_model extends CI_Model
     function count_filtered()
     {
         $this->_get_datatables_query();
-        $this->db->select("*", false);
+        $this->db->select("ref_produk.*,ref_kategori.deskripsi as kategori", false);
+        $this->db->join('ref_kategori', 'ref_produk.id_kategori=ref_kategori.id_kategori');
         $query = $this->db->get();
         return $query->num_rows();
     }
@@ -67,7 +69,8 @@ class Produk_model extends CI_Model
     public function count_all()
     {
         $this->_get_datatables_query();
-        $this->db->select("*", false);
+        $this->db->select("ref_produk.*,ref_kategori.deskripsi as kategori", false);
+        $this->db->join('ref_kategori', 'ref_produk.id_kategori=ref_kategori.id_kategori');
         return $this->db->count_all_results();
     }
 
@@ -138,5 +141,19 @@ class Produk_model extends CI_Model
             $res['mess'] = 'Gagal Update Data';
         }
         return $res;
+    }
+
+    public function get_kategori()
+    {
+
+        $query = $this->db->query("select * from ref_kategori");
+        $data = array();
+        foreach ($query->result() as $row) {
+            $data[] = array(
+                'id' => $row->id_kategori,
+                'nama' => $row->deskripsi,
+            );
+        }
+        return json_encode($data);
     }
 }

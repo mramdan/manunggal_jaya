@@ -45,8 +45,8 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="kategori">Kategori Produk</label>
-                                                <input type="text" name="kategori" id="kategori" class="form-control" placeholder="Input Kategori Produk" required>
+                                                <label for="id_kategori">Kategori Produk</label>
+                                                <select name="id_kategori" id="id_kategori" class="form-control"></select>
                                             </div>
                                         </div>
                                         <div class="col-md-12">

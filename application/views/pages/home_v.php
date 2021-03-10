@@ -129,7 +129,7 @@
         <p class="mb-lg-5 pb-3 font-size-lg text-muted text-center">Biro Jasa Bengkel Las Manunggal Jaya adalah raksasa interior dengan berbagai layanan jasa.</p>
         <div class="row mb-lg-5 mb-4">
             <div class="col-lg-3 col-sm-6 mb-sm-grid-gutter mb-3">
-                <a class="cs-image-fade h-100 card card-hover box-shadow py-3" href="services-single-v1.html" style="background-image: url(<?= base_url() ?>assets/frontend/img/construction/home/services/01.jpg);">
+                <a class="cs-image-fade h-100 card card-hover box-shadow py-3" href="<?= base_url() ?>" style="background-image: url(<?= base_url() ?>assets/frontend/img/construction/home/services/01.jpg);">
                     <div class="cs-image-inner py-5">
                         <div class="card-body">
                             <img class="cs-inner-img d-block mx-auto mb-4" src="<?= base_url() ?>assets/frontend/img/construction/icons/ic-construction.svg" width="52" alt="Construction">
@@ -139,7 +139,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-sm-6 mb-sm-grid-gutter mb-3">
-                <a class="cs-image-fade h-100 card card-hover box-shadow py-3" href="services-single-v1.html" style="background-image: url(<?= base_url() ?>assets/frontend/img/construction/home/services/02.jpg);">
+                <a class="cs-image-fade h-100 card card-hover box-shadow py-3" href="<?= base_url() ?>" style="background-image: url(<?= base_url() ?>assets/frontend/img/construction/home/services/02.jpg);">
                     <div class="cs-image-inner py-5">
                         <div class="card-body">
                             <img class="cs-inner-img d-block mx-auto mb-4" src="<?= base_url() ?>assets/frontend/img/construction/icons/ic-project.svg" width="52" alt="Project Development">
@@ -149,7 +149,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-sm-6 mb-sm-grid-gutter mb-3">
-                <a class="cs-image-fade h-100 card card-hover box-shadow py-3" href="services-single-v2.html" style="background-image: url(<?= base_url() ?>assets/frontend/img/construction/home/services/03.jpg);">
+                <a class="cs-image-fade h-100 card card-hover box-shadow py-3" href="<?= base_url() ?>" style="background-image: url(<?= base_url() ?>assets/frontend/img/construction/home/services/03.jpg);">
                     <div class="cs-image-inner py-5">
                         <div class="card-body">
                             <img class="cs-inner-img d-block mx-auto mb-4" src="<?= base_url() ?>assets/frontend/img/construction/icons/ic-pantone.svg" width="52" alt="Interior Design">
@@ -159,7 +159,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-sm-6 mb-sm-grid-gutter mb-3">
-                <a class="cs-image-fade h-100 card card-hover box-shadow py-3" href="services-single-v2.html" style="background-image: url(<?= base_url() ?>assets/frontend/img/construction/home/services/04.jpg);">
+                <a class="cs-image-fade h-100 card card-hover box-shadow py-3" href="<?= base_url() ?>" style="background-image: url(<?= base_url() ?>assets/frontend/img/construction/home/services/04.jpg);">
                     <div class="cs-image-inner py-5">
                         <div class="card-body">
                             <img class="cs-inner-img d-block mx-auto mb-4" src="<?= base_url() ?>assets/frontend/img/construction/icons/ic-repair.svg" width="52" alt="Repairs">
@@ -169,10 +169,6 @@
                 </a>
             </div>
         </div>
-        <h4 class="h3 d-flex flex-md-row flex-column align-items-center justify-content-center text-center">
-            Pelajari lebih lanjut tentang layanan kami
-            <a href="services.html" class="btn btn-lg btn-primary mt-md-0 mt-sm-4 mt-3 ml-md-5 text-uppercase">lihat layanan</a>
-        </h4>
     </div>
 </section>
 
@@ -216,59 +212,24 @@
               }
             }
           }'>
-            <article class="mb-5 pt-2 pb-sm-3 pb-2">
-                <a class="cs-portfolio-card-slide" href="project-single-v1.html">
-                    <div class="cs-portfolio-card-img">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/work/projects/07.jpg" alt="Card image">
-                    </div>
-                    <div class="cs-portfolio-card-body">
-                        <h3 class="cs-portfolio-card-title">Red Finger Building</h3>
-                        <div class="font-size-sm text-muted">Business Centers</div>
-                        <div class="btn btn-outline-primary text-uppercase">View project</div>
-                    </div>
-                </a>
-            </article>
-            <article class="mb-5 pt-2 pb-sm-3 pb-2">
-                <a class="cs-portfolio-card-slide" href="project-single-v2.html">
-                    <div class="cs-portfolio-card-img">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/work/projects/01.jpg" alt="Card image">
-                    </div>
-                    <div class="cs-portfolio-card-body">
-                        <h3 class="cs-portfolio-card-title">Cubes Building</h3>
-                        <div class="font-size-sm text-muted">Business Centers</div>
-                        <div class="btn btn-outline-primary text-uppercase">View project</div>
-                    </div>
-                </a>
-            </article>
-            <article class="mb-5 pt-2 pb-sm-3 pb-2">
-                <a class="cs-portfolio-card-slide" href="project-single-v1.html">
-                    <div class="cs-portfolio-card-img">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/work/projects/06.jpg" alt="Card image">
-                    </div>
-                    <div class="cs-portfolio-card-body">
-                        <h3 class="cs-portfolio-card-title">The Pencil Building</h3>
-                        <div class="font-size-sm text-muted">Stores &amp; Malls</div>
-                        <div class="btn btn-outline-primary text-uppercase">View project</div>
-                    </div>
-                </a>
-            </article>
-            <article class="mb-5 pt-2 pb-sm-3 pb-2">
-                <a class="cs-portfolio-card-slide" href="project-single-v2.html">
-                    <div class="cs-portfolio-card-img">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/work/projects/02.jpg" alt="Card image">
-                    </div>
-                    <div class="cs-portfolio-card-body">
-                        <h3 class="cs-portfolio-card-title">Modern Cottage</h3>
-                        <div class="font-size-sm text-muted">Private Houses</div>
-                        <div class="btn btn-outline-primary text-uppercase">View project</div>
-                    </div>
-                </a>
-            </article>
+            <?php foreach ($kategori as $kats) : ?>
+                <article class="mb-5 pt-2 pb-sm-3 pb-2">
+                    <a class="cs-portfolio-card-slide" href="<?= base_url('pages/detail_produk/') ?>">
+                        <div class="cs-portfolio-card-img">
+                            <img class="bg-size-cover" src="<?= base_url() ?>assets/uploads/produk/kategori/<?= $kats['foto'] ?>" alt="Card image">
+                        </div>
+                        <div class="cs-portfolio-card-body">
+                            <h3 class="cs-portfolio-card-title"><?= $kats['deskripsi'] ?></h3>
+                            <div class="btn btn-outline-primary text-uppercase">View project</div>
+                        </div>
+                    </a>
+                </article>
+            <?php endforeach ?>
         </div>
     </div>
     <h4 class="h3 d-flex flex-md-row flex-column align-items-center justify-content-center pt-sm-0 pt-4 text-center">
         Jelajahi semua pekerjaan kami
-        <a href="projects.html" class="btn btn-lg btn-primary mt-md-0 mt-sm-4 mt-3 ml-md-5 text-uppercase">View portfolio</a>
+        <a href="<?= base_url('pages/produk/') ?>" class="btn btn-lg btn-primary mt-md-0 mt-sm-4 mt-3 ml-md-5 text-uppercase">View portfolio</a>
     </h4>
 </section>
 
@@ -330,118 +291,5 @@
         </div>
     </section>
 
-
-</div> <!-- / Shaped bg -->
-
-
-<!-- Shaped bg -->
-<div class="pt-md-5 bg-no-repeat bg-position-center-top" style="background-image: url(<?= base_url() ?>assets/frontend/img/construction/shapes/01.png);">
-
-    <!-- Recent news -->
-    <section class="container mt-md-4 py-lg-6 py-5">
-        <h2 class="h1 mb-5 pb-md-3 text-center">Blog</h2>
-        <div class="row">
-            <div class="col-lg-7 col-md-6 mb-md-0 mb-grid-gutter">
-                <article class="cs-image-scale h-100 card box-shadow card-hover border-0">
-                    <a class="cs-image-inner card-img-top" href="news-single.html">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/news/01.jpg" alt="Blog card image">
-                    </a>
-                    <div class="card-body">
-                        <h3 class="h5 mb-2 pb-1">
-                            <a class="nav-link" href="news-single.html">How to Build Climate Change-Resilient Infrastructure</a>
-                        </h3>
-                        <ul class="nav nav-muted mb-2 pb-1">
-                            <li class="nav-item mr-2">
-                                <a class="nav-link d-inline-block mr-2 p-0 font-size-sm font-weight-normal" href="#">
-                                    Industry News
-                                </a>
-                                <span class="text-border px-1">|</span>
-                            </li>
-                            <li class="nav-item mr-2">
-                                <a class="nav-link d-inline-block mr-2 p-0 font-size-sm font-weight-normal" href="#">
-                                    June 24, 2020
-                                </a>
-                                <span class="text-border px-1">|</span>
-                            </li>
-                            <li class="nav-item mr-2">
-                                <a class="nav-link d-inline-block mr-2 p-0 font-size-sm font-weight-normal" href="#">
-                                    <i class="cxi-chat mt-n1 mr-2 font-size-base align-middle"></i>
-                                    4 comments
-                                </a>
-                            </li>
-                        </ul>
-                        <p class="card-text">Ipsum aliquet nisi, hendrerit rhoncus quam tortor, maecenas faucibus. Tincidunt aliquet sit vel, venenatis nulla. Integer bibendum turpis convallis...</p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-lg-5 col-md-6 d-flex flex-column mb-md-0 mb-grid-gutter">
-                <article class="cs-image-scale h-100 mb-grid-gutter card box-shadow card-hover border-0">
-                    <a class="cs-image-inner card-img-top" href="news-single.html">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/news/recent/01.jpg" alt="Blog card image">
-                    </a>
-                    <div class="card-body py-3">
-                        <h3 class="h5 mb-2">
-                            <a class="nav-link" href="news-single.html">How Construction Can Help Itself</a>
-                        </h3>
-                        <ul class="nav nav-muted">
-                            <li class="nav-item mr-2">
-                                <a class="nav-link d-inline-block mr-2 p-0 font-size-sm font-weight-normal" href="#">
-                                    Innovation
-                                </a>
-                                <span class="text-border px-1">|</span>
-                            </li>
-                            <li class="nav-item mr-2">
-                                <a class="nav-link d-inline-block mr-2 p-0 font-size-sm font-weight-normal" href="#">
-                                    June 12, 2020
-                                </a>
-                                <span class="text-border px-1">|</span>
-                            </li>
-                            <li class="nav-item mr-2">
-                                <a class="nav-link d-inline-block mr-2 p-0 font-size-sm font-weight-normal" href="#">
-                                    <i class="cxi-chat mt-n1 mr-2 font-size-base align-middle"></i>
-                                    No comments
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="cs-image-scale h-100 card box-shadow card-hover border-0">
-                    <a class="cs-image-inner card-img-top" href="news-single.html">
-                        <img src="<?= base_url() ?>assets/frontend/img/construction/news/recent/02.jpg" alt="Blog card image">
-                    </a>
-                    <div class="card-body py-3">
-                        <h3 class="h5 mb-2">
-                            <a class="nav-link" href="news-single.html">Types of Flooring Materials</a>
-                        </h3>
-                        <ul class="nav nav-muted">
-                            <li class="nav-item mr-2">
-                                <a class="nav-link d-inline-block mr-2 p-0 font-size-sm font-weight-normal" href="#">
-                                    Company News
-                                </a>
-                                <span class="text-border px-1">|</span>
-                            </li>
-                            <li class="nav-item mr-2">
-                                <a class="nav-link d-inline-block mr-2 p-0 font-size-sm font-weight-normal" href="#">
-                                    June 2, 2020
-                                </a>
-                                <span class="text-border px-1">|</span>
-                            </li>
-                            <li class="nav-item mr-2">
-                                <a class="nav-link d-inline-block mr-2 p-0 font-size-sm font-weight-normal" href="#">
-                                    <i class="cxi-chat mt-n1 mr-2 font-size-base align-middle"></i>
-                                    No comments
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-        </div>
-        <h4 class="h3 d-flex flex-md-row flex-column align-items-center justify-content-center mt-md-4 pt-md-5 pt-3 text-center">
-            Explore all our news posts
-            <a href="news.html" class="btn btn-lg btn-primary mt-md-0 mt-sm-4 mt-3 ml-md-5 text-uppercase">View all news</a>
-        </h4>
-    </section>
-
-
 </div>
+<!-- / Shaped bg -->

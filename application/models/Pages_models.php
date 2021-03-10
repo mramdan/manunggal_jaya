@@ -46,6 +46,22 @@ class Pages_models extends CI_Model
       return $data;
    }
 
+   public function get_kategori()
+   {
+      $query = $this->db->query('select * from ref_kategori order by id_kategori desc');
+
+      $data = array();
+      foreach ($query->result() as $row) {
+         $data[] = array(
+            'id_kategori' => $row->id_kategori,
+            'deskripsi' => $row->deskripsi,
+            'foto' => $row->foto,
+
+         );
+      }
+      return $data;
+   }
+
    public function get_product()
    {
       $query = $this->db->query('select * from ref_produk order by id_produk desc limit 3');

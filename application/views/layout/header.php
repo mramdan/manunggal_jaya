@@ -116,19 +116,6 @@
       }
    </style>
 
-   <!-- Page loading scripts-->
-   <script>
-      (function() {
-         window.onload = function() {
-            var preloader = document.querySelector('.cs-page-loading');
-            preloader.classList.remove('active');
-            setTimeout(function() {
-               preloader.remove();
-            }, 2000);
-         };
-      })();
-   </script>
-
    <!-- Demo switcher off-canvas toggle styles -->
    <style>
       .cs-demo-switcher {
@@ -155,7 +142,7 @@
    </style>
 
    <!-- Google Tag Manager -->
-   <script>
+   <!-- <script>
       (function(w, d, s, l, i) {
          w[l] = w[l] || [];
          w[l].push({
@@ -170,7 +157,7 @@
             '../../../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
          f.parentNode.insertBefore(j, f);
       })(window, document, 'script', 'dataLayer', 'GTM-WKV3GT5');
-   </script>
+   </script> -->
 </head>
 
 <!-- Body-->
@@ -222,8 +209,8 @@
             </div>
             <nav class="collapse navbar-collapse order-lg-2" id="navbarCollapse1">
                <ul class="navbar-nav mr-auto text-nowrap">
-                  <li class="nav-item active">
-                     <a class="nav-link" href="<?= base_url('pages/') ?>">Home</a>
+                  <li class="nav-item">
+                     <a class="nav-link" href="<?= base_url() ?>">Home</a>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link" href="<?= base_url('pages/profile') ?>">Profile</a>

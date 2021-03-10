@@ -93,7 +93,7 @@
                 $('[name="nama_produk"]').val(data.nama_produk);
                 $('[name="deskripsi"]').val(data.deskripsi).trigger('change');
                 $('[name="harga"]').val(data.harga);
-                $('[name="kategori"]').val(data.kategori);
+                $('[name="id_kategori"]').val(data.id_kategori);
 
                 $('[name="old_foto"]').val(data.foto);
 
@@ -106,6 +106,20 @@
             }
         });
     }
+
+    function get_kategori() {
+        let dropdown = $('#id_kategori');
+        dropdown.empty();
+        dropdown.append('<option value="" selected="true">-- pilih Kategori --</option>');
+        const url = '<?php echo site_url('admin/produk/get_kategori') ?>';
+        $.getJSON(url, function(data) {
+            ////console.log(data);
+            $.each(data, function(key, isi) {
+                dropdown.append($('<option></option>').attr('value', isi.id).text(isi.nama));
+            });
+        });
+    }
+    get_kategori();
 
     function detail(id) {
 

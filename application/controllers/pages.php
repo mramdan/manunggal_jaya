@@ -42,6 +42,7 @@ class Pages extends CI_Controller
          'name' => $this->pages->get_profile('nama_perusahaan'),
          'about' => $this->pages->get_profile('about'),
          'testimoni' => $this->pages->get_testimoni(),
+         'kategori' => $this->pages->get_kategori(),
 
       ];
       $this->load->view('layout/header', $data);
