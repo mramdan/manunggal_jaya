@@ -43,7 +43,7 @@ class Blog extends CI_Controller
             $row = array();
 
             $row[] = $no;
-            $row[] = '<a href="javascript:void(0)" onclick="detail(' . "'" . $dd->id_blog . "'" . ')">' . $dd->judul_blog . ' <i class="fas fa-external-link-alt"></i></a>';
+            $row[] = '<a target=blank href="pages/d_blog">' . $dd->judul_blog . ' <i class="fas fa-external-link-alt"></i></a>';
             $row[] = $dd->konten;
 
 

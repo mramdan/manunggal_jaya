@@ -63,7 +63,7 @@
                </div>
             </div>
 
-            <div class="modal fade" id="modal_detail" tabindex="-1" role="dialog" aria-hidden="true">
+            <!-- <div class="modal fade" id="modal_detail" tabindex="-1" role="dialog" aria-hidden="true">
                <div class="modal-dialog modal-xl" role="document">
                   <div class="modal-content">
                      <div class="modal-header">
@@ -84,7 +84,7 @@
                      </div>
                   </div>
                </div>
-            </div>
+            </div> -->
 
             <button type="button" onclick="add_new()" class="btn btn-success btn-floated"><span class="fa fa-plus"></span></button> <!-- /floating action -->
 
@@ -108,7 +108,6 @@
                               <th>No</th>
                               <th> Judul Blog </th>
                               <th> Konten </th>
-
                               <th style="width:100px; min-width:100px;"> &nbsp; </th>
                            </tr>
                         </thead>
