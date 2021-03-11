@@ -30,12 +30,14 @@ class Testimoni extends CI_Controller
       $this->load->view('_template/footer');
    }
 
-   public function ajax_list()
+
+
+   public function ajax_listacc()
    {
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-         $id_skk = $this->input->post('id_skk');
+         $status = "Not Acc";
 
-         $list = $this->testi_m->get_datatables($id_skk);
+         $list = $this->testi_m->get_datatables($status);
          $data = array();
          $no = $_POST['start'];
 
@@ -47,9 +49,53 @@ class Testimoni extends CI_Controller
             $row[] = '<a href="javascript:void(0)" onclick="detail(' . "'" . $dd->id_testi . "'" . ')">' . $dd->nama_pelanggan . ' <i class="fas fa-external-link-alt"></i></a>';
             $row[] = $dd->komentar;
             $row[] = $dd->foto;
+            $row[] = $dd->status;
+            $data[] = $row;
+         }
+
+         $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->testi_m->count_all($status),
+            "recordsFiltered" => $this->testi_m->count_filtered($status),
+            "data" => $data,
+         );
+      } else {
+         $output = array(
+            "draw" => "",
+            "recordsTotal" => "",
+            "recordsFiltered" => "",
+            "data" => 'Not Allowed',
+         );
+      }
+      echo json_encode($output);
+   }
 
 
-            $row[] = '<a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" onclick="edit(' . "'" . $dd->id_testi . "'" . ')"><i class="fa fa-pencil-alt"></i></a>
+
+
+
+
+   public function ajax_list()
+   {
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+         $status = "Acc";
+
+         $list = $this->testi_m->get_datatables($status);
+         $data = array();
+         $no = $_POST['start'];
+
+         foreach ($list as $dd) {
+            $no++;
+            $row = array();
+
+            $row[] = $no;
+            $row[] = '<a href="javascript:void(0)" onclick="detail(' . "'" . $dd->id_testi . "'" . ')">' . $dd->nama_pelanggan . ' <i class="fas fa-external-link-alt"></i></a>';
+            $row[] = $dd->komentar;
+            $row[] = $dd->foto;
+            $row[] = $dd->status;
+
+
+            $row[] = '
                           <a class="btn btn-sm btn-icon btn-secondary" href="javascript:void(0)" onclick="delete_data(' . "'" . $dd->id_testi . "'" . ')"><i class="far fa-trash-alt text-red"></i></a>';
 
             $data[] = $row;
@@ -57,8 +103,8 @@ class Testimoni extends CI_Controller
 
          $output = array(
             "draw" => $_POST['draw'],
-            "recordsTotal" => $this->testi_m->count_all($id_skk),
-            "recordsFiltered" => $this->testi_m->count_filtered($id_skk),
+            "recordsTotal" => $this->testi_m->count_all($status),
+            "recordsFiltered" => $this->testi_m->count_filtered($status),
             "data" => $data,
          );
       } else {
@@ -175,14 +221,6 @@ class Testimoni extends CI_Controller
    {
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
          echo $this->produk_m->delete_by_id($id);
-      }
-   }
-
-   public function ajax_edit($id)
-   {
-      if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-         $data = $this->produk_m->get_by_id($id);
-         echo json_encode($data);
       }
    }
 }

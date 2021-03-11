@@ -43,12 +43,13 @@ class Testimoni_model extends CI_Model
       }
    }
 
-   function get_datatables()
+
+   function get_datatables($status)
    {
 
       $this->_get_datatables_query();
       $this->db->select("*", false);
-
+      $this->db->where('status', $status);
       if ($_POST['length'] != -1)
          $this->db->limit($_POST['length'], $_POST['start']);
 
@@ -56,18 +57,20 @@ class Testimoni_model extends CI_Model
       return $query->result();
    }
 
-   function count_filtered()
+   function count_filtered($status)
    {
       $this->_get_datatables_query();
       $this->db->select("*", false);
+      $this->db->where('status', $status);
       $query = $this->db->get();
       return $query->num_rows();
    }
 
-   public function count_all()
+   public function count_all($status)
    {
       $this->_get_datatables_query();
       $this->db->select("*", false);
+      $this->db->where('status', $status);
       return $this->db->count_all_results();
    }
 
@@ -90,16 +93,16 @@ class Testimoni_model extends CI_Model
 
    public function delete_by_id($id)
    {
-      $q = $this->db->query("select foto from $this->table where id_produk = $id")->row();
+      $q = $this->db->query("select foto from $this->table where id_testi = $id")->row();
       $foto = $q->foto;
 
       // var_dump($foto);
-      $path = 'assets/uploads/produk/';
+      $path = 'assets/uploads/testimoni/';
       //hapus file
       if (file_exists($path . $foto)) {
          unlink($path . $foto);
       }
-      $this->db->where('id_produk', $id);
+      $this->db->where('id_testimoni', $id);
       $r = $this->db->delete($this->table);
 
       if ($r) {
@@ -118,7 +121,7 @@ class Testimoni_model extends CI_Model
    {
       $this->db->start_cache();
       $this->db->from($this->table);
-      $this->db->where('id_produk', $id);
+      $this->db->where('id_testi', $id);
       $this->db->stop_cache();
       $query = $this->db->get();
       $this->db->flush_cache();
