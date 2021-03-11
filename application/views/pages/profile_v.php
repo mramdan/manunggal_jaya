@@ -7,7 +7,7 @@
             <nav aria-label="breadcrumb">
                <ol class="breadcrumb mb-lg-4 pb-md-3">
                   <li class="breadcrumb-item">
-                     <a href="index.html">Homepage</a>
+                     <a href="<?= base_url() ?>">Homepage</a>
                   </li>
                   <li class="breadcrumb-item active" aria-current="page">About Us</li>
                </ol>
@@ -33,28 +33,28 @@
          <div class="col-md-3 col-sm-6 mb-md-0 mb-5">
             <div class="mx-auto text-center" style="max-width: 260px;">
                <img class="mb-4" src="<?= base_url() ?>assets/frontend/img/construction/about/features/ic-like.svg" width="48" alt="Icon box image">
-               <h3 class="h1 mb-2 text-primary">60%</h3>
+               <h3 class="h1 mb-2 text-danger">60%</h3>
                <p class="mb-0 font-size-sm text-muted">Clients on the recommendation of friends</p>
             </div>
          </div>
          <div class="col-md-3 col-sm-6 mb-md-0 mb-5">
             <div class="mx-auto text-center" style="max-width: 260px;">
                <img class="mb-4" src="<?= base_url() ?>assets/frontend/img/construction/about/features/ic-painting.svg" width="48" alt="Icon box image">
-               <h3 class="h1 mb-2 text-primary">2400+</h3>
+               <h3 class="h1 mb-2 text-danger">2400+</h3>
                <p class="mb-0 font-size-sm text-muted">Apartments renovated</p>
             </div>
          </div>
          <div class="col-md-3 col-sm-6 mb-md-0 mb-5">
             <div class="mx-auto text-center" style="max-width: 260px;">
                <img class="mb-4" src="<?= base_url() ?>assets/frontend/img/construction/about/features/ic-helmet.svg" width="48" alt="Icon box image">
-               <h3 class="h1 mb-2 text-primary">670</h3>
+               <h3 class="h1 mb-2 text-danger">670</h3>
                <p class="mb-0 font-size-sm text-muted">Qualified specialists</p>
             </div>
          </div>
          <div class="col-md-3 col-sm-6 mb-md-0 mb-5">
             <div class="mx-auto text-center" style="max-width: 260px;">
                <img class="mb-4" src="<?= base_url() ?>assets/frontend/img/construction/about/features/ic-pantone.svg" width="48" alt="Icon box image">
-               <h3 class="h1 mb-2 text-primary">150000+ m<sup>2</sup></h3>
+               <h3 class="h1 mb-2 text-danger">150000+ m<sup>2</sup></h3>
                <p class="mb-0 font-size-sm text-muted">Finishing work was carried out</p>
             </div>
          </div>
@@ -73,8 +73,8 @@
 
                <!-- Quote -->
                <blockquote class="blockquote">
-                  <p class="pr-sm-4 lead font-weight-bold">Dapibus nec vitae ante mattis. Aliquam phasellus ac dui augue in. Sed aliquet in egestas hac at proin sed quam. Etiam aliquet sagittis non, massa cum pulvinar. Et in leo, tempus purus vestibulum ut blandit et mi. Odio massa purus vel praesent arcu enim elit felis viverra.</p>
-                  <p class="pr-sm-4 lead font-weight-bold">Magna aliquam interdum mattis ipsum arcu. Elit odio elit viverra quis metus amet eleifend amet. Vet suspendisse faucibus tempor ipsum integer.</p>
+                  <p class="pr-sm-4 lead font-weight-bold">Manunggal Jaya hadir untuk anda yang ingin membuat pagar, kanopy atau lainnya, bahkan jika anda ingin membangun rumah, kami dapat mengerjakan kontruksi baja dan bangunan untuk anda. Tentunya kami selalu memberikan gratis survey dan konsultasi untuk wilayah Jakarta, Bogor, Depok, Tangerang Dan Bekasi.</p>
+                  <p class="pr-sm-4 lead font-weight-bold">Tukang las yang berkerja di Manunggal Jaya merupakan tukang las yang sudah berpengalaman dalam pengelasan, serta bahan yang kami gunakan yaitu bahan berkwalitas sehingga konsumen merasakan kepuasan tersendiri akan hasil yang kami kerjakan.</p>
                   <footer class="d-sm-flex align-items-start justify-content-between pt-4 pr-4">
                      <div class="mr-sm-4 mb-sm-0 mb-5">
                         <h3 class="h6 mb-1">Sandi Gordon</h3>
@@ -300,8 +300,8 @@
 
 <!-- Location -->
 <section class="pt-5 pb-lg-6 py-5 bg-secondary">
-   <div class="container pt-4">
-      <h2 class="h1 mb-5 pb-md-3 text-center">We work worldwide</h2>
-      <img src="<?= base_url() ?>assets/frontend/img/construction/about/loocation.png" alt="Our location">
-   </div>
+   <h2 class="h1 mb-5 pb-md-3 text-center">We work worldwide</h2>
+
+   <div style="width: 100%"><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Duren%20Mekar,%20Kec.%20Bojongsari,%20Kota%20Depok,%20Jawa%20Barat,%20Indonesia+(https://www.google.com/maps/place/Depok,+Duren+Mekar,+Kec.+Bojongsari,+Kota+Depok,+Jawa+Barat,+Indonesia/@-6.4127142,106.7467403,19z/data=!4m9!1m3!11m2!2sHCrN9mqFR9bG0n7xs2O34CTAft6AwA!3e2!3m4!1s0x2e69e8ed34aeedf7:0xd4287d7007cd5a84!8m2!3d-6.4127235!4d106.7470809?hl=id-ID)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+
 </section>

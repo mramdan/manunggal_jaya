@@ -214,13 +214,13 @@
           }'>
             <?php foreach ($kategori as $kategories) : ?>
                 <article class="mb-5 pt-2 pb-sm-3 pb-2">
-                    <a class="cs-portfolio-card-slide" href="<?= base_url() ?>pages/kategori/<?= $kategories['deskripsi'] ?>">
+                    <a class="cs-portfolio-card-slide" href="<?= base_url() ?>pages/kategori/<?= $kategories['kategori'] ?>">
                         <div class="cs-portfolio-card-img">
-                            <img class="bg-size-cover bg-position-center-top" src="<?= base_url() ?>assets/uploads/produk/kategori/<?= $kategories['foto'] ?>" alt="<?= $kategories['deskripsi'] ?>">
+                            <img class="bg-size-cover bg-position-center-top" src="<?= base_url() ?>assets/uploads/produk/kategori/<?= $kategories['foto'] ?>" alt="<?= $kategories['kategori'] ?>">
                         </div>
                         <div class="cs-portfolio-card-body">
-                            <h3 class="cs-portfolio-card-title"><?= $kategories['deskripsi'] ?></h3>
-                            <div class="btn btn-outline-primary text-uppercase">View project</div>
+                            <h3 class="cs-portfolio-card-title"><?= $kategories['kategori'] ?></h3>
+                            <div class="btn btn-outline-danger text-uppercase">View project</div>
                         </div>
                     </a>
                 </article>
@@ -228,8 +228,8 @@
         </div>
     </div>
     <h4 class="h3 d-flex flex-md-row flex-column align-items-center justify-content-center pt-sm-0 pt-4 text-center">
-        Jelajahi semua pekerjaan kami
-        <a href="<?= base_url('pages/produk') ?>" class="btn btn-lg btn-primary mt-md-0 mt-sm-4 mt-3 ml-md-5 text-uppercase">View portfolio</a>
+        Jelajahi semua produk kami
+        <a href="<?= base_url('pages/produk') ?>" class="btn btn-lg btn-danger mt-md-0 mt-sm-4 mt-3 ml-md-5 text-uppercase">Lihat produk</a>
     </h4>
 </section>
 

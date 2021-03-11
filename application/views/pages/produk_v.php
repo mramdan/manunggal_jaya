@@ -1,113 +1,199 @@
-<main>
+<!-- Page title-->
+<section class="pt-6 pb-lg-6 pb-5 bg-secondary bg-no-repeat bg-fixed" style="background-image: url(<?= base_url() ?>assets/frontend/img/construction/work/page-title-bg.jpg);">
+   <div class="container py-lg-5">
+      <div class="row">
+         <div class="col-lg-6 col-md-8">
 
-   <div class="slider-area2">
-      <div class="slider-height2 hero-overly d-flex align-items-center">
-         <div class="container">
-            <div class="row">
-               <div class="col-xl-12">
-                  <div class="hero-cap hero-cap2 text-center pt-80">
-                     <h2>Testimoni</h2>
-                  </div>
-               </div>
-            </div>
+            <!-- Breadcrumbs -->
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb mb-lg-4 pb-md-3">
+                  <li class="breadcrumb-item">
+                     <a href="<?= base_url() ?>">Homepage</a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">Produk</li>
+               </ol>
+            </nav>
+
+            <!-- Title -->
+            <h1 class="display-1 text-uppercase">Produk Kami</h1>
+            <p class="mb-0 lead text-muted">Produk kami mewakili pengalaman konstruksi yang didukung oleh hasrat untuk layanan klien yang sempurna, kualitas dan inovasi dalam industri konstruksi.</p>
          </div>
       </div>
    </div>
-
-   <div style="background-color: white; border-top: 3px solid #ff1e00;">
-
-
-      <section id="portfolio" class="clearfix">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-12">
-                  <ul id="portfolio-flters">
-                     <li data-filter="*" class="filter-active">All</li>
-                     <li data-filter=".filter-app">Kanopi</li>
-                     <li data-filter=".filter-card">Pagar</li>
-                     <li data-filter=".filter-web">Tralis</li>
-                     <li data-filter=".filter-web">Railing</li>
-                     <li data-filter=".filter-web">clasik</li>
-                  </ul>
-               </div>
-            </div>
-
-            <div class="row portfolio-container">
-               <div class="row row-cols-1 row-cols-md-3 g-4">
-
-                  <?php foreach ($produk as $pk) : ?>
-                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 portfolio-item filter-app">
-                        <div class="card">
-                           <a href="<?= base_url() ?>pages/detail_produk/<?= $pk['nama_produk']; ?>">
-                              <img src="<?= base_url() ?>assets/img/gallery/<?= $pk['file']; ?>" class="card-img-top" alt="...">
-                           </a>
-                           <div class="card-body">
-                              <h5 class="card-title"><?= $pk['nama_produk']; ?></h5>
-                              <p><?= $pk['deskripsi']; ?></p>
-                           </div>
-                           <div class="card-body">
-                              <div class="header-btns d-none d-lg-block">
-
-                                 <style>
-                                    .hg {
-                                       width: 100%;
-                                       height: 50px;
-                                       background-color: #ff1e00;
-                                       border-radius: 5px;
-                                       color: blanchedalmond;
-                                       display: flex;
-                                       text-align: center;
-                                       font: 5px;
-                                    }
-
-                                    .hg span {
-                                       margin: auto;
-                                       font-weight: bolder;
-                                    }
-                                 </style>
-                                 <div class="hg">
-                                    <span>Rp.<?= $pk['harga']; ?></span>
-                                 </div>
+</section>
 
 
-                              </div>
-                           </div>
+<!-- Page content-->
+<section class="container mt-lg-n5 pb-4">
 
-                        </div>
-                     </div>
-                  <?php endforeach ?>
-               </div>
+   <div data-filter-grid>
 
+      <!-- Filterable grid of items -->
+      <div class="row pt-lg-3">
 
-               <!-- <?php foreach ($produk as $pk) : ?>
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 portfolio-item filter-app">
-
-                     <div class="prod-box portfolio-wrap">
-                        <div class="prod-i">
-                           <a href="<?= base_url() ?>pages/detail_produk/<?= $pk['id_produk']; ?>">
-                              <img src="<?= base_url() ?>assets/img/gallery/<?= $pk['file']; ?>" class="img-fluid" alt="#" /></a>
-                        </div>
-                        <div class="prod-dit clearfix">
-                           <div class="dit-t clearfix">
-                              <div class="left-ti">
-                                 <h4><?= $pk['nama_produk']; ?></h4>
-                                 <p><?= $pk['deskripsi']; ?></p>
-                              </div>
-                              <a href="#">Rp.<?= $pk['harga']; ?></a>
-                           </div>
-                        </div>
-                     </div>
+         <!-- Grid item -->
+         <div class="cs-grid-item col-lg-4 col-sm-6 mb-grid-gutter">
+            <article>
+               <a class="cs-portfolio-card-slide" href="project-single-v1.html">
+                  <div class="cs-portfolio-card-img">
+                     <img src="<?= base_url() ?>assets/frontend/img/construction/work/projects/01.jpg" alt="Card image">
                   </div>
-               <?php endforeach ?> -->
-
-
-            </div>
+                  <div class="cs-portfolio-card-body">
+                     <h3 class="cs-portfolio-card-title">Cubes Building</h3>
+                     <div class="font-size-sm text-muted">Business Centers</div>
+                     <div class="btn btn-outline-danger text-uppercase">View project</div>
+                  </div>
+               </a>
+            </article>
          </div>
-      </section>
 
+         <!-- Grid item -->
+         <div class="cs-grid-item project-development col-lg-4 col-sm-6 mb-grid-gutter">
+            <article>
+               <a class="cs-portfolio-card-slide" href="project-single-v2.html">
+                  <div class="cs-portfolio-card-img">
+                     <img src="<?= base_url() ?>assets/frontend/img/construction/work/projects/02.jpg" alt="Card image">
+                  </div>
+                  <div class="cs-portfolio-card-body">
+                     <h3 class="cs-portfolio-card-title">Modern Cottage</h3>
+                     <div class="font-size-sm text-muted">Private Houses</div>
+                     <div class="btn btn-outline-danger text-uppercase">View project</div>
+                  </div>
+               </a>
+            </article>
+         </div>
 
+         <!-- Grid item -->
+         <div class="cs-grid-item project-development col-lg-4 col-sm-6 mb-grid-gutter">
 
+            <!-- Portfolio card with slide effect -->
+            <article>
+               <a class="cs-portfolio-card-slide" href="project-single-v1.html">
+                  <div class="cs-portfolio-card-img">
+                     <img src="<?= base_url() ?>assets/frontend/img/construction/work/projects/03.jpg" alt="Card image">
+                  </div>
+                  <div class="cs-portfolio-card-body">
+                     <h3 class="cs-portfolio-card-title">Luxury Beach House</h3>
+                     <div class="font-size-sm text-muted">Private Houses</div>
+                     <div class="btn btn-outline-danger text-uppercase">View project</div>
+                  </div>
+               </a>
+            </article>
+         </div>
 
+         <!-- Grid item -->
+         <div class="cs-grid-item interior-design col-lg-4 col-sm-6 mb-grid-gutter">
+
+            <!-- Portfolio card with slide effect -->
+            <article>
+               <a class="cs-portfolio-card-slide" href="project-single-v2.html">
+                  <div class="cs-portfolio-card-img">
+                     <img src="<?= base_url() ?>assets/frontend/img/construction/work/projects/04.jpg" alt="Card image">
+                  </div>
+                  <div class="cs-portfolio-card-body">
+                     <h3 class="cs-portfolio-card-title">Modern Double Bedroom</h3>
+                     <div class="font-size-sm text-muted">Apartments &amp; Flats</div>
+                     <div class="btn btn-outline-danger text-uppercase">View project</div>
+                  </div>
+               </a>
+            </article>
+         </div>
+
+         <!-- Grid item -->
+         <div class="cs-grid-item interior-design col-lg-4 col-sm-6 mb-grid-gutter">
+
+            <!-- Portfolio card with slide effect -->
+            <article>
+               <a class="cs-portfolio-card-slide" href="project-single-v1.html">
+                  <div class="cs-portfolio-card-img">
+                     <img src="<?= base_url() ?>assets/frontend/img/construction/work/projects/05.jpg" alt="Card image">
+                  </div>
+                  <div class="cs-portfolio-card-body">
+                     <h3 class="cs-portfolio-card-title">Kids Bedroom With Decorations</h3>
+                     <div class="font-size-sm text-muted">Apartments &amp; Flats</div>
+                     <div class="btn btn-outline-danger text-uppercase">View project</div>
+                  </div>
+               </a>
+            </article>
+         </div>
+
+         <!-- Grid item -->
+         <div class="cs-grid-item construction col-lg-4 col-sm-6 mb-grid-gutter">
+
+            <!-- Portfolio card with slide effect -->
+            <article>
+               <a class="cs-portfolio-card-slide" href="project-single-v2.html">
+                  <div class="cs-portfolio-card-img">
+                     <img src="<?= base_url() ?>assets/frontend/img/construction/work/projects/06.jpg" alt="Card image">
+                  </div>
+                  <div class="cs-portfolio-card-body">
+                     <h3 class="cs-portfolio-card-title">The Pencil Building</h3>
+                     <div class="font-size-sm text-muted">Stores &amp; Malls</div>
+                     <div class="btn btn-outline-danger text-uppercase">View project</div>
+                  </div>
+               </a>
+            </article>
+         </div>
+
+         <!-- Grid item -->
+         <div class="cs-grid-item construction col-lg-4 col-sm-6 mb-grid-gutter">
+
+            <!-- Portfolio card with slide effect -->
+            <article>
+               <a class="cs-portfolio-card-slide" href="project-single-v1.html">
+                  <div class="cs-portfolio-card-img">
+                     <img src="<?= base_url() ?>assets/frontend/img/construction/work/projects/07.jpg" alt="Card image">
+                  </div>
+                  <div class="cs-portfolio-card-body">
+                     <h3 class="cs-portfolio-card-title">Red Finger Building</h3>
+                     <div class="font-size-sm text-muted">Business Centers</div>
+                     <div class="btn btn-outline-danger text-uppercase">View project</div>
+                  </div>
+               </a>
+            </article>
+         </div>
+
+         <!-- Grid item -->
+         <div class="cs-grid-item interior-design repairs col-lg-4 col-sm-6 mb-grid-gutter">
+
+            <!-- Portfolio card with slide effect -->
+            <article>
+               <a class="cs-portfolio-card-slide" href="project-single-v2.html">
+                  <div class="cs-portfolio-card-img">
+                     <img src="<?= base_url() ?>assets/frontend/img/construction/work/projects/08.jpg" alt="Card image">
+                  </div>
+                  <div class="cs-portfolio-card-body">
+                     <h3 class="cs-portfolio-card-title">Scandinavian Style Interior</h3>
+                     <div class="font-size-sm text-muted">Private Houses</div>
+                     <div class="btn btn-outline-danger text-uppercase">View project</div>
+                  </div>
+               </a>
+            </article>
+         </div>
+
+         <!-- Grid item -->
+         <div class="cs-grid-item project-development interior-design repairs col-lg-4 col-sm-6 mb-grid-gutter">
+
+            <!-- Portfolio card with slide effect -->
+            <article>
+               <a class="cs-portfolio-card-slide" href="project-single-v1.html">
+                  <div class="cs-portfolio-card-img">
+                     <img src="<?= base_url() ?>assets/frontend/img/construction/work/projects/09.jpg" alt="Card image">
+                  </div>
+                  <div class="cs-portfolio-card-body">
+                     <h3 class="cs-portfolio-card-title">Brown and Gray Painted House</h3>
+                     <div class="font-size-sm text-muted">Private Houses</div>
+                     <div class="btn btn-outline-danger text-uppercase">View project</div>
+                  </div>
+               </a>
+            </article>
+         </div>
+      </div>
+      <div class="mb-lg-5 mb-4 pt-3 text-center">
+         <button class="btn btn-lg btn-link load-more-btn p-0 text-decoration-none" type="button">
+            <i class="cxi-arrow-convert mt-n1 mr-3 align-middle"></i>
+            Load more
+         </button>
+      </div>
    </div>
-
-</main>
+</section>

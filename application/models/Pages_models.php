@@ -54,7 +54,7 @@ class Pages_models extends CI_Model
       foreach ($query->result() as $row) {
          $data[] = array(
             'id_kategori' => $row->id_kategori,
-            'deskripsi' => $row->deskripsi,
+            'kategori' => $row->kategori,
             'foto' => $row->foto,
 
          );
@@ -88,20 +88,27 @@ class Pages_models extends CI_Model
 
    public function get_blog()
    {
-      $query = $this->db->query('select * from blog LEFT JOIN ref_image ON blog.id_gambar=ref_image.id_image');
+      $query = $this->db->query('select * from blog order by id_blog asc');
 
       $data = array();
       foreach ($query->result() as $row) {
          $data[] = array(
-            'id_artikel' => $row->id_artikel,
-            'judul_artikel' => $row->judul_artikel,
+            'id_blog' => $row->id_blog,
+            'judul_blog' => $row->judul_blog,
             'konten' => $row->konten,
-            'file' => $row->file,
+            'foto' => $row->foto,
+            'tgl_post' => $row->tgl_post,
+            'link' => $row->link,
          );
       }
       return $data;
    }
 
+   public function get_blog_by_link($link)
+   {
+      $hsl = $this->db->query("SELECT * FROM blog WHERE link='$link'");
+      return $hsl;
+   }
 
    public function get_sosmed($sosmed)
    {
