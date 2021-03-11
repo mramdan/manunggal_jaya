@@ -70,6 +70,7 @@
                               <th> Nama Pelanggan </th>
                               <th> Komentar </th>
                               <th> Foto </th>
+                              <th> Status </th>
                               <th style="width:100px; min-width:100px;"> &nbsp; </th>
                            </tr>
                         </thead>
