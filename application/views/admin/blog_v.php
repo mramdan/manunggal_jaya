@@ -21,7 +21,7 @@
             </header>
             <!-- Modal Here -->
             <div class="modal fade" id="modal_form_blog" tabindex="-1" role="dialog" aria-hidden="true">
-               <div class="modal-dialog modal-lg" role="document">
+               <div class="modal-dialog modal-xl" role="document">
                   <div class="modal-content">
                      <div class="modal-header">
                         <h6 id="title" class="modal-title"> </h6>
@@ -40,7 +40,7 @@
                               <div class="col-md-12">
                                  <div class="form-group">
                                     <label for="konten">Konten</label>
-                                    <textarea name="konten" data-toggle="summernote" data-placeholder="Write here..." class="form-control" placeholder="Input konten blog" required></textarea>
+                                    <textarea name="konten" data-toggle="summernote" data-placeholder="Write here..." class="form-control" cols="8" placeholder="Input konten blog" required></textarea>
                                  </div>
                               </div>
 
@@ -63,28 +63,6 @@
                </div>
             </div>
 
-            <!-- <div class="modal fade" id="modal_detail" tabindex="-1" role="dialog" aria-hidden="true">
-               <div class="modal-dialog modal-xl" role="document">
-                  <div class="modal-content">
-                     <div class="modal-header">
-                        <h3 id="title" class="modal-title"></h3>
-                     </div>
-                     <div class="modal-body">
-                        <div class="row">
-                           <div class="col-md-5 mb-2">
-                              <img id="foto_blog" class="img-fluid">
-                           </div>
-                           <div class="col-md-7">
-                              <div id="detai_desc"></div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                     </div>
-                  </div>
-               </div>
-            </div> -->
 
             <button type="button" onclick="add_new()" class="btn btn-success btn-floated"><span class="fa fa-plus"></span></button> <!-- /floating action -->
 
