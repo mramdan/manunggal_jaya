@@ -120,6 +120,8 @@
 <script src="<?= base_url() ?>assets/frontend/vendor/simplebar/dist/simplebar.min.js"></script>
 <script src="<?= base_url() ?>assets/frontend/vendor/tiny-slider/dist/min/tiny-slider.js"></script>
 <script src="<?= base_url() ?>assets/frontend/vendor/progressbar.js/dist/progressbar.min.js"></script>
+<script src="<?= base_url() ?>assets/frontend/vendor/lg-fullscreen.js/dist/lg-fullscreen.min.js"></script>
+<script src="<?= base_url() ?>assets/frontend/vendor/lg-zoom.js/dist/lg-zoom.min.js"></script>
 
 <!-- Main theme script-->
 <script src="<?= base_url() ?>assets/frontend/js/theme.min.js"></script>

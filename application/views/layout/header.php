@@ -11,6 +11,36 @@
    <meta name="description" content="<?= $description ?>">
    <meta name="keywords" content="<?= $keywords ?>">
    <meta name="author" content="<?= $author ?>">
+   <meta name="title" content="Bengkel Las Manunggal Jaya">
+
+   <!-- Open Graph / Facebook -->
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://bengkellas-manunggaljaya.com/">
+   <meta property="og:title" content="Bengkel Las Manunggal Jaya">
+   <meta property="og:description" content="Jasa Bengkel Las Handal Melayani Pembuatan Pagar Rumah, Kanopy, Railling Tangga, Balkon, Teralis, Stainless, Kontruksi Baja, Kontruksi Bangunan Di Jakarta, Bogor, Depok, Tangerang terpercaya di indoneisa menawarkan kualitas terjamin murah dan awet.">
+   <meta property="og:image" content="">
+
+   <!-- Twitter -->
+   <meta property="twitter:card" content="summary_large_image">
+   <meta property="twitter:url" content="https://bengkellas-manunggaljaya.com/">
+   <meta property="twitter:title" content="Bengkel Las Manunggal Jaya">
+   <meta property="twitter:description" content="Jasa Bengkel Las Handal Melayani Pembuatan Pagar Rumah, Kanopy, Railling Tangga, Balkon, Teralis, Stainless, Kontruksi Baja, Kontruksi Bangunan Di Jakarta, Bogor, Depok, Tangerang terpercaya di indoneisa menawarkan kualitas terjamin murah dan awet.">
+   <meta property="twitter:image" content="">
+   <meta name="google-site-verification" content="C1z1yGbLn890P9hxzK9Xl6D_Vjt6xAV2dwnYzAkDxSs" />
+   <script type="application/ld+json">
+      {
+         "name": "Bengkel Las Manunggal Jaya",
+         "description": "Jasa Bengkel Las Handal Melayani Pembuatan Pagar Rumah, Kanopy, Railling Tangga, Balkon, Teralis, Stainless, Kontruksi Baja, Kontruksi Bangunan Di Jakarta, Bogor, Depok, Tangerang terpercaya di indoneisa menawarkan kualitas terjamin murah dan awet.",
+         "author": {
+            "@type": "Person",
+            "name": "Sandi Gordon"
+         },
+         "@type": "WebSite",
+         "url": "",
+         "headline": "<?= $title ?>",
+         "@context": "http://schema.org"
+      }
+   </script><!-- End SEO tag -->
 
    <!-- Viewport-->
    <meta name="viewport" content="width=device-width, initial-scale=1">

@@ -9,7 +9,7 @@ class B extends CI_Controller
         $this->load->model('Pages_models', 'pages');
     }
 
-    public function detail($link)
+    public function artikel($link)
     {
         $data = [
             //title Page

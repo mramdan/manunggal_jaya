@@ -214,7 +214,7 @@
           }'>
             <?php foreach ($kategori as $kategories) : ?>
                 <article class="mb-5 pt-2 pb-sm-3 pb-2">
-                    <a class="cs-portfolio-card-slide" href="<?= base_url() ?>pages/kategori/<?= $kategories['kategori'] ?>">
+                    <a class="cs-portfolio-card-slide" href="<?= base_url() ?>pages/produk_detail/<?= $kategories['slug'] ?>">
                         <div class="cs-portfolio-card-img">
                             <img class="bg-size-cover bg-position-center-top" src="<?= base_url() ?>assets/uploads/produk/kategori/<?= $kategories['foto'] ?>" alt="<?= $kategories['kategori'] ?>">
                         </div>

@@ -83,7 +83,7 @@ class Pages extends CI_Controller
    public function produk()
    {
       $data = [
-         'title' => 'Profile',
+         'title' => 'Produk ' . $this->pages->get_profile('nama_perusahaan'),
          // Seo Setting
          'description' => $this->pages->get_profile('description'),
          'keywords' => $this->pages->get_profile('keywords'),
@@ -105,11 +105,49 @@ class Pages extends CI_Controller
          'email' => $this->pages->get_profile('email'),
 
          // Content
-         // ''=>,
+         'kategori' => $this->pages->get_kategori(),
 
       ];
       $this->load->view('layout/header', $data);
-      $this->load->view('pages/produk_v');
+      $this->load->view('pages/produk_v', $data);
+      $this->load->view('layout/footer', $data);
+   }
+
+   public function produk_detail($slug)
+   {
+      $produk = $this->pages->get_kategori_by_slug($slug);
+      $kat = $produk['kategori'];
+      $idkat = $produk['id_kategori'];
+
+      $data = [
+         'title' => 'Jasa Pembuatan & Pemasangan ' . $kat,
+         // Seo Setting
+         'description' => $this->pages->get_profile('description'),
+         'keywords' => $this->pages->get_profile('keywords'),
+         'author' => $this->pages->get_profile('author'),
+
+         //header
+         'logo' => $this->pages->get_profile('logo'),
+         'kontak' => $this->pages->get_profile('kontak'),
+         'kontak2' => $this->pages->get_profile('kontak2'),
+
+         // Footer
+         'twitter' => $this->pages->get_sosmed('Twitter'),
+         'facebook' => $this->pages->get_sosmed('Facebook'),
+         'instagram' => $this->pages->get_sosmed('Instagram'),
+         'youtube' => $this->pages->get_sosmed('YouTube'),
+         'name' => $this->pages->get_profile('nama_perusahaan'),
+         'description' => $this->pages->get_profile('description'),
+         'alamat' => $this->pages->get_profile('alamat'),
+         'email' => $this->pages->get_profile('email'),
+
+         // Content
+         'produk' => $produk,
+         'produk_detail' => $this->pages->get_produk_detail($idkat),
+
+      ];
+      $this->load->view('layout/header', $data);
+      $this->load->view('pages/produk_detail_v', $data);
       $this->load->view('layout/footer', $data);
    }
 

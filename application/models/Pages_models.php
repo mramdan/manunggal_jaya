@@ -55,6 +55,8 @@ class Pages_models extends CI_Model
          $data[] = array(
             'id_kategori' => $row->id_kategori,
             'kategori' => $row->kategori,
+            'slug' => $row->slug,
+            'harga' => $row->harga,
             'foto' => $row->foto,
 
          );
@@ -62,18 +64,20 @@ class Pages_models extends CI_Model
       return $data;
    }
 
-   public function get_product()
+   public function get_kategori_by_slug($slug)
    {
-      $query = $this->db->query('select * from ref_produk order by id_produk desc limit 3');
+      return $this->db->get_where('ref_kategori', ['slug' => $slug])->row_array();
+   }
+
+   public function get_produk_detail($idkat)
+   {
+      $query = $this->db->query("select * from ref_produk where id_kategori= $idkat");
 
       $data = array();
       foreach ($query->result() as $row) {
          $data[] = array(
             'id_produk' => $row->id_produk,
             'nama_produk' => $row->nama_produk,
-            'kategori' => $row->kategori,
-            'deskripsi' => $row->deskripsi,
-            'harga' => $row->harga,
             'foto' => $row->foto,
          );
       }

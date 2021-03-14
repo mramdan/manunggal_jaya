@@ -37,12 +37,12 @@
             <div class="cs-grid-item col-md-6 mb-md-5 mb-grid-gutter pb-lg-3">
                <!-- Post preview: card alt -->
                <article class="cs-image-scale h-100 card box-shadow card-hover border-0">
-                  <a class="cs-image-inner card-img-top" href="<?= base_url() ?>b/detail/<?= $blogs['link'] ?>">
+                  <a class="cs-image-inner card-img-top" href="<?= base_url() ?>b/artikel/<?= $blogs['link'] ?>">
                      <img src="<?= base_url() ?>assets/uploads/blog/<?= $blogs['foto'] ?>" alt="foto-<?= $blogs['judul_blog'] ?>">
                   </a>
                   <div class="card-body">
                      <h3 class="h5 mb-2 pb-1">
-                        <a class="nav-link" href="<?= base_url() ?>b/detail/<?= $blogs['link'] ?>"><?= $blogs['judul_blog'] ?></a>
+                        <a class="nav-link" href="<?= base_url() ?>b/artikel/<?= $blogs['link'] ?>"><?= $blogs['judul_blog'] ?></a>
                      </h3>
                      <ul class="nav nav-muted mb-2 pb-1">
                         <li class="nav-item mr-2">
