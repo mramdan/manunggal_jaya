@@ -53,7 +53,7 @@
 
          //Set column definition initialisation properties.
          "columnDefs": [{
-               "targets": [4], //last column
+               "targets": [5], //last column
                "orderable": false, //set not orderable
             },
             // {
@@ -140,16 +140,89 @@
       });
    }
 
+   function confirm(id) {
+      save_method = 'update';
+      $('#form_acc')[0].reset(); // reset form on modals
+      $('#image').empty();
+      // $('#modal_form_acc').modal('show');
+
+
+      //Ajax Load data from ajax
+      $.ajax({
+         url: "<?php echo site_url('admin/produk/ajax_edit/') ?>" + id,
+         type: "GET",
+         dataType: "JSON",
+         success: function(data) {
+
+            // console.log('edit', data);
+
+            $('[name="id_testi"]').val(data.id_testi);
+            $('[name="nama_pelanggan"]').val(data.nama_pelanggan);
+            $('[name="komentar"]').val(data.komentar).trigger('change');
+            $('[name="status"]').val(data.status);
+
+
+            $('[name="old_foto"]').val(data.foto);
+
+            $('#modal_form_acc').modal('show'); // show bootstrap modal when complete loaded
+            $('.modal-title').text('Edit Hero/Slider'); // Set Title to Bootstrap modal title
+
+         },
+         error: function(jqXHR, textStatus, errorThrown) {
+            alert('Error get data from ajax');
+         }
+      });
+   }
+
+
+   // edit data
+
+   function edit(id) {
+      save_method = 'update';
+      $('#form_acc')[0].reset(); // reset form on modals
+      $('#image').empty();
+      // $('#modal_form_produk').modal('show');
+
+
+      //Ajax Load data from ajax
+      $.ajax({
+         url: "<?php echo site_url('admin/testimoni/ajax_edit/') ?>" + id,
+         type: "GET",
+         dataType: "JSON",
+         success: function(data) {
+
+            // console.log('edit', data);
+
+            $('[name="id_testi"]').val(data.id_testi);
+            $('[name="nama_pelanggan"]').val(data.nama_pelanggan);
+            $('[name="komentar"]').val(data.komentar).trigger('change');
+
+            $('[name="status"]').val(data.status);
+
+            $('[name="old_foto"]').val(data.foto);
+
+            $('#modal_form_acc').modal('show'); // show bootstrap modal when complete loaded
+            $('.modal-title').text('Edit Hero/Slider'); // Set Title to Bootstrap modal title
+
+         },
+         error: function(jqXHR, textStatus, errorThrown) {
+            alert('Error get data from ajax');
+         }
+      });
+   }
+
+   // delet data
+
    function delete_data(id) {
       if (confirm('Apakah Anda yakin menghapus data ini ?')) {
          // ajax delete data to database
          $.ajax({
-            url: "<?php echo site_url('admin/produk/ajax_delete') ?>/" + id,
+            url: "<?php echo site_url('admin/testimoni/ajax_delete') ?>/" + id,
             type: "POST",
             dataType: "JSON",
             success: function(data) {
                if (data.status == '00') {
-                  // reload_list_produk();
+                  // reload_list_testimoni();
                   reload_table();
                   showAlert(data.type, data.mess);
                } else {
@@ -162,5 +235,71 @@
             }
          });
       }
+
+      $('#form_acc').submit(function(e) {
+         // alert("Form submitted!");
+         e.preventDefault();
+         // Get form
+         var form = $('#form_acc')[0];
+
+         // Create an FormData object
+         //var data = new FormData(form);
+         var data = new FormData(form);
+         //var data = $(this).serialize();
+
+         if ($('[name="image"]').val() == '') {
+            alert('Pilih Foto Testimoni Yang Akan di Upload !');
+            return false;
+         }
+
+         $('#btnSave').text('Sedang Proses, Mohon tunggu...'); //change button text
+         $('#btnSave').attr('disabled', true); //set button disable 
+
+         // ajax adding data to database
+         // console.log($('#form_produk').serialize());
+         var url;
+
+         if (save_method == 'add') {
+            url = "<?php echo site_url('admin/testimoni/ajax_add') ?>";
+         } else {
+            url = "<?php echo site_url('admin/testimoni/ajax_update') ?>";
+         }
+
+         $.ajax({
+            url: url,
+            type: "POST",
+            //contentType: 'multipart/form-data',
+            cache: false,
+            contentType: false,
+            processData: false,
+            method: 'POST',
+            data: data,
+            dataType: "JSON",
+
+            success: function(data) {
+               if (data.status == '00') //if success close modal and reload ajax table
+               {
+                  reload_table();
+                  showAlert(data.type, data.mess);
+                  $('#modal_form_acc').modal('hide');
+               } else {
+                  reload_table();
+                  showAlert(data.type, data.mess);
+
+               }
+
+               $('#btnSave').text('Simpan'); //change button text
+               $('#btnSave').attr('disabled', false); //set button enable 
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+               type = 'error';
+               msg = 'Error adding / update data';
+               showAlert(type, msg); //utk show alert
+               $('#btnSave').text('Simpan'); //change button text
+               $('#btnSave').attr('disabled', false); //set button enable 
+            }
+         });
+
+      });
    }
 </script>

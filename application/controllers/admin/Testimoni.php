@@ -50,6 +50,8 @@ class Testimoni extends CI_Controller
             $row[] = $dd->komentar;
             $row[] = $dd->foto;
             $row[] = $dd->status;
+            $row[] = '<a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" onclick="edit(' . "'" . $dd->id_testi . "'" . ')"><i class="fa fa-pencil-alt"></i></a>
+                          <a class="btn btn-sm btn-icon btn-secondary" href="javascript:void(0)" onclick="delete_data(' . "'" . $dd->id_testi . "'" . ')"><i class="far fa-trash-alt text-red"></i></a>';
             $data[] = $row;
          }
 
@@ -69,10 +71,6 @@ class Testimoni extends CI_Controller
       }
       echo json_encode($output);
    }
-
-
-
-
 
 
    public function ajax_list()
@@ -122,9 +120,9 @@ class Testimoni extends CI_Controller
    {
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-         $config['upload_path'] = './assets/uploads/produk/';
+         $config['upload_path'] = './assets/uploads/testimoni/';
          $config['allowed_types'] = 'gif|jpg|png';
-         $config['file_name'] = $this->input->post('nama_produk') . time();
+         $config['file_name'] = $this->input->post('nama_pelanggan') . time();
          $config['overwrite'] = true;
          $config['max_size'] = 3024; // 1MB
 
@@ -212,7 +210,7 @@ class Testimoni extends CI_Controller
             );
          }
 
-         $update = $this->produk_m->update(array('id_hero' => $this->input->post('id_hero')), $data);
+         $update = $this->testi_m->update(array('id_hero' => $this->input->post('id_hero')), $data);
          echo json_encode($update);
       }
    }
@@ -220,7 +218,15 @@ class Testimoni extends CI_Controller
    public function ajax_delete($id)
    {
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-         echo $this->produk_m->delete_by_id($id);
+         echo $this->testi_m->delete_by_id($id);
+      }
+   }
+
+   public function ajax_edit($id)
+   {
+      if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+         $data = $this->testi_m->get_by_id($id);
+         echo json_encode($data);
       }
    }
 }
