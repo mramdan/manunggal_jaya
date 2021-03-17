@@ -69,7 +69,7 @@
                              <p class="mb-0">Spesifikasi bahan bisa di sesuaikan</p>
                          </div>
                          <div class="mb-3 pt-4 px-2">
-                             <a href="#" class="btn btn-gradient btn-hover-shadow btn-block">Pesan Sekarang</a>
+                             <a href="https://api.whatsapp.com/send?phone=+6285793742404&text=Halo%20Bengkellas%20Manunggal%20Jaya,%20Saya%20mau%20order%20produk%20ini%20<?= base_url() ?>pages/produk_detail/<?= $produk['slug'] ?>" class="btn btn-gradient btn-hover-shadow btn-block">Pesan Sekarang</a>
                          </div>
                      </div>
                  </div>
