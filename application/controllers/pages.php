@@ -213,4 +213,36 @@ class Pages extends CI_Controller
       $this->load->view('pages/kontak_v', $data);
       $this->load->view('layout/footer', $data);
    }
+
+   public function testimoni()
+   {
+      $data = [
+         'title' => 'Blog - ' . $this->pages->get_profile('nama_perusahaan'),
+         // Seo Setting
+         'description' => $this->pages->get_profile('description'),
+         'keywords' => $this->pages->get_profile('keywords'),
+         'author' => $this->pages->get_profile('author'),
+
+         //header
+         'logo' => $this->pages->get_profile('logo'),
+         'kontak' => $this->pages->get_profile('kontak'),
+         'kontak2' => $this->pages->get_profile('kontak2'),
+
+         // Footer
+         'twitter' => $this->pages->get_sosmed('Twitter'),
+         'facebook' => $this->pages->get_sosmed('Facebook'),
+         'instagram' => $this->pages->get_sosmed('Instagram'),
+         'youtube' => $this->pages->get_sosmed('YouTube'),
+         'name' => $this->pages->get_profile('nama_perusahaan'),
+         'description' => $this->pages->get_profile('description'),
+         'alamat' => $this->pages->get_profile('alamat'),
+         'email' => $this->pages->get_profile('email'),
+
+         // COntent
+         'testimoni' => $this->pages->get_testimoni(),
+      ];
+      $this->load->view('layout/header', $data);
+      $this->load->view('pages/Testimoni_v', $data);
+      $this->load->view('layout/footer', $data);
+   }
 }

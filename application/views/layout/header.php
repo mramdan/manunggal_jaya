@@ -254,6 +254,9 @@
                   <li class="nav-item">
                      <a class="nav-link" href="<?= base_url('pages/kontak') ?>">Kontak</a>
                   </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="<?= base_url('pages/testimoni') ?>">Testimoni</a>
+                  </li>
                </ul>
             </nav>
          </div>
