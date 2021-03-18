@@ -239,10 +239,45 @@ class Pages extends CI_Controller
          'email' => $this->pages->get_profile('email'),
 
          // COntent
-         'testimoni' => $this->pages->get_testimoni(),
+         'testimoni' => $this->pages->get_testimoniall(),
+
+
       ];
       $this->load->view('layout/header', $data);
       $this->load->view('pages/Testimoni_v', $data);
+      // $this->load->view('js/f_testi_js', $data);
       $this->load->view('layout/footer', $data);
+   }
+
+   public function submitTesti()
+   {
+
+
+      $config['upload_path'] = './assets/uploads/testimoni/';
+      $config['allowed_types'] = '*';
+      $config['file_name'] =  time();
+      $config['overwrite'] = true;
+      $config['max_size'] = 1024; // 1MB
+
+      $this->load->library('upload', $config);
+      // $this->upload->initialize($config);
+      if (!$this->upload->do_upload('foto')) {
+         $error = $this->upload->display_errors();
+         echo  $error;
+      } else {
+         $image_data = $this->upload->data();
+
+         $data = array(
+            'nama_pelanggan' => $this->input->post('nama_pelanggan'),
+            'komentar' => $this->input->post('komentar'),
+            'status' => 'Not Acc',
+            'foto' => $image_data['file_name'],
+         );
+         // var_dump($data);
+
+         $insert = $this->pages->save($data);
+         // redirect('page/thanks', $insert);
+         $this->load->view('pages/thanks', $insert);
+      }
    }
 }

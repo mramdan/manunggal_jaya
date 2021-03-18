@@ -75,23 +75,19 @@
          <div class="ml-md-auto mr-md-0 mx-auto" style="max-width: 495px;">
 
             <!-- Details form -->
-            <form class="py-5 px-sm-5 px-4 bg-light rounded box-shadow-lg">
+            <form action="<?= base_url('pages/submitTesti') ?>" method="POST" class="py-5 px-sm-5 px-4 bg-light rounded box-shadow-lg" enctype="multipart/form-data">
                <h2 class="h3 text-center">Berikan Penilaian Anda</h2>
                <div class="form-group">
-                  <label for="detail-name" class="font-size-sm">Name*</label>
-                  <input id="detail-name" class="form-control" type="text" placeholder="Your name" required>
+                  <label for="nama_pelanggan" class="font-size-sm">nama</label>
+                  <input id="nama_pelanggan" class="form-control" name="nama_pelanggan" type="text" placeholder="Your name" required>
                </div>
                <div class="form-group">
-                  <label for="detail-message" class="font-size-sm">komentar</label>
-                  <textarea id="detail-message" class="form-control" rows="2" placeholder="Your message" required></textarea>
+                  <label for="komentar" class="font-size-sm">komentar</label>
+                  <textarea id="komentar" name="komentar" class="form-control" rows="2" placeholder="Your message" required></textarea>
                </div>
                <div class="form-group">
                   <label for="foto" class="font-size-sm">Masukan Foto Anda</label>
-                  <input id="foto" class="form-control" type="file" placeholder="Masukan Foto Anda">
-               </div>
-               <div class="form-group custom-control custom-checkbox">
-                  <input id="detail-subscribe" class="custom-control-input" type="checkbox" checked>
-                  <label for="detail-subscribe" class="custom-control-label font-size-sm">I agree to receive communications from Createx Construction Bureau.</label>
+                  <input id="foto" name="foto" class="form-control" type="file" placeholder="Masukan Foto Anda">
                </div>
                <div class="text-center">
                   <button type="submit" class="btn btn-primary text-uppercase">Kirim Testimoni</button>
