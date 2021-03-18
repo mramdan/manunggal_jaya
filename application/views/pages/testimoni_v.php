@@ -12,13 +12,13 @@
                   <li class="breadcrumb-item">
                      <a href="about.html">About Us</a>
                   </li>
-                  <li class="breadcrumb-item active" aria-current="page">Available Positions</li>
+                  <li class="breadcrumb-item active" aria-current="page">Gallery Testimoni</li>
                </ol>
             </nav>
 
             <!-- Title -->
-            <h1 class="display-1 text-uppercase">Available Position</h1>
-            <p class="mb-0 lead text-muted">Build your career with Createx Construction Bureau.</p>
+            <h1 class="display-1 text-uppercase">Gallery Testimoni</h1>
+            <p class="mb-0 lead text-muted">Get your Testimoni.</p>
          </div>
       </div>
    </div>

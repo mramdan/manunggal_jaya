@@ -217,7 +217,7 @@ class Pages extends CI_Controller
    public function testimoni()
    {
       $data = [
-         'title' => 'Blog - ' . $this->pages->get_profile('nama_perusahaan'),
+         'title' => 'Testimoni- ' . $this->pages->get_profile('nama_perusahaan'),
          // Seo Setting
          'description' => $this->pages->get_profile('description'),
          'keywords' => $this->pages->get_profile('keywords'),
