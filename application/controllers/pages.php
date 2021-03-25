@@ -277,7 +277,42 @@ class Pages extends CI_Controller
 
          $insert = $this->pages->save($data);
          // redirect('page/thanks', $insert);
-         $this->load->view('pages/thanks', $insert);
+         $this->load->view('pages/tester', $insert);
       }
    }
+
+   // public function tester()
+   // {
+   //    $data = [
+   //       'title' => 'Testimoni- ' . $this->pages->get_profile('nama_perusahaan'),
+   //       // Seo Setting
+   //       'description' => $this->pages->get_profile('description'),
+   //       'keywords' => $this->pages->get_profile('keywords'),
+   //       'author' => $this->pages->get_profile('author'),
+
+   //       //header
+   //       'logo' => $this->pages->get_profile('logo'),
+   //       'kontak' => $this->pages->get_profile('kontak'),
+   //       'kontak2' => $this->pages->get_profile('kontak2'),
+
+   //       // Footer
+   //       'twitter' => $this->pages->get_sosmed('Twitter'),
+   //       'facebook' => $this->pages->get_sosmed('Facebook'),
+   //       'instagram' => $this->pages->get_sosmed('Instagram'),
+   //       'youtube' => $this->pages->get_sosmed('YouTube'),
+   //       'name' => $this->pages->get_profile('nama_perusahaan'),
+   //       'description' => $this->pages->get_profile('description'),
+   //       'alamat' => $this->pages->get_profile('alamat'),
+   //       'email' => $this->pages->get_profile('email'),
+
+   //       // COntent
+   //       'testimoni' => $this->pages->get_testimoniall(),
+
+
+   //    ];
+
+   //    $this->load->view('pages/tester', $data);
+   //    // $this->load->view('js/f_testi_js', $data);
+
+   // }
 }

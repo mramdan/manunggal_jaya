@@ -123,6 +123,10 @@
 <script src="<?= base_url() ?>assets/frontend/vendor/lg-fullscreen.js/dist/lg-fullscreen.min.js"></script>
 <script src="<?= base_url() ?>assets/frontend/vendor/lg-zoom.js/dist/lg-zoom.min.js"></script>
 
+<!-- switch alert -->
+<script src="<?= base_url() ?>assets/frontend/dist/sweetalert2.all.min.js"></script>
+<script src="<?= base_url() ?>assets/frontend/dist/myscript.js"></script>
+
 <!-- Main theme script-->
 <script src="<?= base_url() ?>assets/frontend/js/theme.min.js"></script>
 <!-- <script type="text/javascript">
