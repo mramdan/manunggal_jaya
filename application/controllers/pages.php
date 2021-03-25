@@ -281,38 +281,30 @@ class Pages extends CI_Controller
       }
    }
 
-   // public function tester()
-   // {
-   //    $data = [
-   //       'title' => 'Testimoni- ' . $this->pages->get_profile('nama_perusahaan'),
-   //       // Seo Setting
-   //       'description' => $this->pages->get_profile('description'),
-   //       'keywords' => $this->pages->get_profile('keywords'),
-   //       'author' => $this->pages->get_profile('author'),
+   public function submitkontak()
+   {
+      $nama = $this->input->post('nama');
+      $phone = $this->input->post('phone');
+      $email = $this->input->post('email');
+      $service = $this->input->post('service');
+      $lokasi = $this->input->post('lokasi');
+      $cmetod = $this->input->post('cmetod');
+      $contactmessage = $this->input->post('contactmessage');
+      $contactbox = $this->input->post('contactbox');
 
-   //       //header
-   //       'logo' => $this->pages->get_profile('logo'),
-   //       'kontak' => $this->pages->get_profile('kontak'),
-   //       'kontak2' => $this->pages->get_profile('kontak2'),
+      $data = array(
+         'nama' => $nama,
+         'phone' => $phone,
+         'email' => $email,
+         'service' => $service,
+         'lokasi' => $lokasi,
+         'cmetod' => $cmetod,
+         'contactmessage' => $contactmessage,
+         'contactbox' => $contactbox,
+      );
+      var_dump($data);
 
-   //       // Footer
-   //       'twitter' => $this->pages->get_sosmed('Twitter'),
-   //       'facebook' => $this->pages->get_sosmed('Facebook'),
-   //       'instagram' => $this->pages->get_sosmed('Instagram'),
-   //       'youtube' => $this->pages->get_sosmed('YouTube'),
-   //       'name' => $this->pages->get_profile('nama_perusahaan'),
-   //       'description' => $this->pages->get_profile('description'),
-   //       'alamat' => $this->pages->get_profile('alamat'),
-   //       'email' => $this->pages->get_profile('email'),
-
-   //       // COntent
-   //       'testimoni' => $this->pages->get_testimoniall(),
-
-
-   //    ];
-
-   //    $this->load->view('pages/tester', $data);
-   //    // $this->load->view('js/f_testi_js', $data);
-
-   // }
+      // $insert = $this->pages->save($data);
+      // $this->load->view('pages/tester', $insert);
+   }
 }

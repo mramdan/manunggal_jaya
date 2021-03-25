@@ -34,27 +34,27 @@
       <div class="col-lg-6 offset-lg-1 col-md-7">
 
          <!-- Form -->
-         <form class="row needs-validation" novalidate>
+         <form class="row needs-validation" action="<?= base_url('pages/submitKontak') ?>" method="POST" enctype="multipart/form-data" novalidate>
             <div class="col-sm-6">
                <div class="form-group">
                   <label for="contact-name">Name*</label>
-                  <input id="contact-name" class="form-control form-control-lg" type="text" placeholder="Your name" required>
-                  <div class="invalid-tooltip">Please enter your name.</div>
+                  <input id="contact-name" name="nama" class="form-control form-control-lg" type="text" placeholder="Masukan Nama" required>
+                  <div class="invalid-tooltip">Masukan Nama.</div>
                </div>
                <div class="form-group">
                   <label for="contact-tel">Phone*</label>
-                  <input id="contact-tel" class="form-control form-control-lg" type="tel" placeholder="Your phone number" required>
-                  <div class="invalid-tooltip">Please enter your email.</div>
+                  <input id="contact-tel" name="phone" class="form-control form-control-lg" type="tel" placeholder="Masukan No Telpon" required>
+                  <div class="invalid-tooltip">Masukan No Telpon.</div>
                </div>
                <div class="form-group">
                   <label for="contact-email">Email</label>
-                  <input id="contact-email" class="form-control form-control-lg bg-image-0" type="email" placeholder="Your working email">
+                  <input id="contact-email" name="email" class="form-control form-control-lg bg-image-0" type="email" placeholder="Masukan Nama email">
                </div>
             </div>
             <div class="col-sm-6">
                <div class="form-group">
                   <label for="contact-service">I am interested in</label>
-                  <select id="contact-service" class="custom-select custom-select-lg">
+                  <select id="contact-service" name="service" class="custom-select custom-select-lg">
                      <option>Interior Design</option>
                      <option>Repairs</option>
                      <option>Project Development</option>
@@ -63,7 +63,7 @@
                </div>
                <div class="form-group">
                   <label for="contact-location">Location*</label>
-                  <select id="contact-location" class="custom-select custom-select-lg">
+                  <select id="contact-location" name="lokasi" class="custom-select custom-select-lg">
                      <option>Choose your location</option>
                      <option>New York</option>
                      <option>New Jersey</option>
@@ -71,35 +71,32 @@
                   </select>
                </div>
                <div class="form-group">
-                  <label for="contact-method-phone">Preferred contact method</label>
+                  <label for="cmetod-phone">Preferred contact method</label>
                   <div class="d-flex flex-wrap mt-2 pt-1">
                      <div class="custom-control custom-radio mr-4">
-                        <input id="contact-method-phone" name="contact-method" class="custom-control-input" type="radio" checked>
-                        <label for="contact-method-phone" class="custom-control-label">Phone</label>
+                        <input id="cmetod-phone" name="cmetod" class="custom-control-input" type="radio" checked>
+                        <label for="cmetod-phone" class="custom-control-label">Phone</label>
                      </div>
                      <div class="custom-control custom-radio mr-4">
-                        <input id="contact-method-email" name="contact-method" class="custom-control-input" type="radio">
-                        <label for="contact-method-email" class="custom-control-label">Email</label>
+                        <input id="cmetod-email" name="cmetod" class="custom-control-input" type="radio">
+                        <label for="cmetod-email" class="custom-control-label">Email</label>
                      </div>
-                     <div class="custom-control custom-radio">
-                        <input id="contact-method-viber" name="contact-method" class="custom-control-input" type="radio">
-                        <label for="contact-method-viber" class="custom-control-label">Viber</label>
-                     </div>
+
                   </div>
                </div>
             </div>
             <div class="col-12">
                <div class="form-group">
                   <label for="contact-message">Message*</label>
-                  <textarea id="contact-message" class="form-control form-control-lg bg-image-0" rows="5" placeholder="Your message" required></textarea>
+                  <textarea id="contact-message" name="contactmessage" class="form-control form-control-lg bg-image-0" rows="5" placeholder="Your message" required></textarea>
                   <div class="invalid-tooltip">Please leave us a message.</div>
                </div>
                <div class="d-flex flex-lg-row flex-column align-items-sm-start align-items-stretch justify-content-sm-between pt-md-4 pt-2">
                   <div class="form-group custom-control custom-checkbox">
-                     <input id="contact-subscribe" class="custom-control-input" type="checkbox" checked>
-                     <label for="contact-subscribe" class="custom-control-label">I agree to receive communications from Createx Construction Bureau.</label>
+                     <input id="contact-subscribe" name="contactbox" class="custom-control-input" type="checkbox" checked>
+                     <label for="contact-subscribe" class="custom-control-label">Saya setuju menerima komunikasi dari Bengkellas manunggal jaya.</label>
                   </div>
-                  <button type="submit" class="btn btn-danger btn-lg ml-lg-5 text-uppercase">Send request</button>
+                  <button type="submit" class="btn btn-danger btn-lg ml-lg-5 text-uppercase">Kirim</button>
                </div>
             </div>
          </form>
