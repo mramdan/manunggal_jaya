@@ -12,7 +12,7 @@
     <meta property="og:site_name" content="Bengkel Las Manunggal Jaya">
 
     <!-- FAVICONS -->
-    <link rel="shortcut icon" href="<?= base_url() ?>assets/images/icon/favicon.ico">
+    <!-- <link rel="shortcut icon" href="<?= base_url() ?>assets/images/icon/favicon.ico"> -->
     <meta name="theme-color" content="#3063A0">
     <!-- End FAVICONS -->
 
