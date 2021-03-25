@@ -70,20 +70,6 @@
                      <option>San Francisco</option>
                   </select>
                </div>
-               <div class="form-group">
-                  <label for="cmetod-phone">Preferred contact method</label>
-                  <div class="d-flex flex-wrap mt-2 pt-1">
-                     <div class="custom-control custom-radio mr-4">
-                        <input id="cmetod-phone" name="cmetod" class="custom-control-input" type="radio" checked>
-                        <label for="cmetod-phone" class="custom-control-label">Phone</label>
-                     </div>
-                     <div class="custom-control custom-radio mr-4">
-                        <input id="cmetod-email" name="cmetod" class="custom-control-input" type="radio">
-                        <label for="cmetod-email" class="custom-control-label">Email</label>
-                     </div>
-
-                  </div>
-               </div>
             </div>
             <div class="col-12">
                <div class="form-group">

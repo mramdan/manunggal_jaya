@@ -216,4 +216,21 @@ class Pages_models extends CI_Model
       }
       return $res;
    }
+
+   public function savekontak($data)
+   {
+      // var_dump($data);
+      $r = $this->db->insert('kontak', $data);
+
+      if ($r) {
+         $res['status'] = '00';
+         $res['type'] = 'success';
+         $res['mess'] = 'Terimakasih Sudah Memberi Testimoni';
+      } else {
+         $res['status'] = '01';
+         $res['type'] = 'warning';
+         $res['mess'] = 'Gagal Simpan Data';
+      }
+      return $res;
+   }
 }

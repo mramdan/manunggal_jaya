@@ -288,7 +288,6 @@ class Pages extends CI_Controller
       $email = $this->input->post('email');
       $service = $this->input->post('service');
       $lokasi = $this->input->post('lokasi');
-      $cmetod = $this->input->post('cmetod');
       $contactmessage = $this->input->post('contactmessage');
       $contactbox = $this->input->post('contactbox');
 
@@ -298,13 +297,12 @@ class Pages extends CI_Controller
          'email' => $email,
          'service' => $service,
          'lokasi' => $lokasi,
-         'cmetod' => $cmetod,
          'contactmessage' => $contactmessage,
          'contactbox' => $contactbox,
       );
-      var_dump($data);
+      // var_dump($data);
 
-      // $insert = $this->pages->save($data);
-      // $this->load->view('pages/tester', $insert);
+      $insert = $this->pages->savekontak($data);
+      $this->load->view('pages/kontak', $insert);
    }
 }
