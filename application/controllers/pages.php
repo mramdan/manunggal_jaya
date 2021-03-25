@@ -303,6 +303,7 @@ class Pages extends CI_Controller
       // var_dump($data);
 
       $insert = $this->pages->savekontak($data);
-      $this->load->view('pages/kontak', $insert);
+      echo json_encode($insert);
+      // $this->load->view('pages/kontak', $insert);
    }
 }

@@ -228,7 +228,7 @@ class Pages_models extends CI_Model
          $res['mess'] = 'Terimakasih Sudah Memberi Testimoni';
       } else {
          $res['status'] = '01';
-         $res['type'] = 'warning';
+         $res['type'] = 'error';
          $res['mess'] = 'Gagal Simpan Data';
       }
       return $res;

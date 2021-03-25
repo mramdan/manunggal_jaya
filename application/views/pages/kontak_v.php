@@ -34,7 +34,8 @@
       <div class="col-lg-6 offset-lg-1 col-md-7">
 
          <!-- Form -->
-         <form class="row needs-validation" action="<?= base_url('pages/submitKontak') ?>" method="POST" enctype="multipart/form-data" novalidate>
+         <!-- <form class="row needs-validation" action="<?= base_url('pages/submitKontak') ?>" method="POST" enctype="multipart/form-data" novalidate> -->
+         <form class="row needs-validation" id="form_kontak" method="POST" novalidate>
             <div class="col-sm-6">
                <div class="form-group">
                   <label for="contact-name">Name*</label>
@@ -82,7 +83,8 @@
                      <input id="contact-subscribe" name="contactbox" class="custom-control-input" type="checkbox" checked>
                      <label for="contact-subscribe" class="custom-control-label">Saya setuju menerima komunikasi dari Bengkellas manunggal jaya.</label>
                   </div>
-                  <button type="submit" class="btn btn-danger btn-lg ml-lg-5 text-uppercase">Kirim</button>
+                  <!-- <button type="button" onclick="muncul()" class="btn btn-danger btn-lg ml-lg-5 text-uppercase">tes</button> -->
+                  <button type="submit" id="btnSave" class="btn btn-danger btn-lg ml-lg-5 text-uppercase">Kirim</button>
                </div>
             </div>
          </form>
@@ -127,3 +129,68 @@
       </div>
    </section>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+   $('#form_kontak').submit(function(e) {
+      // alert("Form submitted!");
+      e.preventDefault();
+      // Get form
+      var form = $('#form_kontak')[0];
+
+      // Create an FormData object
+      //var data = new FormData(form);
+      var data = new FormData(form);
+      //var data = $(this).serialize();
+
+      if ($('[name="foto_produk"]').val() == '') {
+         alert('Pilih Foto Produk Yang Akan di Upload !');
+         return false;
+      }
+
+      $('#btnSave').text('Sedang Proses, Mohon tunggu...'); //change button text
+      $('#btnSave').attr('disabled', true); //set button disable 
+
+      // ajax adding data to database
+      // console.log($('#form_produk').serialize());
+      $.ajax({
+         url: "<?php echo site_url('pages/submitKontak') ?>",
+         type: "POST",
+         //contentType: 'multipart/form-data',
+         cache: false,
+         contentType: false,
+         processData: false,
+         method: 'POST',
+         data: data,
+         dataType: "JSON",
+
+         success: function(data) {
+            if (data.status == '00') //if success close modal and reload ajax table
+            {
+               Swal.fire(
+                  'Good job!',
+                  data.mess,
+                  'success'
+               );
+            } else {
+               Swal.fire(
+                  'Oppss..!',
+                  data.mess,
+                  'error'
+               );
+            }
+
+            $('#btnSave').text('Simpan'); //change button text
+            $('#btnSave').attr('disabled', false); //set button enable 
+         },
+         error: function(jqXHR, textStatus, errorThrown) {
+            type = 'error';
+            msg = 'Error adding / update data';
+            showAlert(type, msg); //utk show alert
+            $('#btnSave').text('Simpan'); //change button text
+            $('#btnSave').attr('disabled', false); //set button enable 
+         }
+      });
+
+   });
+</script>
