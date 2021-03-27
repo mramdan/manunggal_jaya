@@ -24,6 +24,48 @@
    </div>
 </section>
 
+<section class="py-5 jarallax" data-jarallax data-speed="0.8">
+
+   <!-- Parallax bg -->
+   <div class="jarallax-img" style="background-image: url(../../assets/img/construction/detail-form-bg.jpg);"></div>
+
+   <!-- Content -->
+   <div class="container py-4">
+      <div class="row">
+         <div class="col-lg-7">
+            <div class="row align-items-center justify-content-between">
+               <div class="col-xl-8 col-lg-8 col-md-8">
+                  <div class="wantToWork-caption wantToWork-caption2">
+                     <h2>Sudah Jadi Bagian Dari kami?</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="ml-md-auto mr-md-0 mx-auto" style="max-width: 495px;">
+
+            <!-- Details form -->
+            <form action="<?= base_url('pages/submitTesti') ?>" method="POST" class="py-5 px-sm-5 px-4 bg-light rounded box-shadow-lg" enctype="multipart/form-data">
+               <h2 class="h3 text-center">Berikan Penilaian Anda</h2>
+               <div class="form-group">
+                  <label for="nama_pelanggan" class="font-size-sm">Nama</label>
+                  <input id="nama_pelanggan" class="form-control" name="nama_pelanggan" type="text" placeholder="Your name" required>
+               </div>
+               <div class="form-group">
+                  <label for="komentar" class="font-size-sm">Komentar</label>
+                  <textarea id="komentar" name="komentar" class="form-control" rows="2" placeholder="Your message" required></textarea>
+               </div>
+               <div class="form-group">
+                  <label for="foto" class="font-size-sm">Masukan Foto Anda</label>
+                  <input id="foto" name="foto" class="form-control" type="file" placeholder="Masukan Foto Anda">
+               </div>
+               <div class="text-center">
+                  <button type="submit" class="btn btn-primary text-uppercase">Kirim Testimoni</button>
+               </div>
+            </form>
+         </div>
+      </div>
+</section>
+
 <section class="container pt-lg-6 pt-5 pb-4">
    <div class="row row-cols-1 row-cols-md-3 g-4">
 
@@ -53,46 +95,4 @@
       <?php endforeach ?>
 
    </div>
-</section>
-
-<section class="py-5 jarallax" data-jarallax data-speed="0.8">
-
-   <!-- Parallax bg -->
-   <div class="jarallax-img" style="background-image: url(../../assets/img/construction/detail-form-bg.jpg);"></div>
-
-   <!-- Content -->
-   <div class="container py-4">
-      <div class="row">
-         <div class="col-lg-7">
-            <div class="row align-items-center justify-content-between">
-               <div class="col-xl-8 col-lg-8 col-md-8">
-                  <div class="wantToWork-caption wantToWork-caption2">
-                     <h2>Sudah Jadi Bagian Dari kami?</h2>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="ml-md-auto mr-md-0 mx-auto" style="max-width: 495px;">
-
-            <!-- Details form -->
-            <form action="<?= base_url('pages/submitTesti') ?>" method="POST" class="py-5 px-sm-5 px-4 bg-light rounded box-shadow-lg" enctype="multipart/form-data">
-               <h2 class="h3 text-center">Berikan Penilaian Anda</h2>
-               <div class="form-group">
-                  <label for="nama_pelanggan" class="font-size-sm">nama</label>
-                  <input id="nama_pelanggan" class="form-control" name="nama_pelanggan" type="text" placeholder="Your name" required>
-               </div>
-               <div class="form-group">
-                  <label for="komentar" class="font-size-sm">komentar</label>
-                  <textarea id="komentar" name="komentar" class="form-control" rows="2" placeholder="Your message" required></textarea>
-               </div>
-               <div class="form-group">
-                  <label for="foto" class="font-size-sm">Masukan Foto Anda</label>
-                  <input id="foto" name="foto" class="form-control" type="file" placeholder="Masukan Foto Anda">
-               </div>
-               <div class="text-center">
-                  <button type="submit" class="btn btn-primary text-uppercase">Kirim Testimoni</button>
-               </div>
-            </form>
-         </div>
-      </div>
 </section>

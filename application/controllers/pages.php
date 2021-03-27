@@ -283,27 +283,25 @@ class Pages extends CI_Controller
 
    public function submitkontak()
    {
-      $nama = $this->input->post('nama');
-      $phone = $this->input->post('phone');
-      $email = $this->input->post('email');
-      $service = $this->input->post('service');
-      $lokasi = $this->input->post('lokasi');
-      $contactmessage = $this->input->post('contactmessage');
-      $contactbox = $this->input->post('contactbox');
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+         $nama = $this->input->post('nama');
+         $phone = $this->input->post('phone');
+         $email = $this->input->post('email');
+         $contactmessage = $this->input->post('contactmessage');
+         $contactbox = $this->input->post('contactbox');
 
-      $data = array(
-         'nama' => $nama,
-         'phone' => $phone,
-         'email' => $email,
-         'service' => $service,
-         'lokasi' => $lokasi,
-         'contactmessage' => $contactmessage,
-         'contactbox' => $contactbox,
-      );
-      // var_dump($data);
+         $data = array(
+            'nama' => $nama,
+            'phone' => $phone,
+            'email' => $email,
+            'contactmessage' => $contactmessage,
+            'contactbox' => $contactbox,
+         );
+         // var_dump($data);
 
-      $insert = $this->pages->savekontak($data);
-      echo json_encode($insert);
-      // $this->load->view('pages/kontak', $insert);
+         $insert = $this->pages->savekontak($data);
+         echo json_encode($insert);
+         // $this->load->view('pages/kontak', $insert);
+      }
    }
 }

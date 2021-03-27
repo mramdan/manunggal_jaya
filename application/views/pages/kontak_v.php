@@ -1,3 +1,4 @@
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <section class="mb-md-2 pt-6 pb-lg-6 pb-5 bg-secondary bg-no-repeat bg-position-center-top bg-fixed" style="background-image: url(<?= base_url() ?>assets/frontend/img/construction/contacts/page-title-bg.jpg);">
    <div class="container pt-lg-5 pb-lg-2">
       <div class="row">
@@ -52,26 +53,7 @@
                   <input id="contact-email" name="email" class="form-control form-control-lg bg-image-0" type="email" placeholder="Masukan Nama email">
                </div>
             </div>
-            <div class="col-sm-6">
-               <div class="form-group">
-                  <label for="contact-service">I am interested in</label>
-                  <select id="contact-service" name="service" class="custom-select custom-select-lg">
-                     <option>Interior Design</option>
-                     <option>Repairs</option>
-                     <option>Project Development</option>
-                     <option>Construction</option>
-                  </select>
-               </div>
-               <div class="form-group">
-                  <label for="contact-location">Location*</label>
-                  <select id="contact-location" name="lokasi" class="custom-select custom-select-lg">
-                     <option>Choose your location</option>
-                     <option>New York</option>
-                     <option>New Jersey</option>
-                     <option>San Francisco</option>
-                  </select>
-               </div>
-            </div>
+
             <div class="col-12">
                <div class="form-group">
                   <label for="contact-message">Message*</label>
@@ -130,7 +112,7 @@
    </section>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
 <script type="text/javascript">
    $('#form_kontak').submit(function(e) {
       // alert("Form submitted!");
@@ -143,10 +125,6 @@
       var data = new FormData(form);
       //var data = $(this).serialize();
 
-      if ($('[name="foto_produk"]').val() == '') {
-         alert('Pilih Foto Produk Yang Akan di Upload !');
-         return false;
-      }
 
       $('#btnSave').text('Sedang Proses, Mohon tunggu...'); //change button text
       $('#btnSave').attr('disabled', true); //set button disable 
