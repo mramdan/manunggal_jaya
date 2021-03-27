@@ -67,6 +67,15 @@
 </section>
 
 <section class="container pt-lg-6 pt-5 pb-4">
+   <div class="col-lg-7">
+      <div class="row align-items-center justify-content-between">
+         <div class="col-xl-8 col-lg-8 col-md-8">
+            <div class="wantToWork-caption wantToWork-caption2">
+               <h2>Testimoni Pelanggan</h2>
+            </div>
+         </div>
+      </div>
+   </div>
    <div class="row row-cols-1 row-cols-md-3 g-4">
 
       <?php foreach ($testimoni as $tmi) : ?>
