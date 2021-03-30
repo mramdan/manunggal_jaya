@@ -302,6 +302,7 @@
 <section class="pt-5 pb-lg-6 py-5 bg-secondary">
    <h2 class="h1 mb-5 pb-md-3 text-center">We work worldwide</h2>
 
-   <div style="width: 100%"><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Duren%20Mekar,%20Kec.%20Bojongsari,%20Kota%20Depok,%20Jawa%20Barat,%20Indonesia+(https://www.google.com/maps/place/Depok,+Duren+Mekar,+Kec.+Bojongsari,+Kota+Depok,+Jawa+Barat,+Indonesia/@-6.4127142,106.7467403,19z/data=!4m9!1m3!11m2!2sHCrN9mqFR9bG0n7xs2O34CTAft6AwA!3e2!3m4!1s0x2e69e8ed34aeedf7:0xd4287d7007cd5a84!8m2!3d-6.4127235!4d106.7470809?hl=id-ID)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
-
+   <div style="width: 100%">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.2140745537586!2d106.7466120291492!3d-6.412503866995524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc78a66491b8c75cf!2sBengkel%20Las%20Manunggal%20Jaya!5e0!3m2!1sid!2sid!4v1616846383013!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+   </div>
 </section>

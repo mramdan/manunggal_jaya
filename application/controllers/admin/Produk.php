@@ -267,7 +267,7 @@ class Produk extends CI_Controller
                     $image_data = $this->upload->data();
                     //direktori file
                     $path = 'assets/uploads/produk/kategori/';
-                    $filename = $this->input->post('foto_old');
+                    $filename = $this->input->post('old_foto');
                     //hapus file
                     if (file_exists($path . $filename)) {
                         unlink($path . $filename);

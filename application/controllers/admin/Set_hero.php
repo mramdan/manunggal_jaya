@@ -77,7 +77,7 @@ class Set_hero extends CI_Controller
 
                 $config['upload_path'] = './assets/uploads/hero/';
                 $config['file_name'] =  time();
-                $config['allowed_types'] = 'gif|jpg|png';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
                 $config['overwrite'] = true;
                 $config['max_size'] = 1024; // 1MB
 
@@ -101,7 +101,7 @@ class Set_hero extends CI_Controller
                     // $this->load->library('image_lib', $config);
                     // $this->image_lib->resize();
 
-                    $path = 'assets/uploads/hero/';
+                    $path = './assets/uploads/hero/';
                     $filename = $this->input->post('old_image');
                     //hapus file
                     if (file_exists($path . $filename)) {
